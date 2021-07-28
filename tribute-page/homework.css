@@ -59,32 +59,30 @@ h1 {
 
 
 
+
+
+
 /* --- Styling for BODY STARTS HERE --- */
 body{
-    background-color: white; 
+    background-color: white;
+    margin: 0; 
 }
 
-
-
-
-/* Styling for Elon's company pictures*/
+    /* Styling for Elon's company pictures*/
 .companyPics{
     height: 350px;
     width: 650px;
     border: 1.5px solid black;
 }
 
-
-
+    /* Company Images positioning */
 #imagesFlexBox{
     display: flex;
     justify-content: center;
     align-items: center;
-
-
-    
+   
 }
-
+    /* Company Description - short description of Elon's company images */
 .companyDescription{
 
     text-align: center;
@@ -92,11 +90,7 @@ body{
     font-style: italic;
     font-weight: bold;
 }
-
-
-
-
-
+    /* Tribute-Info */
 #tribute-info{
 
     display: block;
@@ -110,14 +104,17 @@ body{
     background-color: white;
     position: relative;   
     
-
-    
     width: 1500px;
     height: auto;
-    
-
 }
+/* --- Styling of BODY ENDS here --- */
 
+
+
+
+
+
+/* --- FOOTER --- */
 #quote{
     font-size: 40px;
     font-style: italic;
