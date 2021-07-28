@@ -98,11 +98,11 @@ a:hover{
 
 }
 
-#imgw:checked ~ .m2 {
+#img2:checked ~ .m2 {
     margin-left: -100%;
 
 }
-#img1:checked ~ .m3 {
+#img3:checked ~ .m3 {
     margin-left: -200%;
 
 }
