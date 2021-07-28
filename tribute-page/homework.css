@@ -133,6 +133,14 @@ body{
     border: 3px solid black;
     background-color: lightgray;
     padding: 5px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
    
+}
+
+#notes{
+
+    display: block;
+    text-align: center;
+    
+    
 }
