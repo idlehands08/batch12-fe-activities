@@ -1,37 +1,50 @@
 body{
     margin: 0;
-    background-color: black;
-    color: lightgray;
+    background-color: black;  
+    
+    
+    color: #ABB2B9;
     font-size: 30px;
     line-height: 40px;    
 }
 
 header{
     color: lightgray;
-    text-align: center;
-    padding-top: 50px;
-    padding-bottom: 80px;
-    width: auto;
-    height: 100%;
+    text-align: center;  
+    padding-top: 30px;
+    background-color: black;   
+
+}
+
+#tabs {
+    font-size: 22px;
+    font-weight:lighter;
+    margin-bottom: 20px;
 
 }
 
 
 header h1{
-    font-size: 80px;
+    font-size: 70px;
     color: lightgray;
     
 }
 
-#img-caption{
+#titleCaptionDiv{
     margin: 0;
     position: absolute;
-    left: 15%;
-    top: 450px;
+    right: 10%;
+    top: 350px;
+    color: #ABB2B9;
 }
 
 h1, h2{
     font-family: 'Roboto', sans-serif;
+    
+}
+
+h2 {
+    color: whitesmoke;
 }
 
 #title{
@@ -43,8 +56,7 @@ main{
     max-width: 800px;
     text-align: left;
     margin: 0 auto;
-    padding: 50px;
-    background-color: black;
+    padding: 50px;    
     
 }
 
@@ -128,6 +140,11 @@ a:hover{
 
 #img4:checked ~ .m4 {
     margin-left: -300%;
+
+}
+
+#img4:checked ~ .m5 {
+    margin-left: -400%;
 
 }
 /* ---End of slider --- */
