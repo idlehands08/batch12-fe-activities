@@ -143,7 +143,7 @@ a:hover{
 
 }
 
-#img4:checked ~ .m5 {
+#img5:checked ~ .m5 {
     margin-left: -400%;
 
 }
