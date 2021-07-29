@@ -46,7 +46,7 @@ main img {
 
 h2{
     font-size: 37.5px;
-    padding-top: 20px;
+    padding-top: 80px;
     padding-bottom: 20px;
 }
 
@@ -55,8 +55,11 @@ a{
 }
 
 a:hover{
-    color: blue;
+    color: rgb(25, 0, 255);
 }
+
+/* Spacing for Text Heavy Content. <h2> + <p> within textInfo divs */
+
 
 
 /* --- SLIDER styling and functionality ---*/
@@ -64,6 +67,8 @@ a:hover{
 .slider {
     position: relative;
     overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: 50px;
     
 }
 
