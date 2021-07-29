@@ -16,6 +16,11 @@ header{
 
 }
 
+header img{
+    margin: 0;
+    border-radius: 10px;
+}
+
 #tabs {
     font-size: 22px;
     font-weight:lighter;
@@ -33,7 +38,7 @@ header h1{
 #titleCaptionDiv{
     margin: 0;
     position: absolute;
-    right: 10%;
+    right: 15%;
     top: 350px;
     color: #ABB2B9;
 }
