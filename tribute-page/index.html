@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Made by GTD -->
     <meta charset="UTF-8">
     <title>Tribute to Elon Musk</title>
     <link rel="stylesheet" href= "homework.css" />
@@ -12,28 +13,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
     <body>
+        <!-- 1. As a user, I want my tribute page to have an element with corresponding id="main", which contains all other elements. -->
+        <main id="main">
         
         <!-- Header Element -->
         <header>
-            <span id="tabs">Home   |    About    | Companies</span>
-            <!-- I want to see... id="title" -->
+            <nav class="nav">
+                <a href="#main">Home</a><span> |</span>
+                <a href="#hypeDiv">About</a><span> |</span>
+                <a href="#Biography">Biography</a><span> |</span>
+                <a href="#Companies">Companies</a> 
+                             
+            </nav>         
             <div id = "titleCaptionDiv">
+            <!-- 2. I want to see an element with a corresponding id="title", 
+                which contains string (i.e. text) that describes the subject of the tribute page -->    
             <h1 id="title">Elon Musk</h1>
-            <span id="img-caption">
+            <!-- I want to see... od " -->   
+            <span id="elonQuote">
                 "When something is important enough, you do it 
                 <br>even if the odds are not in your favor."
             </span>
-            </div>             
-                        
+            </div>         
         </header>
 
-        <!-- Main Element -->
-        <!-- I want to see... id="main" -->
-        <main id="main">
+        <!-- 2nd DIV page with Sliding Company Logos -->
+        <div id="hypeDiv">
+            <div id="companySlider">
+                <span id="intro">The genius behind...</span>
+                <div class = "autoSlider"></div>
+            </div>
+        </div>
+        
+        <!-- 3. As a user, I want to see a div element with a correesponding id="img-div" -->
+        <div id="img-div">
+            <!-- 4. As a user, I want to see an img element with a corresponding id="image" within the 'img-div' element -->
+            <img id="image" src="images/ElonProfilePic.png">
+            <!-- 5. As a user, I want to see an element with a corresponding id="img-caption" that contains text content describing the image shown in img-div -->
+            <p id="img-caption">Elon sporting his minimalist everyday attire.</p>
+        </div>
+        <!-- start of aboutElon div -->
+        
+        <div class ="aboutElon">
+
+            <!-- Div that contains Who is Elon up to Button Image Sliders -->
+            <div id="pictureDiv">
             <h2>Who is Elon?</h2>
-            <p> From spearheading the creation of reusable rockets, 
+            
+            <!-- 6. As a user, I want to see an element with a corresponding id="tribute-info" which contains text content describing the subject of the tribute page -->
+            <p id="tribute-info"> From spearheading the creation of reusable rockets, 
                 to creating a company that is pushing the limits of fully electric production vehicles, 
                 Elon Musk is a testament to what hard work, perseverance, and talent can achieve.</p>
+            
+            
 
             <!-- Slideshow -->
             <div class="slider">
@@ -43,11 +75,11 @@
                     <input type="radio" name="slide" id="img3">
                     <input type="radio" name="slide" id="img4">
                     <input type="radio" name="slide" id="img5">
-                    <img src="images/Slider0.png" class="m1" alt="img1"> 
-                    <img src="images/Slider2.jpg" class="m2" alt="img2">
+                    <img src="images/Slider1.png" class="m1" alt="img1"> 
+                    <img src="images/Slider2.png" class="m2" alt="img2">
                     <img src="images/Slider3.png" class="m3" alt="img3">
-                    <img src="images/Slider4.jpg" class="m4" alt="img4">
-                    <img src="images/Slider1.jpg" class="m5" alt="img5">                    
+                    <img src="images/Slider4.png" class="m4" alt="img4">
+                    <img src="images/Slider0.png" class="m5" alt="img5">                    
                     
                 </div>
                 <div class="dots">
@@ -58,11 +90,25 @@
                     <label for="img5"></label>
                 </div>
          
+            </div>
             </div>            
 
+        
+    </div>
+    <!-- end of aboutElon div-->
+
+    <!-- hypeDiv2 which has the 2nd scrolling background -->
+    <div id="hypeDiv2">
+            
+    </div>
+    
+    <!-- start of aboutElon div -->
+    <div class="aboutElon"> 
+        
+        
             <!-- List of Achievements -->
             
-            <h2>Achievements</h2>
+            <h2>Achievements<hr></h2>           
             <ol>
                 <li>Founded <a target="_blank" href="https://www.spacex.com/">SpaceX</a>, the company who developed the technology for reusable rockets.</li>
                 <li>Founded <a target="_blank" href="https://www.tesla.com/">Tesla</a>, a company leading in production of fully electric vehicles.</li>
@@ -70,31 +116,91 @@
                 <li>Developed <a target="_blank" href="https://www.starlink.com/">Starlink</a> which is a satellite constellation which will be operated by SpaceX and aims to provide internet access to most parts of the Earth.</li>
                 <li>Founded <a target="_blank" href="https://www.starlink.com/">The Boring Company</a>,  an infrastructure and tunnel construction company that aims to dig tunnels efficiently to facilitate an underground transportation network.</li>
             </ol>
-                      
+            <!-- Biography  -->
+            <h2 id="Biography">Biography<hr></h2>
             
-            <!-- Biography REPLACE CONTENT -->
-            <h2>Biography</h2>
-            <p>Elon Musk, (born June 28, 1971, Pretoria, South Africa), South African-born 
-                American entrepreneur who cofounded the electronic-payment 
-                firm PayPal and formed SpaceX, maker of launch vehicles and spacecraft. 
-                He was also one of the first significant investors in, as well as chief 
-                executive officer of, the electric car manufacturer Tesla. 
+            <p>Elon Musk is a South African-born American entrepreneur and businessman 
+                who founded X.com in 1999 (which later became PayPal), 
+                SpaceX in 2002 and Tesla Motors in 2003. 
+                Musk became a multimillionaire in his late 20s when 
+                he sold his start-up company, Zip2, to a division of Compaq Computers.  
                </p>
+            
+            <h2>Early Life <hr></h2>
+            
+            <p>Musk was born on June 28, 1971, in Pretoria, South Africa. As a child, Musk was so lost in his daydreams 
+                about inventions that his parents and doctors ordered a test to check his hearing.
+
+                At about the time of his parents’ divorce, when he was 10, 
+                Musk developed an interest in computers. He taught himself how to program,
+                 and when he was 12 he sold his first software: a 
+                 game he created called Blastar.</p>
+    </div>
+    <!-- end of aboutElonDiv -->
+
+    <!-- hypeDiv3 which has the 2nd scrolling background -->
+    <div id="hypeDiv3">
+            
+    </div>
+
+    <!-- start of aboutElon Div -->
+    <div class="aboutElon"> 
+
+            <h2 id="Companies">Companies<hr></h2>           
+            <h3><a class="subjectLinks" target="_blank" href="https://www.britannica.com/topic/Zip2">Zip2 Corporation</a></h3>
+            <p>Musk launched his first company, Zip2 Corporation, in 1995 with his brother, Kimbal Musk. An online city guide, 
+                Zip2 was soon providing content for the new websites of both 
+                The New York Times and the Chicago Tribune. In 1999, a division of 
+                Compaq Computer Corporation bought Zip2 for $307 million in cash and $34 million in stock options.</p>
+            
+            <h3><a class="subjectLinks" target="_blank" href="https://www.britannica.com/topic/PayPal">PayPal</a></h3>
+            <p>In 1999, Elon and Kimbal Musk used the money from their sale of Zip2 to found X.com, an online financial services/payments company. 
+                An X.com acquisition the following year led to the creation of PayPal as it is known today.
+
+                In October 2002, Musk earned his first billion when PayPal was acquired by eBay for $1.5 billion in stock. 
+                Before the sale, Musk owned 11 percent of PayPal stock.</p>
+            
+            <h3><a class="subjectLinks" target="_blank" href="https://www.britannica.com/topic/SpaceX">SpaceX</a></h3>
+            <p>Musk founded his third company, Space Exploration Technologies Corporation, or SpaceX, in 2002 with the intention of building spacecraft 
+                for commercial space travel. By 2008, SpaceX was well established, and NASA awarded the company the contract to handle 
+                cargo transport for the International Space Station—with plans for astronaut transport in the future—in a move to replace 
+                NASA’s own space shuttle missions.</p>
+            
+            <h3><a class="subjectLinks" target="_blank" href="https://www.britannica.com/topic/Tesla-Motors">Tesla Motors</a></h3>
+            <p>Musk is the co-founder, CEO and product architect at Tesla Motors, a company formed in 2003 that is 
+                dedicated to producing affordable, mass-market electric cars as well as battery products and solar roofs. 
+                Musk oversees all product development, engineering and design of the company's products.</p>
+            
+            <h3><a class="subjectLinks" target="_blank" href="https://en.wikipedia.org/wiki/The_Boring_Company">The Boring Company</a></h3>
+            <p>In January 2017, Musk launched The Boring Company, a company devoted to 
+                boring and building tunnels in order to reduce street traffic. 
+                He began with a test dig on the SpaceX property in Los Angeles.</p>
             
             
             <!-- Button for More Info -->
             <div id="linkButton">
+            <!-- 7. As a user, I want to see an element with a corresponding id="tribute-link", which links to an outside site that contains additional
+            information about the subject of the tribute page. HINT .... target="_blank" -->
             <a id="tribute-link" href="https://www.britannica.com/biography/Elon-Musk" 
             target="_blank_">MORE INFO</a>
             </div>
+        
+    </div>
+    <!-- end of aboutElon div  -->
+
+    <!-- start of footer -->
+        <footer>
+            <!-- <a id="tribute-link" target="_blank_" href="https://www.britannica.com/biography/Elon-Musk"  >MORE INFO</a> -->
+            <p id="footerNote">Content was sourced from: https://www.biography.com/business-figure/elon-musk while images were sourced from Google Image Search. 
+                This site was merely created for an HTML/CSS class for learning purposes only.</p>
+        </footer>
+    <!-- end of footer -->
                 
             
         </main>
+        <!-- End of Main -->
 
-        <footer>
-            <!-- <a id="tribute-link" target="_blank_" href="https://www.britannica.com/biography/Elon-Musk"  >MORE INFO</a> -->
-            <p id="footerNote">This site was created for an HTML/CSS class for learning purposes only.</p>
-        </footer>
+        
 
      
     </body>
