@@ -15,7 +15,7 @@ header {
     text-align: center;  
     background-color: black;    
     background-image: url(./images/Header.png);
-    /* background-attachment: fixed;  */
+    background-attachment: fixed;  
     max-width: 100%;
     height: auto;   
     background-size: cover;
