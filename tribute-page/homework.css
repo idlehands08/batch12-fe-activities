@@ -2,8 +2,9 @@
 
 body{
     margin: 0;
-      
-    background-color: black;
+    /* background-color: black; */
+    /* --- added slight texture to plain black background --- */
+    background-image: url(./images/BlackBackground.png);
     color: #ABB2B9;
     font-size: 27.5px;
     line-height: 40px;    
