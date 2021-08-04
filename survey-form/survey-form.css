@@ -36,17 +36,6 @@
 }
 
 
-body {
-
-    display: block;
-    position: relative;
-    
-    
-
-    
-  
-}
-
 
 section{
     display: block;
@@ -201,10 +190,18 @@ form{
     width: 10rem;
 }
 
+   /* margin on the left of personal info items */
+.personal-info .flex-column-item {
+    margin-left: 20px;
+}
 
+.secondary-info {
+    margin-left: 20px;
+}
 
+/* primary info input styling */
 .primary-info input {
-    min-width: 30rem;
+    min-width: 15rem;
     outline: none;
     padding: .5rem .5rem .5rem 1rem;
     border-top-style: hidden;
@@ -215,6 +212,14 @@ form{
     font-size: 1.2rem;
 
     
+}
+    /* made age width smaller */
+#age {
+    min-width: 2rem;
+}
+
+#contact-number {
+    min-width: 10rem;
 }
 /* input[type=text], #name, #email, #number, #age{
     
@@ -241,7 +246,7 @@ form{
 
 select {
 
-    background-color : #F4F3EE;
+    background-color : whitesmoke;
     border: solid 2px #fff;
     border-radius: 0.25rem; 
     -webkit-box-shadow: 
@@ -289,6 +294,8 @@ input[id=age] {
 
 .title-header{
     text-align: center;
+    margin-left: 40px;
+    color: color: #32292F;
 
 }
 
@@ -299,7 +306,7 @@ label {
 
 
 form {
-    color: black;
+    
 }
 .primary-info label{
     margin-top: 2rem;
@@ -315,7 +322,7 @@ form {
 }
      /* please rate us  */
 #feedback-instructions {
-    color: black;
+    color: #32292F;
     font-size: 1.2rem;
     padding-bottom: 2rem;
     
@@ -340,7 +347,7 @@ form {
 }
 
 .comments h6{
-    color: black;
+    color: #32292F;
     margin: 2rem 0 1rem 0;
     font-weight: 900;
     font-size: 1rem;
@@ -476,6 +483,12 @@ textarea {
 
 @media (max-width:1200px) {
     
+    .title-header{
+        text-align: center;
+        margin-left: 20px;
+    
+    }
+
     #img-header {
         width: 100%;
         height: 15rem;
@@ -496,28 +509,15 @@ textarea {
         max-width: 100%;
     }
 
-    
-
-    
-    
 
     
 }
 
-@media (max-width:1000px) {
-    
-    .primary-info input {
-        min-width: 100%;
-        
-    }
-       
-    
 
-    
-}
 
 @media (max-width: 840px) {
     
+  
    
 
     h2 {
@@ -558,16 +558,34 @@ textarea {
         display: flex;
         flex-direction: column;
     }
+    /* remove margine for the left of personal info */
+    .personal-info .flex-column-item {
+        margin-left: 5px;
+    }
+    
+    .secondary-info {
+        margin-left: 5px;
+    }
 
 
     
 }
 
-@media (max-width: 500px) {
+@media (max-width: 680px) {
 
 
     .title-header{
         font-size: 80%;
+    }
+
+    #title{
+        /* font-family: 'Nixie One', cursive;  */
+        font-size: 3rem;
+    
+    }
+
+    #subheader {
+        font-size: 1rem;
     }
 
     
@@ -600,7 +618,7 @@ textarea {
 @media (max-width: 400px) {
     #title{
         /* font-family: 'Nixie One', cursive;  */
-        font-size: 3rem;
+        font-size: 3.5rem;
     
     }
 
