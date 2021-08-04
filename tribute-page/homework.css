@@ -12,7 +12,7 @@ body{
 
 header {
     display: block;
-    color: lightgray;
+    color: whitesmoke;
     text-align: center;  
     background-color: black;    
     background-image: url(./images/Header.png);
@@ -194,7 +194,7 @@ header a{
 
 header h1{
     font-size: 70px;
-    color: lightgray;
+    color: white;
     
 }
 
