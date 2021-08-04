@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="survey-form.css"/>
+    <!-- Google Fonts Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nixie+One&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="file:///E:/fontawesome/css/all.css">
+    <title>Survey Form</title>
+</head>
+<body>
+
+    <div class="container-main" id="container-main">
+
+            <div id="img-header">
+                           
+                
+
+                
+            </div>
+        
+        
+        <!-- survey container starts here -->
+        
+        
+        <div class="container-survey">  
+
+            <div class="title-header">
+                <h1 id="title">Customer Survey</h1>
+                <h2 id="subheader">
+                Through your feedback, we will be able to serve you even better in the future!
+                </h2>          
+                    
+                <h3 id="contact-us-header">Contact us! (+63)9178080441 I (028)513-5617</h2>
+                
+                
+
+            </div>
+
+            <form autocomplete="off" class="form-main" method="GET">
+              
+               
+                <!-- start of personal-info -->
+                <div class="personal-info">
+                    <!-- instructions -->
+                    
+
+                    <!-- start of primary-info -->
+                    <div class="primary-info">
+                        <div class="flex-row-item">
+                            <div class="flex-column-item">                        
+                                <label for="name" id="name-label">Full Name</label>
+                                <input type="text" name="name" id="name" placeholder="e.g. Lando Norris" required>
+
+                            </div>
+                            <div class="flex-column-item">   
+                                <label for="email" id="email-label">Email</label>
+                                <input type="email" name="email" id="email" placeholder="e.g. lnorris@mclaren.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="">
+                            </div>
+                        </div>
+                        <!-- flex row item for contact number and age -->
+
+                        <div class="flex-row-item">                
+                            <div class="flex-column-item">
+                              <label for="contact" id="contact-label">Contact Number</label>
+                              <!-- Requirement 7: As a user, I should be able to enter a number in a field with id="number". -->
+                              <!-- Requirement 8: As a user, if I enter non-numbers in the number input, I want to see an HTML5 validation error. -->
+                              <input type="text" name="contact" id="number" placeholder="e.g. 09170087000" pattern="[0]+\d{10}$" required="">
+                            </div>
+                            <div class="flex-column-item">
+                              <label for="age" id="number-label">Age</label>
+                              <!-- Requirement 9: As a user, if I enter numbers outside the range of the number input, which are defined by the min and max attributes, I will see an HTML5 validation error. -->
+                              <input type="number" name="age" id="age" placeholder="e.g. 60" pattern="[0-9]{3}" min="1" max="110" required="">
+                            </div>
+                        </div>
+
+                        <label for="address" id="address-label">City Address</label>
+                        <input type="text" name="address" id="address" placeholder="e.g. Quezon City (optional)">
+                        <!-- end of flex row item for contact number and age -->
+
+
+                        
+                    </div>
+                    <!-- end of primary-info -->
+                    
+                    <!-- start of secondary-info -->
+                    <div class="secondary-info">
+                        <!-- Requirement 13: Inside the form element, I want to select a field from one or more groups of radio buttons. Each group should be grouped using the name attribute. -->
+                        <div class="flex-row-item" id="flex-row-secondary-info">
+                            <section id="secondary-info-section">
+                            <h6>SEX</h6>
+                            <div class="flex-row-item" id="sex-row">                            
+                                <input type="radio" name="sex" value="male" id="sex-male" required>
+                                <label for="sex-male">MALE</label>                           
+                                <input type="radio" name="sex" value="female" id="sex-female">
+                                <label for="sex-female">FEMALE</label>
+                            </div>
+                            </section>
+
+                            <div>
+                            <!-- Requirement 14: Inside the form element, I want to select several fields from a series of checkboxes, each of which must have a value attribute. -->
+                            <h6>Where did you learn about us</h6>
+                            <!-- start of checkboxes flex-row -->
+                            <div class="flex-row-item">
+                              <div class="flex-column-item">
+                                <div class="checkbox-item">
+                                  <input type="checkbox" name="source" value="facebook" id="facebook">
+                                  <label for="facebook">Facebook</label>
+                                </div>
+                                <div class="checkbox-item">
+                                  <input type="checkbox" name="source" value="instagram" id="instagram">
+                                  <label for="instagram">Instagram</label>
+                                </div>
+                                <div class="checkbox-item">
+                                  <input type="checkbox" name="source" value="tiktok" id="tiktok">
+                                  <label for="tiktok">Tik-Tok</label>
+                                </div>
+                              </div>
+                              <div class="flex-column-item">
+                                <div class="checkbox-item">
+                                  <input type="checkbox" name="source" value="friends" id="friends">
+                                  <label for="friends">Friends</label>
+                                </div>
+                                <div class="checkbox-item">
+                                  <input type="checkbox" name="source" value="store" id="store">
+                                  <label for="store">Physical Store</label>
+                                </div>
+                                <div class="checkbox-item">
+                                  <input type="checkbox" name="source" value="others" id="others">
+                                  <label for="others">Others</label>
+                                </div>
+                              </div>
+                            </div>
+                             <!-- end of flex-row for checkboxes -->
+                          </div>
+                          <!-- end of checkboxes div -->
+                        </div>
+                        
+          
+                        <section class="section-type-of-vehicle">
+                          <!-- Requirement 12: Inside the form element, I want a select an option from a dropdown that has a corresponding id="dropdown". -->
+                          <h6>Type of Vehicle</h6>
+                           <select name="dropdown" id="dropdown-model" class="form-control" required>
+                                <option value="" disabled>Select car type</option>
+                                <option value="sedan">Sedan</option>
+                                <option value="coupe">Coupe</option>
+                                <option value="motorcycle">Motorcycle</option>
+                                <option value="suv">SUV</option>
+                                <option value="van">Van</option>
+                                <option value="pickup">Pickup Truck</option>
+                                <option value="others">Others</option>
+                            </select>
+                        </section>
+                        
+                       
+                    </div>
+                    <!-- end of secondary-info -->
+                </div>
+                <!-- end of personal-info -->
+
+                <!-- Start of feedback -->
+                
+                <section class="container-main-feedback">
+                    
+                    <h6 id="feedback-instructions">Please provide your rating per category using the stars.</h6>
+                    
+                    <div class="feedback-item">
+                        <div class="feedback-label">
+                            <h6 id="exterior-label">Exterior Cleaning</h6>
+                        </div>
+                        <div class="rate">
+                            <input type="radio" id="star5" name="rate" value="5" />
+                            <label for="star5" title="text">5 stars</label>
+                            <input type="radio" id="star4" name="rate" value="4" />
+                            <label for="star4" title="text">4 stars</label>
+                            <input type="radio" id="star3" name="rate" value="3" />
+                            <label for="star3" title="text">3 stars</label>
+                            <input type="radio" id="star2" name="rate" value="2" />
+                            <label for="star2" title="text">2 stars</label>
+                            <input type="radio" id="star1" name="rate" value="1" />
+                            <label for="star1" title="text">1 star</label>
+                        </div>                        
+                    </div>
+
+                    <div class="feedback-item">
+                        <div class="feedback-label">
+                            <h6 id="interior-label">Interior Cleaning</h6>
+                        </div>
+                        <div class="rate">
+                            <input type="radio" id="star5" name="rate" value="5" />
+                            <label for="star5" title="text">5 stars</label>
+                            <input type="radio" id="star4" name="rate" value="4" />
+                            <label for="star4" title="text">4 stars</label>
+                            <input type="radio" id="star3" name="rate" value="3" />
+                            <label for="star3" title="text">3 stars</label>
+                            <input type="radio" id="star2" name="rate" value="2" />
+                            <label for="star2" title="text">2 stars</label>
+                            <input type="radio" id="star1" name="rate" value="1" />
+                            <label for="star1" title="text">1 star</label>
+                        </div>                        
+                    </div>
+
+                    <div class="feedback-item">
+                        <div class="feedback-label">
+                            <h6 id="staff-label">Staff Friendliness</h6>
+                        </div>
+                        <div class="rate">
+                            <input type="radio" id="star5" name="rate" value="5" />
+                            <label for="star5" title="text">5 stars</label>
+                            <input type="radio" id="star4" name="rate" value="4" />
+                            <label for="star4" title="text">4 stars</label>
+                            <input type="radio" id="star3" name="rate" value="3" />
+                            <label for="star3" title="text">3 stars</label>
+                            <input type="radio" id="star2" name="rate" value="2" />
+                            <label for="star2" title="text">2 stars</label>
+                            <input type="radio" id="star1" name="rate" value="1" />
+                            <label for="star1" title="text">1 star</label>
+                        </div>                        
+                    </div>
+
+                    <div class="feedback-item">
+                        <div class="feedback-label">
+                            <h6 id="overall-label">Overall Cleaning</h6>
+                        </div>
+                        <div class="rate">
+                            <input type="radio" id="star5" name="rate" value="5" />
+                            <label for="star5" title="text">5 stars</label>
+                            <input type="radio" id="star4" name="rate" value="4" />
+                            <label for="star4" title="text">4 stars</label>
+                            <input type="radio" id="star3" name="rate" value="3" />
+                            <label for="star3" title="text">3 stars</label>
+                            <input type="radio" id="star2" name="rate" value="2" />
+                            <label for="star2" title="text">2 stars</label>
+                            <input type="radio" id="star1" name="rate" value="1" />
+                            <label for="star1" title="text">1 star</label>
+                        </div>                        
+                    </div>
+
+                    <div class="flex-column-item">
+                        <div class="comments">
+                            <h6>What can we improve on?</h6>
+                            <textarea id="textarea" name="comments" 
+                            rows="5" cols="90" placeholder="Additional Comments (optional)"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="flex-column-item">
+                        <div class="submit-button">
+                          <input type="submit" name="button" value="Submit" id="submit">
+                        </div>
+                    </div>
+    
+
+                </section>
+
+                            
+
+            </form>
+            <!-- form ends here -->
+            
+            
+        </div>
+        <!-- survey container ends here -->
+        
+
+    </div>
+    
+    
+    
+</body>
+</html>
