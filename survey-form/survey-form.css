@@ -64,8 +64,8 @@ section{
     align-self: stretch;     
     
     text-align: center;     
-    background: url(./images/image4.png);
-    background: url("https://images.pexels.com/photos/2062555/pexels-photo-2062555.jpeg?cs=srgb&dl=pexels-orest-sv-2062555.jpg&fm=jpg");
+    /* background: url(./images/image4.png); */
+    background: url(./images/Header.jpg);
     background-position: center;
     background-size: cover;
     width: 40%;
