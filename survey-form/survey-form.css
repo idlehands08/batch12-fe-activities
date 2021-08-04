@@ -1,5 +1,5 @@
 :root {
-    --font-family2: 'Nixie One', sans-serif;
+    
 
     --color-white: #f3f3f3;
     --color-spacegray: rgba(57, 70, 72, 0.8);
@@ -29,11 +29,10 @@
     margin: 0;
     padding: 0;
     box-sizing: inherit;
-    font-family: 'Open Sans', sans-serif;
-    
-    
+
 
 }
+
 
 
 
@@ -59,6 +58,8 @@ section{
     background-size: cover;
     width: 20%;
     color: whitesmoke;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
     
 }
 
@@ -84,7 +85,7 @@ section{
     flex-direction: row;
     /* border: solid 3px black;   */
     background-color: #fff;
-    padding-top: 40px;
+    
 
 }
 
@@ -93,6 +94,9 @@ section{
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid black;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
     
 }
 
@@ -107,19 +111,15 @@ section{
 
 .feedback-item {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    
-    
+    justify-content: center;
 
+    
 }
 
-.feedback-label{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    padding-right: 1rem;
-}
+
+
 
 form {
     display: flex;
@@ -177,7 +177,7 @@ form{
 
 
 .personal-info{
-    margin-bottom: 50px;
+    
 }
 
 #sex-row label {
@@ -249,8 +249,73 @@ form{
 } */
 
 
+/* Interactive Items Styling */
+
+/* Exterior Cleaning Stars */
+.container{
+position: relative;
+/* border: 1px solid #444; */
+border-radius: 5px;    
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+width: 200px;
+}
+
+.container .edit:hover{
+text-decoration: underline;
+}
+.container .star-widget input{
+display: none;
+}
+.star-widget label{
+font-size: 1.5rem;
+color: #444;
+padding: 0.2rem;
+
+float: right;
+transition: all 0.2s ease;
+}
+.container input:not(:checked) ~ label:hover,
+.container input:not(:checked) ~ label:hover ~ label{
+color: #fd4;
+}
+.container input:checked ~ label{
+color: #fd4;
+}
+.container input#exterior-rate-5:checked ~ label{
+color: #fe7;
+text-shadow: 0 0 20px #952;
+}
+
+.container input#interior-rate-5:checked ~ label{
+color: #fe7;
+text-shadow: 0 0 20px #952;
+}
+
+.container input#staff-rate-5:checked ~ label{
+color: #fe7;
+text-shadow: 0 0 20px #952;
+}
+
+
+.container input#staff-rate-5:checked ~ label{
+color: #fe7;
+text-shadow: 0 0 20px #952;
+}
+
+.container input#overall-rate-5:checked ~ label{
+    color: #fe7;
+    text-shadow: 0 0 20px #952;
+    }
     
-  
+
+
+
+
+
+
 
 
 select {
@@ -294,8 +359,13 @@ input[id=age] {
 
 
 /* form font styling starts here */
+
 html {
-    font-size: 85%;
+    font-size: 70%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; 
 }
 
 #title{
@@ -334,12 +404,19 @@ label {
 #feedback-instructions {
     color: #32292F;
     font-size: 1rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 0.7rem;
     
 }
 
 .feedback-label {
     color: #2383D1;
+    
+}
+
+.feedback-label h6{
+    font-size: 1.2rem;
+    
 }
         /* SEX and TYPE OF VEHICLE label  */
 .secondary-info h6{
@@ -449,46 +526,7 @@ textarea {
 
 
 
-/* stars styling */
-.rate{
 
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-   
-
-   
-}
-.rate:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
-}
-.rate:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size: 3rem;
-    color:#ccc;
-}
-.rate:not(:checked) > label:before {
-    content: '★ ';
-}
-.rate > input:checked ~ label {
-    color: #ffc700;    
-}
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
-    color: #deb217;  
-}
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
-    color: #c59b08;
-}
 
 
 @media (max-width:1200px) {
@@ -508,6 +546,16 @@ textarea {
     #img-header {
         width: 100%;
         height: 15rem;
+        border-radius: 0;
+    }
+
+    .container-survey {
+        border-radius: 0;
+        border: none;
+    }
+
+    html {
+        font-size: 100%;
     }
 
   
@@ -515,6 +563,8 @@ textarea {
         display: flex;
         flex-direction: column;
         align-items: center;
+        
+        
     }
     
 
@@ -522,6 +572,7 @@ textarea {
     
     .container-survey {
         max-width: 100%;
+        
     }
 
 
@@ -617,7 +668,10 @@ textarea {
 }
 
 @media (max-width: 400px) {
-   
+    
+    html{
+        font-size: 65%;
+    }
     #feedback-instruction{
         text-align: center;
     }
