@@ -201,16 +201,6 @@ form{
     width: 10rem;
 }
 
-/* Input + Textarea Styling */
-button,
-input,
-textarea,
-select{
-
-    /* font-family: 'Open Sans', sans-serif; */
-    
-
-}
 
 
 .primary-info input {
@@ -222,8 +212,8 @@ select{
     border-left-style: hidden;
     border-bottom: 0.5px solid #646464;
     background-color: transparent;
-    font-family: "Lato", sans-serif;
     font-size: 1.2rem;
+
     
 }
 /* input[type=text], #name, #email, #number, #age{
@@ -356,6 +346,18 @@ form {
     font-size: 1rem;
     text-transform: uppercase;
   
+}
+
+button,
+input,
+textarea,
+select{
+    font-family: 'Open Sans', sans-serif; 
+}
+
+select {
+    font-size: 1.2rem;
+    
 }
 
 /* font styling ends here */
