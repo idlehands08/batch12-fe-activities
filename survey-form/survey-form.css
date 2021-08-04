@@ -1,7 +1,16 @@
 :root {
     
     --color-blue: #2383D1;
-    --colo-staryellow: #ffb444;
+    /* --color-staryellow: #ffb444; */
+    --color-maizecrayola: #F3CA40;
+    --color-staryellow:#F2A541;
+    --color-blackfogra: #01161E;
+    --color-gainsboro: #D8E1E9;
+    --color-ghostwhite: #F2F4FF;
+    --color-snow: #FFFCFF;
+
+    --color-gunmetal: #292F36;
+    
     
 }
 
@@ -41,8 +50,8 @@ section{
     background-size: cover;
     width: 50%;
     color: whitesmoke;
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
     
 }
 
@@ -68,7 +77,7 @@ section{
     width: 100%;
     flex-direction: row;
     /* border: solid 3px black;   */
-    background-color: #fff;
+    background-color: var(--color-snow);
     
 
 }
@@ -78,9 +87,9 @@ section{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    border: 1px solid var(--color-gunmetal);
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
     
 }
 
@@ -238,13 +247,10 @@ form{
 /* Exterior Cleaning Stars */
 .container{
 position: relative;
-/* border: 1px solid #444; */
-border-radius: 5px;    
 display: flex;
 align-items: center;
 justify-content: center;
 flex-direction: column;
-width: 200px;
 }
 
 .container .edit:hover{
@@ -263,35 +269,35 @@ transition: all 0.2s ease;
 }
 .container input:not(:checked) ~ label:hover,
 .container input:not(:checked) ~ label:hover ~ label{
-color: var(--colo-staryellow);
+color: var(--color-staryellow);
 }
 .container input:checked ~ label{
-color: var(--colo-staryellow);
+color: var(--color-staryellow);
 }
 .container input#exterior-rate-5:checked ~ label{
-color: var(--colo-staryellow);
-text-shadow: 0 0 15px  var(--color-blue);
+color: var(--color-staryellow);
+text-shadow: 0 0 25px  var(--color-staryellow);
 }
 
 .container input#interior-rate-5:checked ~ label{
-color: var(--colo-staryellow);
-text-shadow: 0 0 15px  var(--color-blue);
+color: var(--color-staryellow);
+text-shadow: 0 0 25px  var(--color-staryellow);
 }
 
 .container input#staff-rate-5:checked ~ label{
-color: var(--colo-staryellow);
-text-shadow: 0 0 15px  var(--color-blue);
+color: var(--color-staryellow);
+text-shadow: 0 0 25px  var(--color-staryellow);
 }
 
 
 .container input#staff-rate-5:checked ~ label{
-color: var(--colo-staryellow);
-text-shadow: 0 0 15px  var(--color-blue);
+color: var(--color-staryellow);
+text-shadow: 0 0 25px  var(--color-staryellow);
 }
 
-.container input#overall-rate-5:checked ~ label{
-    color: var(--colo-staryellow);
-    text-shadow: 0 0 15px var(--color-blue);
+.container input#price-rate-5:checked ~ label{
+    color: var(--color-staryellow);
+    text-shadow: 0 0 25px var(--color-staryellow);
     }
     
 
@@ -360,7 +366,7 @@ body {
 .title-header{
     margin: 20px;
     text-align: center;    
-    color: #32292F;
+    color: var(--color-gunmetal);
     font-size: 0.8rem;
     
 
@@ -386,7 +392,7 @@ label {
 }
      /* please rate us  */
 #feedback-instructions {
-    color: #32292F;
+    color: var(--color-gunmetal);
     font-size: 1rem;
     padding-top: 1rem;
     padding-bottom: 0.7rem;
@@ -418,7 +424,7 @@ label {
 }
 
 .comments h6{
-    color: #32292F;
+    color: var(--color-gunmetal);
     margin: 2rem 0 1rem 0;
     font-weight: 900;
     font-size: 1rem;
@@ -426,11 +432,21 @@ label {
   
 }
 
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: lightgray;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: lightgray;
+  }
+
 button,
 input,
 textarea,
 select{
     font-family: 'Open Sans', sans-serif; 
+
+    background-color: transparent;
+   
 }
 
 select {
