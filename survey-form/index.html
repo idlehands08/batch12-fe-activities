@@ -33,14 +33,14 @@
 
             <div class="title-header">
                 <h1 id="title">Customer Survey</h1>              
-                <h2 id="subheader">
-                Thank you for taking this time to give us your feedback.                
-                </h2>                
+                <p id="description">
+                Thank you for taking this time to give us your feedback                
+                </p>                
                 <h3 id="contact-us-header">Contact us: (+63)9178080441 | (028)513-5617</h2>
                 <h3>Email: Redlineautoworks@gmail.com </h3>
             </div>
 
-            <form autocomplete="off" action="success.html" class="form-main" method="GET">
+            <form id="survey-form" autocomplete="off" action="success.html" class="form-main" method="GET">
                 <!-- start of personal-info -->
                 <div class="personal-info">
                     <!-- instructions -->
@@ -55,7 +55,7 @@
                             </div>
                             <div class="flex-column-item">
                                 <label for="email" id="email-label">Email</label>
-                                <input type="email" name="email" id="email" placeholder="e.g. lnorris@mclaren.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="">
+                                <input type="email" name="email" id="email" placeholder="e.g. lnorris@mclaren.com" required>
                             </div>
                         </div>
                         <!-- flex row item for contact number and age -->
@@ -65,12 +65,12 @@
                               <label for="contact" id="contact-label">Contact Number</label>
                               <!-- Requirement 7: As a user, I should be able to enter a number in a field with id="number". -->
                               <!-- Requirement 8: As a user, if I enter non-numbers in the number input, I want to see an HTML5 validation error. -->
-                              <input type="text" name="contact" id="number" placeholder="e.g. 09170087000" pattern="[0]+\d{10}$" required="">
+                              <input type="number" name="contact" id="number" placeholder="e.g. 09170087000" min="00000000000" max="99999999999"  required>
                             </div>
                             <div class="flex-column-item">
                               <label for="age" id="number-label">Age</label>
                               <!-- Requirement 9: As a user, if I enter numbers outside the range of the number input, which are defined by the min and max attributes, I will see an HTML5 validation error. -->
-                              <input type="number" name="age" id="age" placeholder="e.g. 60" pattern="[0-9]{3}" min="1" max="110" required="">
+                              <input type="number" name="age" id="age" placeholder="e.g. 60" pattern="[0-9]{3}" min="1" max="100" required>
                             </div>
                         </div>
 
@@ -147,7 +147,7 @@
                         <section class="section-type-of-vehicle">
                           <!-- Requirement 12: Inside the form element, I want a select an option from a dropdown that has a corresponding id="dropdown". -->
                           <h6>Type of Vehicle</h6>
-                           <select name="dropdown" id="dropdown-model" class="form-control" required>
+                           <select name="dropdown" id="dropdown" class="form-control" required>
                                 <option value="" disabled>Select vehicle type</option>
                                 <option value="sedan">Sedan</option>
                                 <option value="coupe">Coupe</option>
@@ -179,15 +179,15 @@
                         <div class="container" id="exterior-rating">           
       
                             <div class="star-widget">
-                              <input type="radio" name="exterior-rating" id="exterior-rate-5">
+                              <input type="radio" name="exterior-rating" id="exterior-rate-5" value="exterior-rate-5">
                               <label for="exterior-rate-5" class="fas fa-star"></label>
-                              <input type="radio" name="exterior-rating" id="exterior-rate-4">
+                              <input type="radio" name="exterior-rating" id="exterior-rate-4" value="exterior-rate-4">
                               <label for="exterior-rate-4" class="fas fa-star"></label>
-                              <input type="radio" name="exterior-rating" id="exterior-rate-3">
+                              <input type="radio" name="exterior-rating" id="exterior-rate-3" value="exterior-rate-3">
                               <label for="exterior-rate-3" class="fas fa-star"></label>
-                              <input type="radio" name="exterior-rating" id="exterior-rate-2">
+                              <input type="radio" name="exterior-rating" id="exterior-rate-2" value="exterior-rate-2">
                               <label for="exterior-rate-2" class="fas fa-star"></label>
-                              <input type="radio" name="exterior-rating" id="exterior-rate-1"required>
+                              <input type="radio" name="exterior-rating" id="exterior-rate-1" value="exterior-rate-1" required>
                               <label for="exterior-rate-1" class="fas fa-star"></label>
                             </div>
                         </div>
@@ -202,15 +202,15 @@
                         <div class="container" id="interior-rating">           
       
                             <div class="star-widget">
-                              <input type="radio" name="interior-rating" id="interior-rate-5">
+                              <input type="radio" name="interior-rating" id="interior-rate-5" value="interior-rate-5">
                               <label for="interior-rate-5" class="fas fa-star"></label>
-                              <input type="radio" name="interior-rating" id="interior-rate-4">
+                              <input type="radio" name="interior-rating" id="interior-rate-4" value="interior-rate-4">
                               <label for="interior-rate-4" class="fas fa-star"></label>
-                              <input type="radio" name="interior-rating" id="interior-rate-3">
+                              <input type="radio" name="interior-rating" id="interior-rate-3" value="interior-rate-3">
                               <label for="interior-rate-3" class="fas fa-star"></label>
-                              <input type="radio" name="interior-rating" id="interior-rate-2">
+                              <input type="radio" name="interior-rating" id="interior-rate-2" value="interior-rate-2">
                               <label for="interior-rate-2" class="fas fa-star"></label>
-                              <input type="radio" name="interior-rating" id="interior-rate-1"required>
+                              <input type="radio" name="interior-rating" id="interior-rate-1" value="interior-rate-1" required>
                               <label for="interior-rate-1" class="fas fa-star"></label>
                             </div>
                         </div>
@@ -227,15 +227,15 @@
                         <div class="container" id="staff-rating">           
       
                             <div class="star-widget">
-                              <input type="radio" name="staff-rating" id="staff-rate-5">
+                              <input type="radio" name="staff-rating" id="staff-rate-5" value="staff-rate-5">
                               <label for="staff-rate-5" class="fas fa-star"></label>
-                              <input type="radio" name="staff-rating" id="staff-rate-4">
+                              <input type="radio" name="staff-rating" id="staff-rate-4" value="staff-rate-4">
                               <label for="staff-rate-4" class="fas fa-star"></label>
-                              <input type="radio" name="staff-rating" id="staff-rate-3">
+                              <input type="radio" name="staff-rating" id="staff-rate-3" value="staff-rate-3">
                               <label for="staff-rate-3" class="fas fa-star"></label>
-                              <input type="radio" name="staff-rating" id="staff-rate-2">
+                              <input type="radio" name="staff-rating" id="staff-rate-2" value="staff-rate-2">
                               <label for="staff-rate-2" class="fas fa-star"></label>
-                              <input type="radio" name="staff-rating" id="staff-rate-1"required>
+                              <input type="radio" name="staff-rating" id="staff-rate-1" value="staff-rate-1" required>
                               <label for="staff-rate-1" class="fas fa-star"></label>
                             </div>
                         </div>
@@ -250,15 +250,15 @@
                         <div class="container" id="price-rating">           
       
                             <div class="star-widget">
-                              <input type="radio" name="price-rating" id="price-rate-5" >
+                              <input type="radio" name="price-rating" id="price-rate-5" value="price-rate-5">
                               <label for="price-rate-5" class="fas fa-star"></label>
-                              <input type="radio" name="price-rating" id="price-rate-4">
+                              <input type="radio" name="price-rating" id="price-rate-4" value="price-rate-4">
                               <label for="price-rate-4" class="fas fa-star"></label>
-                              <input type="radio" name="price-rating" id="price-rate-3">
+                              <input type="radio" name="price-rating" id="price-rate-3" value="price-rate-3">
                               <label for="price-rate-3" class="fas fa-star"></label>
-                              <input type="radio" name="price-rating" id="price-rate-2">
+                              <input type="radio" name="price-rating" id="price-rate-2" value="price-rate-2">
                               <label for="price-rate-2" class="fas fa-star"></label>
-                              <input type="radio" name="price-rating" id="price-rate-1"required>
+                              <input type="radio" name="price-rating" id="price-rate-1" value="price-rate-1" required>
                               <label for="price-rate-1" class="fas fa-star"></label>
                             </div>
                         </div>                        
@@ -294,7 +294,11 @@
 
     </div>
 
+    <script type="text/javascript" src= "https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 
-    <script src="https://kit.fontawesome.com/de5bc60787.js" crossorigin="anonymous"></script>
+    
+
+
+    
 </body>
 </html>

@@ -129,6 +129,12 @@ form {
     
 }
 
+#description {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-blackfogra);
+}
+
 .primary-info{
     display: flex;
     flex-direction: column;
@@ -223,24 +229,13 @@ form{
 #contact-number {
     min-width: 10rem;
 }
-/* input[type=text], #name, #email, #number, #age{
-    
-    background-color: transparent;
-    color: blue;
-    outline: none;
-    outline-style: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: solid #eeeeee 3px;
-    font-size: 1rem;
-    padding: 1rem;
-    padding-right: 2rem;
-    
-    
-    
-} */
 
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 
 /* Interactive Items Styling */
 
@@ -494,7 +489,7 @@ label {
     margin: 2rem 0 1rem 0;
     font-weight: 900;
     font-size: 1rem;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
   
 }
 
