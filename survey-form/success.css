@@ -1,0 +1,108 @@
+:root {
+    
+    --color-blue: #2383D1;
+   
+    --color-maizecrayola: #F3CA40;
+    --color-staryellow:#F2A541;
+    --color-blackfogra: #01161E;
+    --color-gainsboro: #D8E1E9;
+    --color-ghostwhite: #F2F4FF;
+    --color-snow: #FFFCFF;
+
+    --color-gunmetal: #292F36;
+    
+    
+}
+
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+
+
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif; 
+    margin: auto;
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+}
+
+p {
+    color: var(--color-blue);
+    font-size: 1rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.container-main {
+   
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    text-align: center;
+    
+    
+}
+
+.name-header {
+    font-size: 1.5rem;
+    
+    
+}
+
+.return {
+    padding-top: 30px;
+    width: 8rem;
+    height: 2rem;
+    border: none;
+    color: var(--color-blue);
+    transition: ease-out 0..3s;
+    font-size: 1.2rem;
+    outline: none;
+    border: 1px solid var(--color-blackfogra);
+    position: relative;
+    /* button */
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+    
+    border: solid 1px gainsboro;
+    border-radius: 0.25rem; 
+    -webkit-box-shadow: 
+        inset 0 0 1px 10px rgba(0,0,0,0.1),
+            0 0 2px 10rem rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+        inset 0 0 1rem  rgba(0,0,0,0.1),
+            0 0 2rem rgba(0,0,0,0.1); 
+    box-shadow: 
+        inset 0 0 2.5rem  rgba(0, 102, 255, 0.1),
+            0 0 5rem rgba(0, 68, 255, 0.1); 
+    padding: 0.3rem; 
+    background: rgba(255,255,255,0.5);
+    margin: 0 0 10px 0; 
+    color: var(--color-blue)
+
+    
+}
+
+.return:hover {
+    width: 15rem;
+    transition: 1s all ease;
+    font-size: 1.5rem;
+    font-weight:600;
+    cursor: pointer;
+    text-transform: uppercase;
+     
+
+}

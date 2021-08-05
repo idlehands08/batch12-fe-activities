@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="success.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nixie+One&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
     <title>Document</title>
 </head>
 <body>
+    <div class="container-main">
 
-    <h2 id="name-field">Thank you </h2>
-    <p>The details below will be saved for our record.</p>
-    <h2 id="email-field">Email: </h2>
+        
+        <div class="name-header">
+            <h1>Thank you <span id="name-field"></span><span>!</span></h1>
+            <p>The details you have given will greatly improve our service in the future.</p>
+            <a href="index.html"><button class="return">Back</button></a>
+        </div>
+
+        
+        
+
+    </div>
+    
+    <!-- <h2 id="email-field">Email: </h2>
     <h2 id="contactNumber-field">Contact Number: </h2>
     <h2 id="age-field">Age: </h2>
     <h2 id="address-field">Address: </h2>
@@ -21,7 +37,7 @@
     <h2 id="exterior-rate-field">Exterior Detailing Rating: </h2>
     <h2 id="interior-rate-field">Interior Detailing Rating: </h2>
     <h2 id="staff-rate-field">Staff Rating: </h2>
-    <h2 id="price-rate-field">Price Rating: </h2>
+    <h2 id="price-rate-field">Price Rating: </h2> -->
 
     
 
@@ -44,15 +60,15 @@
         var source = url.searchParams.getAll('source');
         document.getElementById("source-field").textContent += " " + source;
         var vehicleType = url.searchParams.get("dropdown");
-        document.getElementById("vehicle-type-field").textContent += dropdown;
+        document.getElementById("vehicle-type-field").textContent += vehicleType;
         var exteriorRating = url.searchParams.get("exterior-rating");
-        document.getElementById("exterior-rate-field").textContent += exterior-rating;
+        document.getElementById("exterior-rate-field").textContent += exteriorRating;
         var interiorRating = url.searchParams.get("interior-rating");
-        document.getElementById("interior-rate-field").textContent += exterior-rating;
+        document.getElementById("interior-rate-field").textContent += interiorRating;
         var staffRating = url.searchParams.get("staff-rating");
-        document.getElementById("staff-rate-field").textContent += exterior-rating;
+        document.getElementById("staff-rate-field").textContent += staffRating;
         var priceRating = url.searchParams.get("price-rating");
-        document.getElementById("price-rate-field").textContent += exterior-rating;  
+        document.getElementById("price-rate-field").textContent += priceRating;  
 
 
 
