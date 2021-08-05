@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2 id="name-field">Thank you </h2>
+    <p>The details below will be saved for our record.</p>
+    <h2 id="email-field">Email: </h2>
+    <h2 id="contactNumber-field">Contact Number: </h2>
+    <h2 id="age-field">Age: </h2>
+    <h2 id="address-field">Address: </h2>
+    <h2 id="sex-field">Sex: </h2>
+    <h2 id="source-field">Source of store info: </h2>
+    <h2 class="vehicle-type-field">Vehicle Type: </h2>
+    <h2>Ratings</h2>
+    <h2 id="exterior-rate-field">Exterior Detailing Rating: </h2>
+    <h2 id="interior-rate-field">Interior Detailing Rating: </h2>
+    <h2 id="staff-rate-field">Staff Rating: </h2>
+    <h2 id="price-rate-field">Price Rating: </h2>
+
+    
+
+
+    <script type="text/javascript">
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var name = url.searchParams.get("name");
+        document.getElementById("name-field").textContent += name;
+        var email = url.searchParams.get("email");
+        document.getElementById("email-field").textContent += email;
+        var age = url.searchParams.get("age");
+        document.getElementById("age-field").textContent += age;
+        var contactNumber = url.searchParams.get("contact");
+        document.getElementById("contactNumber-field").textContent += contactNumber;
+        var address = url.searchParams.get("address");
+        document.getElementById("address-field").textContent += address;
+        var sex = url.searchParams.get("sex");
+        document.getElementById("sex-field").textContent += sex;
+        var source = url.searchParams.getAll('source');
+        document.getElementById("source-field").textContent += " " + source;
+        var vehicleType = url.searchParams.get("dropdown");
+        document.getElementById("vehicle-type-field").textContent += dropdown;
+        var exteriorRating = url.searchParams.get("exterior-rating");
+        document.getElementById("exterior-rate-field").textContent += exterior-rating;
+        var interiorRating = url.searchParams.get("interior-rating");
+        document.getElementById("interior-rate-field").textContent += exterior-rating;
+        var staffRating = url.searchParams.get("staff-rating");
+        document.getElementById("staff-rate-field").textContent += exterior-rating;
+        var priceRating = url.searchParams.get("price-rating");
+        document.getElementById("price-rate-field").textContent += exterior-rating;  
+
+
+
+    </script>
+</body>
+</html>
