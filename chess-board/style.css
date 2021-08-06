@@ -1,0 +1,90 @@
+:root {
+    
+    --color-blue: #2383D1;    
+    --color-blackfogra: #01161E;
+    --color-gainsboro: #D8E1E9;
+    --color-ghostwhite: #F2F4FF;
+    --color-snow: #FFFCFF;
+    --color-gunmetal: #292F36;
+    
+    
+}
+
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+
+
+}
+
+body {
+	color: var(--color-blue);
+}
+
+.container{
+
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	border: 3px black solid;
+	background: black;
+	max-width: 720px;
+	max-height: 720px;
+	width: 100vw;
+	height: 100vw;
+	
+	
+	
+}
+
+.box-black:nth-child(-n+16) {
+	color: var(--color-ghostwhite);
+	
+}
+
+.box-white:nth-child(-n+16) {
+	color: var(--color-ghostwhite);
+	
+}
+
+.box-black{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 12.5%;
+	height: 12.5%;
+	font-size: 10vw;
+	/* line-height: 12vw; */
+	background-color: var(--color-blackfogra)
+}
+
+.box-white{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 12.5%;
+	height: 12.5%;
+	font-size: 10vw;
+	background-color: var(--color-gunmetal);
+}
+
+@media (min-width:720px){
+	/* centers the chessboard for bigger screens */
+	.container{
+		margin: auto;
+	}
+
+	/* makes sure the font-size doesn't increase with screen size increase*/
+	.box-white{
+		font-size: 4.75rem;
+	}
+
+	.box-black {
+		font-size: 4.75rem;
+	}
+}
+
