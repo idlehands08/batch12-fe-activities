@@ -23,24 +23,32 @@
 
 body {
 	color: var(--color-blue);
+	display: flex;
+	flex-direction: column;
+	justify-self: center;
+	align-items: center;
+	text-align: center;
+	font-size: 3vw;
 }
 
-.container{
+
+
+.container-flex{
 
 	display: flex;
 	flex-wrap: wrap;
 	position: relative;
 	border: 3px black solid;
 	background: black;
-	max-width: 720px;
-	max-height: 720px;
+	max-width: 580px;
+	max-height: 580px;
 	width: 100vw;
 	height: 100vw;
-	
-	
-	
+
+	margin-bottom: 20px;
 }
 
+/* sets the color for the chess pieces */
 .box-black:nth-child(-n+16) {
 	color: var(--color-ghostwhite);
 	
@@ -72,9 +80,62 @@ body {
 	background-color: var(--color-gunmetal);
 }
 
+
+
+/* Grid */
+
+.container-grid{
+
+	display: grid;
+	position: relative;
+	border: 3px black solid;
+	background: black;
+	max-width: 580px;
+	max-height: 580px;
+	width: 100vw;
+	height: 100vw;
+	grid-template-rows: repeat(8, 12.5%);
+	grid-template-columns: repeat(8, 12.5%);
+	
+	
+	
+}
+
+.box2-black{
+	display: grid;
+	justify-content: center;
+	font-size: 10vw;
+	background-color: var(--color-blackfogra);
+}
+
+.box2-white{
+	display: grid;
+	justify-content: center;
+	font-size: 10vw;
+	background-color: var(--color-gunmetal);
+}
+/* sets the color for the chess pieces */
+.box2-black:nth-child(-n+16) {
+	color: var(--color-ghostwhite);
+	
+}
+
+.box2-white:nth-child(-n+16) {
+	color: var(--color-ghostwhite);
+	
+}
+
 @media (min-width:720px){
 	/* centers the chessboard for bigger screens */
-	.container{
+	body{
+		font-size: 1.4rem;
+	}
+	.container-flex{
+		margin: auto;
+		margin-bottom: 20px;
+	}
+
+	.container-grid {
 		margin: auto;
 	}
 
@@ -84,6 +145,13 @@ body {
 	}
 
 	.box-black {
+		font-size: 4.75rem;
+	}
+	.box2-white{
+		font-size: 4.75rem;
+	}
+
+	.box2-black {
 		font-size: 4.75rem;
 	}
 }
