@@ -1,0 +1,26 @@
+<form id="order-form" autocomplete="off" action="success.html" class="form-main" method="GET">
+    <!-- start of PERSONAL-INFO -->
+
+    <div class="flex-column-item" id="order-window">
+        <h2>ORDER ONLINE</h2>
+        <div class="personal-info">
+            <div class="flex-column-item">
+                <!-- <label for="name" id="name-label">Full Name</label> -->
+                <input type="text" name="name" id="name" placeholder="FULL NAME" required>
+            </div>
+            <div class="flex-column-item">
+                <!-- <label for="email" id="email-label">Email</label> -->
+                <input type="email" name="email" id="email" placeholder="EMAIL" required>
+            </div>
+            <div class="flex-column-item">                
+                <input type="number" name="contact" id="number" placeholder="CONTACT #" min="00000000000" max="99999999999"  required>
+            </div>
+            <div class="flex-column-item">
+                <!-- <label for="address" id="address-label">City Address</label> -->
+                <input type="text" name="address" id="address" placeholder="ADDRESS">
+            </div>
+        </div>
+        <button type="button">Order Now</button>
+        <!-- end of PERSONAL-INFO -->
+    </div>
+</form>

@@ -1,0 +1,444 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    src: url(./font/steel-web-font.woff);
+    font-family: steel;
+}
+
+@font-face {
+    src: url(./font/AvenirNextLTPro-Regular.otf);
+    font-family: avenir;
+}
+
+:root {
+    --font-family-sichuFont: steel;
+    --font-family-avenir: avenir;
+    --font-family-roboto:'Roboto', sans-serif;
+    --font-family-allura: 'Allura', cursive;
+    --color-sichuYellow: #FFB238;
+    --color-sichuOrange: #F19143;
+    /* --color-sichuGray: #696D7D; */    
+    --color-spicyRed: #D83010;
+    --color-sichuRed: #9b2420;
+    --color-babypowder: #FDFFFC;
+    --color-blackFogra: #000501;
+}
+
+
+body {
+    /* font-family: var(--font-family-roboto); */
+    font-family: var(--font-family-avenir);
+    /* font-weight: 600; */
+    color: var(--color-babypowder);
+    background: url(./images/SichuWallArtBG.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+}
+
+
+/* Nav Bar Styling */
+#nav-bar {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    justify-content: center;    
+    font-weight: lighter;
+    padding-top: 1vh;    
+    width: 100vw;   
+    background-color: var(--color-babypowder);    
+    font-size: 1.1rem;
+    color: var(--color-blackFogra);
+        
+}
+
+.nav-buttons-div {
+    margin-top: 10px;
+    padding-right: 1rem;
+
+    
+}
+
+.nav-buttons{
+    text-decoration: none;
+    margin: 1vh;
+    color: var(--color-blackFogra);
+    
+}
+
+#nav-order-button {
+    font-size: 1.2vh;
+    margin-left: 1vw;
+}
+
+/* Styling for Welcome/Home Page */
+#container-homePage {
+    display: flex;
+    flex-direction: column;
+    background-image: url(./images/Header.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+/* contains SICHU MALATANG LOGO + SIP INTO SPICE */
+#header-title {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 30%;
+    right: 20%;
+    opacity: 0;
+    animation: animation1 1.5s ease-out forwards;  
+}
+
+/* header-img contains the SICHU MALATANG LOGO */
+#header-img img{
+    height: 20vh;
+}
+
+/* contains description of Sichu - SIP INTO SPICE */
+.title {
+    animation-delay: 0.1s all ease;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+@keyframes animation1 {
+    100% {
+        opacity: 1;
+    }
+}
+
+
+h1 {
+
+    font-size: 6vh;
+    color: var(--color-sichuOrange);
+    font-family: var(--font-family-allura);
+    text-align: center;
+    opacity: 0;
+    animation: animation2 4s ease-out forwards;
+    font-weight: 500;
+    
+    
+}
+
+@keyframes animation2 {
+    100% {
+        opacity: 1;
+    }
+}
+
+.flex-row-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+
+}
+.flex-column-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.order-button {
+    font-size: 2vh;
+	color: #fff !important;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #ed3330;
+   	padding: 0.5rem;
+	border-radius: 5px;
+	display: inline-block;
+	border: none;
+	transition: all 0.4s ease 0s;    
+}
+
+.order-button:hover {
+	background: #434343;
+	letter-spacing: 1px;
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.4s ease 0s;
+}
+
+
+
+/* container for The Sichu Experience / Food Section */
+.container-food {
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;  
+    color: var(--color-babypowder);
+        
+}
+
+/* section titles */
+h2 {
+    font-family:var(--font-family-sichuFont);
+    text-shadow: 2px 2px var(--color-blackFogra);
+    font-size: 6vw;
+    padding-bottom: 10rem;
+}
+    
+
+h3 {
+    font-family:var(--font-family-sichuFont);
+    padding: 1.2rem;
+    font-size: 4vw;
+    text-align: center;
+    
+    
+
+}
+
+h4 {
+    padding: 1rem;
+    font-size: 1.8vw;
+    font-style: italic;
+}
+
+h5 {
+    font-size: 1.4vw;
+    font-style: italic;
+}
+
+.flex-row-to-column-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.flex-row-to-column-img {
+    max-width: 50vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#food-caption {
+    width: 50vw;
+}
+/* food images-div */
+.img-div img{
+    padding: 0.5vw;
+    width: 100%;
+}
+
+
+/* testimonials divider */
+
+.testimonial-divider {
+    background: url(./images/whiteBackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    color: var(--color-blackFogra);
+}
+
+
+
+
+
+
+
+@media (min-width: 1980px) {
+
+}
+
+@media (max-width:1800px) {
+
+    #header-title {
+        position: absolute;
+        top: 30%;
+        right: 5%;
+    }
+
+}
+
+@media (max-width:1600px) {
+
+    #header-title {
+        position: absolute;
+        top: 30%;
+        right: 5%;       
+        
+    }
+
+}
+@media (max-width: 1024px){
+    
+    /* reduce global font-size to 90% of original */
+    html {
+        font-size: 90%;
+    }
+
+    body {
+        /* font-family: var(--font-family-roboto); */
+        font-family: var(--font-family-avenir);
+        /* font-weight: 600; */
+        color: var(--color-babypowder);
+        background: url(./images/SichuWallArtBG2.png);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        
+    }
+    
+    #header-img img{
+        height: 20vh;
+    }
+    /* change background image to an image for 768 width */
+    #container-homePage {
+        background-image: url(./images/Header768.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        align-items: center;
+    }
+       
+    #header-title {
+        right: auto;
+        left: auto;
+    }
+
+    .nav-buttons {
+        margin-top: 10px;
+        padding-right: 0;
+    }
+
+    h2 {
+        font-size: 10vw;
+        margin: 0;
+    }
+
+    h3 {
+        font-size: 7vw;
+        padding: 0;
+    }
+
+    h4 {
+        font-size: 5vw;
+    }
+
+    h5 {
+        font-size: 3vw;
+    }
+   
+    .food-blocks {
+        height: 90vh;
+        text-align: center;
+    }
+
+    
+}
+
+@media (max-width: 768px) {
+    #food-block1 {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        width: 100vw;        
+    }
+
+    #food-block2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100vw;        
+    }
+
+    #food-block3 {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        width: 100vw;        
+    }
+
+    #food-block4 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100vw;        
+    }
+
+    .flex-row-to-column-img {
+        border-radius: 1rem;
+        max-width: 90vw;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+}
+
+@media (max-width: 414px){
+    html {
+        font-size: 80%;
+    }
+
+    /* reduces size of SICHU Logo*/
+    #header-img img{
+        height: 15vh;
+    }
+
+     
+    #header-title {
+        align-items: center;
+        top: 20%;
+        right: auto;
+        left: auto;
+        max-width: 100%;
+    }
+
+    #container-homePage {
+        background-image: url(./images/Header360.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+    }
+}
+
+
+@media (max-width: 290px){
+    html {
+        font-size: 60%;
+    }
+        
+}
+
+
+
+
+
+
