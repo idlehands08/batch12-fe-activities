@@ -8,24 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Roboto:wght@100;300;400;500;900&display=swap" rel="stylesheet"><title>Document</title>
+    <link rel="stylesheet" href="css/all.min.css">
 </head>
 <body>
 
 <!-- start of main container -->
 <div class="container-main">
-    <nav id="nav-bar">
-        <div class="nav-buttons">
-            <a class="nav-buttons" href="#container-homePage">Home</a>
-            <a class="nav-buttons">About</a>
-            <a class="nav-buttons">Food</a>
-            <a class="nav-buttons">Contact</a>
-        </div>
-        <div class="button">
-            <a class="order-button" id="nav-order-button" href="https://docs.google.com/forms/d/e/1FAIpQLSf2X1BK86g2JvFgjNxJOqjLhdGnXsaptgu1YRkSeyVPi_1D1g/viewform?fbclid=IwAR03GOoLZIdyhPv7CAq0VJfy5BYMaGp0yh-eeCQ3B7iZTMWW3fELv_k70_0" target="_blank" rel="nofollow noopener">Order Now</a>
-        </div>
-    </nav> 
-    
-     <!-- start of home-page -->
+   
+      <!-- start of home-page -->
         <div id="container-homePage">
             <!-- nav bar -->
             
@@ -56,17 +46,14 @@
                         <div class="img-div">
                             <img src="images/Ingredients.png">
                         </div>
+
+                        
                     </div>
                     <div class="flex-column-item" id="food-caption">
-                        <h3>
-                            Make your Own Bowl
-                        </h3>
-                        <h4>
-                            Choose from over 50 premium ingredients
-                        </h4>
-                        <h5>
-                            Pick your spice level and cooking style
-                        </h5>
+                        <h3>Make your Own Bowl</h3>
+                        <h4> Choose from over 50 premium ingredients  </h4>        
+                        <h5>Pick your spice level and choose between two cooking methods!</h5>
+                        <h5>(Malatang: hotpot or Malaxiangguo: dry fried)</h5>
                     </div>
                 </div>           
             </div>
@@ -75,23 +62,41 @@
                 <div class="flex-row-to-column-items" id="food-block2">
 
                     <div class="flex-column-item" id="food-caption">
-                        <h3>
-                        Choose from Favorites
-                        </h3>
-                        <h5>
-                            Szechuan Style 
-                        </h5>
-                        <h5>
-                            Pinoy favorites                  
-                        </h5>
-                        <h5>
-                            Meat Overload                   
-                        </h5>
+                        <h5>Don't wanna make your own?</h5>
+                        <h3>Choose from our Favorites</h3>
+                        <h5>Szechuan Style</h5>
+                        <h5> Pinoy Favorites</h5>   
+                        <h5>Meat Overload</h5> 
                     </div>
                     <div class="flex-row-to-column-img" >
-                        <div class="img-div">
-                            <img src="images/PinoyFavoritesBowl.png">
+                        <div class="slideshow-container" id="choose-favorites-slideshow">
+                            <div class="my-fading-slides">
+                                <div class="numbertext">1 / 3</div>
+                                <img src="./images/SzechuanStyleBowl.png" style="width: 100%">
+                                <div class="slider-caption">Szechuan Style</div>
+                            </div>
+                            <div class="my-fading-slides">
+                                <div class="numbertext">2 / 3</div>
+                                <img src="./images/PinoyFavoritesBowl.png" style="width: 100%">
+                                <div class="slider-caption">Pinoy Favorites</div>
+                            </div>
+                            <div class="my-fading-slides">
+                                <div class="numbertext">3 / 3</div>
+                                <img src="./images/MeatOverloadBowl.png" style="width: 100%">
+                                <div class="slider-caption">Meat Overload</div>
+                            </div>
+                            
                         </div>
+                        <!-- Hidden dot container -->
+                        <div class="dot-container" style="text-align:center">
+                            <span class="dot"></span> 
+                            <span class="dot"></span> 
+                            <span class="dot"></span> 
+                        </div>
+                        
+                        <!-- <div class="img-div">
+                            <img src="images/PinoyFavoritesBowl.png">
+                        </div> -->
                     </div>
                 </div>           
             </div>
@@ -104,12 +109,9 @@
                         </div>
                     </div>
                     <div class="flex-column-item" id="food-caption">
-                        <h3>
-                            Elevate your experience
-                        </h3>
-                        <h4>
-                        with our add-ons!
-                        </h4>
+                        <h3>Elevate your experience</h3>
+                        <h4>with our Best Selling appetizers and side dishes!</h4>
+                        <h5>Skewers, Egg Fried Rice, and Baked Enoki</h5>
                     </div>
                 </div>           
             </div>
@@ -134,14 +136,104 @@
         
         </div>
         <!-- end of container-food -->
-        <div class="testimonial-divider">
-            <div class="profile-pic-div">
 
+        <!-- <div class="slideshow-container" id="choose-favorites-slideshow">
+            <div class="my-fading-slides">
+                <div class="numbertext">1 / 3</div>
+                <img src="./images/SzechuanStyleBowl.png" style="width: 100%">
+                <div class="slider-caption">Szechuan Style</div>
             </div>
-            <p class="testimonial">
-                Loren IpsumLoren IpsumLoren IpsumLoren IpsumLoren IpsumLoren IpsumLoren IpsumLoren IpsumLoren Ipsum
-            </p>
+            <div class="my-fading-slides">
+                <div class="numbertext">2 / 3</div>
+                <img src="./images/PinoyFavoritesBowl.png" style="width: 100%">
+                <div class="slider-caption">Pinoy Favorites</div>
+            </div>
+            <div class="my-fading-slides">
+                <div class="numbertext">3 / 3</div>
+                <img src="./images/MeatOverloadBowl.png" style="width: 100%">
+                <div class="slider-caption">Meat Overload</div>
+            </div>
+            
+        </div> -->
+        
+        <div class="testimonials">
+            <!-- start of fading slides2 -->
+            <div class="testimonial-blocks">
+                <div class="my-fading-slides2">           
+                    <div class="flex-row-to-column-testimonial">
+                        <!-- <div class="numbertext2">1 / 3</div> -->
+                        <div class="testimonial-img">
+                            <img src="images/testimonial1.png">
+                        </div>
+                        <div class="testimonial-text-star-column">
+                            <div class="star-rating-row">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Posted @withregram • @romelamboy Weather forecast says this should be your breakfast tomorrow @sichu.malatang" </p>
+                            <h4> - Romel    </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-blocks">
+                <div class="my-fading-slides2">           
+                    <div class="flex-row-to-column-testimonial">
+                        <!-- <div class="numbertext2">2 / 3</div> -->
+                        <div class="testimonial-img">
+                            <img src="images/testimonial2.jpg">
+                        </div>
+                        <div class="testimonial-text-star-column">
+                            <div class="star-rating-row">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Delivery service is great! The soup is excellent! I love the dipping sauce and all ingredients is quite fresh and tasty." </p>
+                            <h4> - Yosita Vivattanaset    </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-blocks">
+                <div class="my-fading-slides2">           
+                    <div class="flex-row-to-column-testimonial">
+                        <!-- <div class="numbertext2">3 / 3</div> -->
+                        <div class="testimonial-img">
+                            <img src="images/testimonial3.jpg">
+                        </div>
+                        <div class="testimonial-text-star-column">
+                            <div class="star-rating-row">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p> "The food was very nice and plus points for having a very stylish interior. I highly recommend this restaurant! Definitely going back here. </p>
+                            <h4> - Vader Lord</h4>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <!-- end of fading slides2 -->
         </div>
+
+        <div class="dot-container2" style="text-align:center">
+            <span class="dot2"></span> 
+            <span class="dot2"></span> 
+            <span class="dot2"></span> 
+        </div>
+
+
+
+
         <div class="container-aboutUs">
 
         </div>
@@ -149,6 +241,50 @@
 </div>
 <!-- end of main-container -->
 
+    <script>
+        var slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("my-fading-slides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 3000); // Change image every 2 seconds
+        }
+
+        var slideIndex2 = 0;
+        showSlides2();
+        function showSlides2() {
+            var i;
+            var slides = document.getElementsByClassName("my-fading-slides2");
+            var dots = document.getElementsByClassName("dot2");
+            for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+            }
+            slideIndex2++;
+            if (slideIndex2 > slides.length) {slideIndex2 = 1}    
+            for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex2-1].style.display = "block";  
+            dots[slideIndex2-1].className += " active";
+            setTimeout(showSlides2, 5000); // Change image every 2 seconds
+        }
+
+
+        
+    </script>
+    <!-- END OF AUTOSLIDER SCRIPT -->
 
     
 </body>
