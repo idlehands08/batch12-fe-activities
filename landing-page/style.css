@@ -440,6 +440,11 @@ p {
     text-align: center;
 }
 
+.fa-pepper-hot {
+    color: var(--color-spicyRed);
+    padding-left: 5px;
+}
+
 @media (min-width: 2100px) {
     
     html {
