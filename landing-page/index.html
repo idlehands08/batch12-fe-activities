@@ -11,19 +11,35 @@
     <link rel="stylesheet" href="css/all.min.css">
 </head>
 <body>
-
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">Sichu</label>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#food">Food</a></a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Feedback</a></li>
+        </ul>        
+    </nav>
+   
     <div class="container-navbar">
         <!-- nav-bar-scroll start -->
-        <div class="nav-bar" id="navbar">
+        <!-- <div class="nav-bar" id="navbar">
             <div class="nav-bar-items-row">               
                 <div class="flex-row-item">
-                    <!-- insert navbar links here -->
+                    <div class="container-navbar-links">
+                        
+                    </div>
                     <div class="container-nav-order-button">
                         <a class="scroll-nav-order-button"  href="https://docs.google.com/forms/d/e/1FAIpQLSf2X1BK86g2JvFgjNxJOqjLhdGnXsaptgu1YRkSeyVPi_1D1g/viewform?fbclid=IwAR03GOoLZIdyhPv7CAq0VJfy5BYMaGp0yh-eeCQ3B7iZTMWW3fELv_k70_0" target="_blank" rel="nofollow noopener">Order Now</a>
                     </div>                            
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- end of scroll nav bar -->
         <!-- start of scrolling nav bar script -->
         <script>
@@ -44,7 +60,7 @@
     <!-- end of nav-bar -->
 
     <!-- start of home-page -->
-    <div class="container-homePage">
+    <div class="container-homePage" id="home">
             
         <div class="flex-column-item" id="header-title">
             <!-- header-img for company logo -->      
@@ -68,7 +84,7 @@
   
     
         <!-- start of container-make-own-bowl -->
-        <div class="container-big-food">
+        <div class="container-big-food" id="food">
             <div class="container-main-meals">
                 <!-- start of main-meals-items -->
                 <div class="main-meals-items">
@@ -78,11 +94,12 @@
                     <div class="flex-column-item" id="caption-create-meal">
                         <h3>CREATE YOUR OWN MEAL</h3>   
                         <h4>- CHOOSE FROM OVER 50 FRESH PREMIUM INGREDIENTS</h4>
-                        <h4>- PICK YOUR SPICE LEVEL <i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></h4>
+                        <h4>- PICK YOUR SPICE LEVEL<i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i><i class="fas fa-pepper-hot"></i></h4>
                         <h4>- CHOOSE BETWEEN HOT POT OR DRY POT</h4>
                     </div>
                     
-                    <!-- <section class="favorites-section"> -->
+                    
+                    <section class="favorites-section">
                         <h3 id="favorites-section-title">CHOOSE FROM OUR FAVORITES</h3>
                         <div class="flex-row-item" id="favorite-bowls-group">
                             <div class="flex-column-item" id="favorite-bowls">
@@ -109,9 +126,9 @@
                             
                             <a class="order-button" id ="favorites-order-button" 
                             href="https://docs.google.com/forms/d/e/1FAIpQLSf2X1BK86g2JvFgjNxJOqjLhdGnXsaptgu1YRkSeyVPi_1D1g/viewform?fbclid=IwAR03GOoLZIdyhPv7CAq0VJfy5BYMaGp0yh-eeCQ3B7iZTMWW3fELv_k70_0" 
-                            target="_blank" rel="nofollow noopener">ORDER NOW and get FREE Egg Fried Rice!</a>
+                            target="_blank" rel="nofollow noopener">Get a FREE Egg Fried Rice on your first order!</a>
                         </div>                        
-                    <!-- </section> -->
+                    </section>
                 </div>
                 <!-- end of main-meals-items -->
             </div> 
@@ -167,7 +184,7 @@
 
         <div class="container-aboutUs">
             <div class="container-aboutUs-items">
-                <div class="section-title">
+                <div class="section-title" id="about">
                     <h2>ABOUT US</h2>
                  </div>
                 <div class="aboutUs-text">
