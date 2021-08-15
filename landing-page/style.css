@@ -189,10 +189,10 @@ body {
   }
 
 /* Styling for Welcome/Home Page */
-#container-homePage {
-    display: flex;
+.container-homePage {
+    display: flex; 
     flex-direction: column;
-    background-image: url(./images/TestHeader.png);
+    background-image: url(./images/Header.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -251,9 +251,17 @@ h1 {
     }
 }
 
+/* Container Main - Hold all sections except for Navbar */
+.container-main {
+    display: flex;
+    flex-direction: column;
+
+}
 /* FOOD SECTION */
 
+/* THE SICHU EXPERIENCE */
 /* container-big-food */
+
 .container-big-food h2{
     color: var(--color-sichuOrange);
     font-size: 5.5rem;
@@ -266,9 +274,9 @@ h1 {
     background: url(./images/makeOwnBowlRightBG.png);
     background-size: cover;
     background-repeat: no-repeat;
-    padding-top: 6rem;
+    padding-top: 4rem;
     padding-left: 2vw;
-    height: 100vh;
+    min-height: 100vh;
     
     
 }
@@ -277,6 +285,7 @@ h1 {
     flex-direction: column;
     justify-content: flex-start;
     max-width: 900px;
+    justify-self: center;
 }
 
 .favorites-section {
@@ -289,10 +298,8 @@ h1 {
 #favorites-section-title {
     padding: 0;
 }
-#favorite-bowls-group {
-    display: flex;
-    flex-direction: row;
-    max-width: 900px;
+#favorite-bowls-group {    
+    max-width: 700px;
 }
 
 #favorite-bowls {    
@@ -324,14 +331,12 @@ h1 {
 }
 
 
-
+/* ADD ONS */
 /* container-small-food */
-.container-small-food {
-    padding-top: 200px;
+.container-small-food {    
     background-color: var(--color-cultured);
-    height: 100vh;
+    padding-top: 4rem;
     max-width: 100vw;
-    padding-top: 6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -341,17 +346,12 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* max-width: 900px; */
     align-items: center;
     
 
 }
-.addons-group {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    
-}
+
+
 #addons {
     display: flex;
     flex-direction: column;
@@ -385,7 +385,21 @@ h1 {
 
 
 
+/* ABOUT US */
+.container-aboutUs {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+}
 
+.container-aboutUs-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+}
 
 
 /* TEXT STYLING */
@@ -394,6 +408,7 @@ h1 {
 h2 {
     font-family:var(--font-family-sichuFont);
     text-shadow: 2px 2px var(--color-blackFogra);
+    color: var(--color-sichuOrange);
     font-size: 5rem;
     padding-bottom: 1rem;
 }
@@ -419,10 +434,126 @@ h5 {
     /* font-style: italic; */
 }
 
+p {
+    font-size: 1.6rem;
+
+    text-align: center;
+}
+
+@media (min-width: 2100px) {
+    
+    html {
+        font-size: 120%;
+        
+    }
+    
+    .main-meals-items {
+        margin-left: 400px;
+        justify-self: center;
+        padding-top: 100px;
+      
+     
+    }
+
+}
 
 
+@media (min-width:1680px) {    
+    
+    
 
+}
 
+@media (max-width: 1800px) {
+
+    .container-main-meals {
+        height: auto;
+        
+    }
+    
+}
+
+@media (max-width:1200px) {
+
+    #header-title {
+        /* centers the div horizontally */
+        right: 0;
+        left: 0;
+    
+    }
+
+    .container-homePage {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: url(./images/Header768.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+    }
+    .container-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container-main-meals {
+        background-image: none;
+        
+
+    }
+
+    
+}
+
+@media (max-width: 768px) {
+
+    html {
+        font-size: 80%;
+    }
+
+    
+    .flex-row-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 90%;
+        height: auto;
+    }
+
+    
+
+    .container-homePage {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: url(./images/Header768.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+    }
+
+    .container-main-meals {
+        height: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .main-meals-items {
+        align-items: center;
+    
+    }
+    
+    .container-small-food {
+        padding: 0;
+        margin-top: 150px;
+    }
+
+  
+}
 
 
 
