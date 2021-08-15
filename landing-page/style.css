@@ -19,7 +19,7 @@
 :root {
     --font-family-sichuFont: steel;
     --font-family-avenir: avenir;
-    --font-family-roboto:'Roboto', sans-serif;
+    /* --font-family-roboto:'Roboto', sans-serif; */
     --font-family-allura: 'Allura', cursive;
     --color-sichuYellow: #FFB238;
     --color-sichuOrange: #F19143;
@@ -170,89 +170,6 @@ a.active, a:hover {
 
 }
 
-
-
-/* start of scroll-nav-bar */
-#navbar {
-    
-    position: fixed;
-    height:60px;
-    top: -60px; /* Hide the navbar 50 px outside of the top view */
-    transition: top 0.8s; /* Transition effect when sliding down (and up) */
-    z-index: 100;
-    border: none;
-    justify-content: center;
-    
-  }
-  
-
-#navbar a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-
-
-
-
-.scroll-nav-order-button {
-    
-    color: var(--color-babypowder);
-    font-size: 1.2rem;
-    margin-left: 1vw;
-    padding: 5px;
-    
-    text-transform: uppercase;
-    text-decoration: none;
-    border: solid 2px var(--color-babypowder);
-    border-radius: 6px;
-    text-align: center;
-    /* background-color: var(--color-spicyRed); */
-    background-color: #ed3330;
-    /* display: inline-block;   */
-
-}
-
-.nav-bar-items-row {
-    padding-top: 20px;
-    max-height: 100%;
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-left: 50px;
-    margin-right: 50px;
-    
-    
-    /* justify-content: space-between; */
-}
-.nav-bar {
-    width: 100vw;
-    height: 100px;
-    background: var(--color-sichuRed);
-    /* background-color: var(--color-babypowder); */
-    /* padding-top: 5px; */
-    position: absolute;
-    z-index: 100;
-    border-top: 8px solid var(--color-blackFogra);
-}
-.nav-order-button {
-    
-    
-    color: var(--color-babypowder);
-    font-size: 1rem;
-    margin-left: 1vw;
-    padding: 5px;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: solid 3px var(--color-babypowder);
-    border-radius: 6px;
-    text-align: center;
-
-
-}
-/* end of scroll navbar */
-
 /* red order button */
 .order-button {
     font-size: 2vh;
@@ -351,7 +268,7 @@ h1 {
     font-family: var(--font-family-allura);
     opacity: 0;
     animation: animation2 4s ease-out forwards;
-    font-size: 4.5rem;
+    font-size: 3rem;
     text-align: center;
     font-weight: 500;
     
@@ -489,15 +406,13 @@ h1 {
 }
 
 .addons-caption {
+    padding-top: 10px;
+    padding-bottom: 5px;
     background-color: var(--color-sichuRed);
     color: var(--color-babypowder);
     text-align: center;
     width: 100%;
-}
-
-.addons-caption h3 {
-    font-size: 1.2rem;
-    padding: 0;
+    
 }
 
 

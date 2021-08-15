@@ -11,61 +11,28 @@
     <link rel="stylesheet" href="css/all.min.css">
 </head>
 <body>
-    <nav>
+    <nav id="nav-bar">
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
         <label class="logo">Sichu</label>
         <ul>
-            <li><a href="#home">Home</a></li>
+            <li><a id="nav-order-button" href="https://docs.google.com/forms/d/e/1FAIpQLSf2X1BK86g2JvFgjNxJOqjLhdGnXsaptgu1YRkSeyVPi_1D1g/viewform?fbclid=IwAR03GOoLZIdyhPv7CAq0VJfy5BYMaGp0yh-eeCQ3B7iZTMWW3fELv_k70_0" target="_blank" rel="nofollow noopener">Order Now</a></li>
+            <li><a href="#header">Home</a></li>
             <li><a href="#food">Food</a></a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Feedback</a></li>
+            <li><a href="#">Contact</a></li>            
         </ul>        
     </nav>
    
-    <div class="container-navbar">
-        <!-- nav-bar-scroll start -->
-        <!-- <div class="nav-bar" id="navbar">
-            <div class="nav-bar-items-row">               
-                <div class="flex-row-item">
-                    <div class="container-navbar-links">
-                        
-                    </div>
-                    <div class="container-nav-order-button">
-                        <a class="scroll-nav-order-button"  href="https://docs.google.com/forms/d/e/1FAIpQLSf2X1BK86g2JvFgjNxJOqjLhdGnXsaptgu1YRkSeyVPi_1D1g/viewform?fbclid=IwAR03GOoLZIdyhPv7CAq0VJfy5BYMaGp0yh-eeCQ3B7iZTMWW3fELv_k70_0" target="_blank" rel="nofollow noopener">Order Now</a>
-                    </div>                            
-                </div>
-            </div>
-        </div> -->
-        <!-- end of scroll nav bar -->
-        <!-- start of scrolling nav bar script -->
-        <script>
-            // When the user scrolls down 20px from the top of the document, slide down the navbar
-            // When the user scrolls to the top of the page, slide up the navbar (50px out of the top view)
-            window.onscroll = function() {scrollFunction()};
-
-            function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("navbar").style.top = "0";
-            } else {
-                document.getElementById("navbar").style.top = "-80px";
-            }
-            }
-        </script>
-        <!-- end of scrolling nav bar script -->
-    </div>
-    <!-- end of nav-bar -->
-
     <!-- start of home-page -->
-    <div class="container-homePage" id="home">
+    <header class="container-homePage" id="header">
             
         <div class="flex-column-item" id="header-title">
             <!-- header-img for company logo -->      
             <div id="header-img">
-                <img src="images/SichuLogoSmaller.png">
+                <img src="images/SichuLogo.png">
             </div>
             <div class="title">
                 <h1>Sip into Spice!</h1>
@@ -74,15 +41,11 @@
                 <a class="order-button" href="https://docs.google.com/forms/d/e/1FAIpQLSf2X1BK86g2JvFgjNxJOqjLhdGnXsaptgu1YRkSeyVPi_1D1g/viewform?fbclid=IwAR03GOoLZIdyhPv7CAq0VJfy5BYMaGp0yh-eeCQ3B7iZTMWW3fELv_k70_0" target="_blank" rel="nofollow noopener">Order Now</a>
             </div>
         </div>
-    </div>
+    </header>
     <!-- end of homePage -->
     
     <!-- start of main-contianer -->
     <div class="container-main">  
-    
-
-  
-    
         <!-- start of container-make-own-bowl -->
         <div class="container-big-food" id="food">
             <div class="container-main-meals">
@@ -121,12 +84,12 @@
                                 <h5>Meat Overload</h5>
                             </div>
                         </div>
-                        <h3 id="main-meal-price">PRICE: PHP1000/1kg or PHP550/500g</h3>
+                        <h3 id="main-meal-price">PRICE: PHP1100/1kg or PHP550/500g</h3>
                         <div class="container-favorites-button">
                             
                             <a class="order-button" id ="favorites-order-button" 
                             href="https://docs.google.com/forms/d/e/1FAIpQLSf2X1BK86g2JvFgjNxJOqjLhdGnXsaptgu1YRkSeyVPi_1D1g/viewform?fbclid=IwAR03GOoLZIdyhPv7CAq0VJfy5BYMaGp0yh-eeCQ3B7iZTMWW3fELv_k70_0" 
-                            target="_blank" rel="nofollow noopener">Get a FREE Egg Fried Rice on your first order!</a>
+                            target="_blank" rel="nofollow noopener">Get a FREE Egg Fried Rice on your first order</a>
                         </div>                        
                     </section>
                 </div>
@@ -138,7 +101,10 @@
                 <!-- addons-container-starts-here -->
                 <div class="container-food-addons">
                     <div class="section-title">
-                        <h2>ADD ONS</h2>
+                        <h2>ADD ONS</h2>                                               
+                    </div>
+                    <div class="subheader">
+                        <h3>Elevate your meal with our best selling add ons!</h3>
                     </div>
                     <!-- flex row item for addons images and caption -->
                     <!-- addons group starts here -->
@@ -148,7 +114,7 @@
                                 <img src="./images/Skewers.png">
                             </div>
                             <div class="addons-caption">
-                                <h5>ASSORTED SKEWERS</h5>
+                                <h5>SKEWERS</h5>
                                 <h4>PHP 200</h4>
                             </div>
                         </div>
@@ -166,7 +132,7 @@
                                 <img src="./images/EggFriedRice.png">
                             </div>
                             <div class="addons-caption">
-                                <h5>SICHU EGG FRIED RICE</h5>
+                                <h5>EGG FRIED RICE</h5>
                                 <h4>PHP 280</h4>
                             </div>
                         </div>
