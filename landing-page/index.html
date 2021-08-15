@@ -147,12 +147,118 @@
             </div>
         
         <!-- ending of container-big food -->
+        
+        <div class="container-customer-rating">
+            <div class="customer-rating-item">
+                <div class="my-fading-slides">
+                    <div class="flex-row-item" id="flex-row-rating">
+                        <div class="customer-image">
+                            <img src="./images/testimonial1.png">
+                        </div>
+                        <div class="flex-column-item" id="container-rating-stars-caption">
+                            <div class="container-star-widget">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="flex-column-item" id="container-rating-caption">
+                                <p> "Sichu Malatang definitely isn’t your usual hotpot. They bring authentic Szechuan Malatang flavors to your tastebuds – an explosion of flavor making you crave for more! Try them out today!"</p>
+                                <h4>- WhenInManila</h4>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="customer-rating-item">
+                <div class="my-fading-slides">
+                    <div class="flex-row-item" id="flex-row-rating">
+                        <div class="customer-image">
+                            <img src="./images/testimonial2.jpg">
+                        </div>
+                        <div class="flex-column-item" id="container-rating-stars-caption">
+                            <div class="container-star-widget">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="flex-column-item" id="container-rating-caption">
+                                <p>"Delivery service is great! The soup is excellent! I love the dipping sauce and all ingredients is quite fresh and tasty."</p>
+                                <h4>- Yosita Vivattanaset </h4>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="customer-rating-item">
+                <div class="my-fading-slides">
+                    <div class="flex-row-item" id="flex-row-rating">
+                        <div class="customer-image">
+                            <img src="./images/testimonial3.jpg">
+                        </div>
+                        <div class="flex-column-item" id="container-rating-stars-caption">
+                            <div class="container-star-widget">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="flex-column-item" id="container-rating-caption">
+                                <p>"The food was very nice and plus points for having a very stylish interior. I highly recommend this restaurant! Definitely going back here."</p>
+                                <h4>-Victor Lee </h4>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of customer rating -->
+        <div class="dot-container" style="text-align:center">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+        </div>
 
-        <div class="container-aboutUs">
+        <script>
+            var slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("my-fading-slides");
+                var dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {slideIndex = 1}    
+                for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+                setTimeout(showSlides, 5000); // Change image every 5 seconds
+            }
+
+        </script>
+    
+
+        
+        <div class="container-aboutUs">          
             <div class="container-aboutUs-items">
                 <div class="section-title" id="about">
                     <h2>ABOUT US</h2>
                  </div>
+                 <div class="container-video">          
+                    <iframe src="https://www.youtube.com/embed/IrSzSAbYYZE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>                
                 <div class="aboutUs-text">
                     <p>Sichu Malatang was founded in the year 2019. The first branch was established in Double Dragon Plaza, Pasay City. Our mission is to be able 
                         to bring authentic Szechuan hot pot experience to Manila. To do achieve this, we brought in highly skilled malatang chefs 
@@ -163,8 +269,13 @@
             </div>
         </div>
 
-       
-      
+        <div class="container-contact">
+            <div class="flex-column-item" id="container-contact-items">
+                <div class="flex-column-item" id="contact-title">
+                    <h2>CONTACT US</h2>
+                </div>               
+            </div>
+        </div>
     </div>
     <!-- end of container-main -->
 
