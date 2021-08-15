@@ -357,6 +357,12 @@ h1 {
     
 }
 
+@media (max-width: 420px) {
+    h1 {
+        font-size: 3.2rem;
+    }
+}
+
 @keyframes animation2 {
     100% {
         opacity: 1;
