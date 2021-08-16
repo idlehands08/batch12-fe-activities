@@ -799,17 +799,17 @@ h1 {
 #facebook-icon:hover {
     color: #4267B2;
     background: none;
-    font-size: 75px;
+    /* font-size: 75px; */
 }
 #instagram-icon:hover {
     color: #fb3958;
     background: none;
-    font-size: 75px;
+    /* font-size: 75px; */
 }
 #twitter-icon:hover {
     color: #00acee;
     background: none;
-    font-size: 75px;
+    /* font-size: 75px; */
 }
 #form input {
     width: 100%;
