@@ -902,6 +902,14 @@ textarea {
 	transition: all 0.4s ease 0s;
 }
 
+
+/* FOOTER */
+footer {
+    text-align: center;
+}
+footer h6{
+    font-size: 1rem;
+}
 /* TEXT STYLING */
 /* section titles */
 h2 {
