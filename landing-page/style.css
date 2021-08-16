@@ -397,9 +397,11 @@ h1 {
         color: var(--color-spicyRed);
         background: var(--color-cultured);
         border-radius: 20px;
-        
-    
+        margin-left: 15px;
+            
     }
+
+    
 
     .favorites-section {
         margin-top: 25px;
