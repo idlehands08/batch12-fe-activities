@@ -297,8 +297,8 @@ text-shadow: 0 0 25px var(--color-staryellow);
 
 #submit {
 
-    width: 8rem;
-    height: 2rem;
+    width: 100%;
+    
     border: none;
     color: var(--color-blue);
     transition: ease-out 0..3s;
@@ -306,6 +306,7 @@ text-shadow: 0 0 25px var(--color-staryellow);
     outline: none;
     border: 1px solid var(--color-blackfogra);
     position: relative;
+
     /* button */
     margin-top: 20px;
     margin-bottom: 50px;
