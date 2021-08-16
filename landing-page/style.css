@@ -334,11 +334,7 @@ h1 {
     
     
 }
-@media (max-width: 980px) {
-    .container-main-meals {
-       
-    }
-}
+
 
 .main-meals-items {
     display: flex;
@@ -348,8 +344,27 @@ h1 {
     justify-self: center;
 }
 
-.main-meals .section-title{
+/* drypothotpot image will appear only 1200px max width and below */
 
+#container-drypothotpot-image  {
+    display: none;
+}
+
+#container-drypothotpot-image img {
+    max-width: 60%;
+    height: auto;
+}
+
+@media (max-width: 1200px) {
+
+    #container-drypothotpot-image  {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
 }
 
 .favorites-section {
