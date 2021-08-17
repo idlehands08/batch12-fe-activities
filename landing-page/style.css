@@ -504,7 +504,7 @@ h1 {
 
 
 
-/* CUSTOMER RATING */
+/* CUSTOMER RATINGS */
 
 .container-customer-rating {
     display: flex;
@@ -833,6 +833,8 @@ h1 {
         display: none;
     }
 }
+
+/* input bar styling */
 input {
     width: 100%;
     height: auto;
@@ -854,6 +856,7 @@ input {
     color: var(--color-blue)
 }
 
+/* textarea styling */
 textarea {
     max-width: 100%;
     background-color : whitesmoke;
