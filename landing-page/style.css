@@ -518,7 +518,7 @@ h1 {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
-    height: 40vh;
+    height: 25vh;
    
 }
 
@@ -549,7 +549,7 @@ h1 {
 }
 
 .customer-image img{   
-    max-width: 10vw;
+    max-width: 5vw;
     width: auto;
     
 }
