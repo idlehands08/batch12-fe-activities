@@ -518,10 +518,11 @@ h1 {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
-    height: 25vh;
+    height: 26vh;
    
 }
 
+/* Start of slideshow styling */
 .my-fading-slides {
     display: flex;
     flex-direction:row;
@@ -549,7 +550,7 @@ h1 {
 }
 
 .customer-image img{   
-    max-width: 5vw;
+    max-width: 10vh;
     width: auto;
     
 }
