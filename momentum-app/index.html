@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,300&family=Open+Sans:wght@300;400;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bubbler+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <title>Momentum-App</title>
+</head>
+<body>
+    <!-- Wrapper main is not yet used. It's on standby  to be used for animations if needed -->
+    <div class="wrapper-main">
+        <div class="container-main theme1">
+            <!-- Welcome Page -->
+            <div class="container-welcome">
+                <div class="welcome-title">
+                    <span id="do">DO</span><span class="strike">UBT</span>
+                </div>
+                <!-- <h2 class="welcome">Welcome!</h2> -->
+                <input type="text" id="input-name" name="input-name" placeholder="What is your name?" autocomplete="off">
+            </div>
+            <!-- Nav Bar -->
+            <nav class="navbar">
+                <li id="button-Notes" class="button-minimalist">Notes</li>
+                <li id="button-toDoList" class="button-minimalist">Tasks</li>
+            </nav>
+            <!-- Sticky Notes -->
+            <div class="wrapper-stickyNotesContainer hide">
+                <div class="container-stickyNote hide">
+                    <div class="container-addNotesButton-PhoneSize">
+                        <span id="close-notes-button">CLOSE</span>
+                        <i id="plusNoteButton" class="far fa-plus-square"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- To Do / Tasks List -->
+            <div id="container-toDoList" class="container-toDoList hide">
+                    <button class="closeToDoListButton"><i class="fas fa-times"></i></button>
+                    <h3 id="title-toDoList">Tasks</h3>
+                    <div class = "inputField-toDoList">
+                        <input class="line-input" type="text" id="input-toDoItem" placeholder = "Add new task" name="input-toDoItem" autocomplete="off">
+                        <button id="button-add-toDoItem"><i id="addToDoButton" class="fas fa-plus"></i></button>
+                    </div>
+                    <!-- toDo-List contains all the added todo/tasks -->
+                    <ul class="toDo-List">
+                    </ul>
+            </div>  
+            <!-- Reset Confirmation Box -->
+            <div id="container-reset" class="container-reset hide">
+                <header>
+                    <h3 id="reset-confirmation-message"></h3>
+                </header>
+                <ul>
+                    <li id="button-reset-yes" class="button-minimalist">YES</li>
+                    <li id="button-reset-no" class="button-minimalist">NO</li>            
+                </ul> 
+            </div>
+            <!-- container for all the items on the center of the page -->
+            <div class="container-center">
+                <!-- stretch reminder : only displayed every set interval or upon button trigger -->
+                <div class="container-reminders flex-column-item hide">
+                    <h2 class="reminderText"></h2>
+                    <h4 class="reminderSubText">Hydrate, walk around, stretch, and maybe do some push ups while you're at it.</h4>
+                    <h5 class="healthQuote">To ensure good health: eat lightly, breathe deeply, live moderately, cultivate cheerfulness, and maintain an interest in life.</h5>
+                    <h6 class="healthQuoteAuthor">- William Londen</h6>
+                </div>
+                <!-- wrapper for the items to be hidden when reminders are called -->
+                <div class="wrapper-center flex-column-item">
+                    <!-- clock container -->
+                    <div class="clock">
+                        <h1>00:00:00</h1>
+                    </div>
+                    <!-- main greeting container permanently displayed on page -->
+                    <div class="container-greeting flex-column-item">
+                        <div class="flex-row-item">
+                            <h3>Seize the day,&nbsp;</h3> 
+                            <h3 id='userName'></h3> 
+                            <h3>!</h3> 
+                            
+                        </div>
+                        <li id="button-editName" class="button-minimalist">EDIT NAME</li>
+                    </div>
+                    <!-- focus display to be shown after focus is entered by user -->
+                    <div class="focus-display flex-column-item hide">
+                        <h4 id="focus"></i></h4><li id="editFocusButton" class ="button-minimalist">•••</li>
+                        
+                    </div>
+                    <div class="container-focus">
+                            <h4>What's your focus for today?</h4>
+                            <input type="text" id="focus-input" name="focus-input" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="container-quotes flex-column-item hide">
+                        <ul class="prodQuoteButtons flex-row-item">
+                            <li id="button-generateQuote" class ="button-minimalist">Generate Quote</li>
+                            <li id="button-addQuote" class="button-minimalist">Add Quote</li>
+                        </ul>
+                        <h5 id="prodQuote" class="prodQuote"></h5>
+                    </div>
+                <!-- container forus contains the focus question and input field for user focus -->
+            </div>
+            <div class="container-themeMenu hide">
+                
+                <li id="theme1" class="button-minimalist">Forest</li>
+                <li id="theme2" class="button-minimalist">Lake</li>
+                <li id="theme3" class="button-minimalist">Aurora</li>
+                <li id="theme4" class="button-minimalist">Fly High</li>
+                <li id="theme5" class="button-minimalist">Cyberpunk</li>
+                <li id="grayscale" class="button-minimalist">Grayscale</li>
+            </div>
+            <div class="container-remindersMenu hide">
+                <li id="intervalButton1" class="reminder-intervalButton button-minimalist">Set 10 secs</li>
+                <li id="intervalButton2" class="reminder-intervalButton button-minimalist">Set 30 min</li>
+                <li id="intervalButton3" class="reminder-intervalButton button-minimalist">Set 60 min</li>
+                <li id="intervalButton4" class="reminder-intervalButton button-minimalist">Set 90 min</li>
+                <li id="stopIntervalButton" class="reminder-intervalButton button-minimalist">Off</li>
+                <li id="triggerStretchButton" class="button-minimalist">Stretch Break</li>
+            </div>
+
+            
+            <!-- Bottom Buttons  -->
+            <!-- container-spotify -->
+            <div class="container-spotify hide">
+                <iframe id="spotify" src="https://open.spotify.com/embed/playlist/1gx2qwdEsPFR6v0fE7iF58" width="100%" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+            <!-- music button on lower left. shows/hides spotify container -->
+            <div class="container-MusicButton">
+                <li id="button-music" class="button-minimalist">LOFI</li>
+            </div>
+            <!-- UL of buttons displayed on lower right -->
+            <!-- buttons for the set -->
+            
+            <ul class="pageSettingButtons"> 
+                <li id="button-reminder" class ="button-minimalist">Break</li>
+                <li id="button-theme" class="button-minimalist">Theme</li>
+                <li id="button-reset" class="button-minimalist">Reset</li>    
+            </ul>           
+            
+            <!-- footer ends here -->
+        </div>
+        <!-- container-main ends here -->
+    </div>
+    <!-- wrapper-main ends here -->
+    <script src="stickyNotes.js"></script>
+    <script src="todo.js"></script>
+    <script src="themes.js"></script>
+    <script src="spotify.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
