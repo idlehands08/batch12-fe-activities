@@ -10,23 +10,17 @@
 :root {
     --font-family-krub: 'Krub', sans-serif;
     --color-white: whitesmoke;
-
-
+    
     --color-stickyNote: #3fbac1;
     --color-stickyNoteContent: whitesmoke;
   
     --color-toDoList:#fb786e;
     --color-toDoListContent: #fff;
 
-    /* --color-hover: #0782a1;
-    --color-active: #fb786e; */
     --color-hover: #fb786e;
     --color-active: #0782a1;
 
-    
-
     --color-stickyNoteYellow: #fff740;
-    /* cyberpunk color palette */
     --color-cyberPurple: #711c91;
     --color-cyberPink: #ea00d9;
     --color-cyberSkyBlue: #0abdc6;
@@ -211,8 +205,6 @@ select {
     }
 
 }
-
-
 @media (max-width: 414px) {
 
     .wrapper-stickyNotesContainer {
@@ -241,9 +233,6 @@ select {
         flex-direction: row;
         overflow-y: auto;
     }
-
-    
-
     .stickyNote {
        
         border: white 1px solid; 
@@ -277,9 +266,6 @@ select {
         font-size: 2rem;
     }
 }
-
-
-
 .addNotesButton {
     position: absolute;
     top: 0.32rem;
@@ -365,8 +351,8 @@ select {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: whitesmoke;
-    color: black;
+    background: rgba(5, 38, 83, 0.9);
+    color: whitesmoke;
     padding: 1.25rem 1.562rem 1.25rem;
     border-radius: 0.32rem;
     transition: all 1s ease;
@@ -453,7 +439,6 @@ footer ul {
 
 }
 
-
 .container-spotify {
     position: absolute;
     bottom: 2rem;
@@ -533,10 +518,6 @@ footer ul {
     
 }
 
-
-/* can be used to highlight the tasks button when todolist is active on screen */
-
-
 .container-reset {
     display: flex;
     flex-direction: column;
@@ -601,7 +582,6 @@ footer ul {
     margin-top: 1rem;
     z-index: 10;
 }
-
 @media (max-width: 1200px) {
     .container-quotes {
         bottom: 2.5rem;
@@ -731,9 +711,10 @@ footer ul {
 input#input-name{
     font-size: 1.5rem;
     width: 280px;
+    margin-top: 2.25rem;
     border: none;
-    border-bottom: 1px solid black;
-    color: black;
+    border-bottom: 1px solid whitesmoke;
+    color: whitesmoke;
     margin: right; 
     text-align: center;
     background: none;
@@ -742,8 +723,10 @@ input#input-name:focus{
     outline: none;
 }
 input#input-name::placeholder{
-    color: black;
-    opacity: 0.5s;
+    color: whitesmoke;
+    font-style: italic;
+    font-weight: lighter;
+    opacity: 0.5;
 }
 
 
@@ -765,7 +748,7 @@ input#input-name::placeholder{
     left: 0;
     width: 100%;
     height: 0.8rem;
-    background: black;
+    background: whitesmoke;
     animation-name: strike;
     animation-duration: 1.5s;
     animation-timing-function: linear;

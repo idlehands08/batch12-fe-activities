@@ -1,4 +1,3 @@
-
 //VARIABLES
 const todoContainer = document.querySelector('.container-toDoList'); // used for displayToDoList() and drag function -- IMPORTANT
 const closeToDoListButton = document.querySelector('.closeToDoListButton');
@@ -6,12 +5,11 @@ const toDoListButton = document.querySelector('#button-toDoList');  // add task 
 const inputFieldItem = document.querySelector('#input-toDoItem'); // add task input field
 const addButton = document.querySelector('#addToDoButton'); //add button for tasks
 const toDoList = document.querySelector('.toDo-List'); // <UL> To Do list
-
- // toDoItem div tag which contains <p> and the complete delete buttons
-
 //EVENT LISTENERS
 //call addToDo() onclick of addButon (fa plus sign next to to do list input)
 addButton.addEventListener('click', addToDo);
+toDoListButton.addEventListener('click', displayToDoList);
+closeToDoListButton.addEventListener('click', displayToDoList);
 //call addToDo() upon pressing enter while on to do list input
 inputFieldItem.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
@@ -22,7 +20,6 @@ inputFieldItem.addEventListener('keypress', function (e) {
 //delete or complete a task depending on the button pressed
 toDoList.addEventListener('click', deleteCompleteTask);
 //complete a task when you double click the toDoItem container
-
 //FUNCTIONS
 function addToDo(){
     if (inputFieldItem.value.trim() != "") {
@@ -53,7 +50,7 @@ function addToDo(){
     inputFieldItem.value = '';
     }
 }
-
+//delete or complete task function
 function deleteCompleteTask(e){
     const targetTask = e.target;
     //Delete the Item
@@ -65,46 +62,33 @@ function deleteCompleteTask(e){
         targetTask.parentElement.parentElement.classList.toggle("linethrough");
     }
 }
-
-
-
-toDoListButton.addEventListener('click', displayToDoList);
-closeToDoListButton.addEventListener('click', displayToDoList);
 //shows/hides the entire To Do List Container
 function displayToDoList() {
 	if (todoContainer.classList.contains('hide')) {
 		todoContainer.classList.remove("hide");
 		toDoListButton.classList.add("active");
-		
 	}
 	else {
 		todoContainer.classList.add("hide");
 		toDoListButton.classList.remove("active");
 	}
-	
 }
-
 // Function to make to do list container Draggable
 todoContainer.addEventListener('mousedown', mousedown);
 function mousedown(e) {
     window.addEventListener('mousemove', mousemove);
     window.addEventListener('mouseup', mouseup);
-
     let prevX = e.clientX; //current X position of mouse
     let prevY = e.clientY; //current Y position of mouse
-
     function mousemove(e) {
         let newX = prevX - e.clientX; 
         let newY = prevY - e.clientY;
-
         const rect = todoContainer.getBoundingClientRect();
         todoContainer.style.left = rect.left - newX + "px"; //subtracts newX to the current left value
         todoContainer.style.top = rect.top - newY + "px"; //subtracts newY to the current top value
-
         prevX = e.clientX;
         prevY = e.clientY;
     }
-
     function mouseup() {
         window.removeEventListener('mousemove', mousemove);
         window.removeEventListener('mouseup', mouseup);

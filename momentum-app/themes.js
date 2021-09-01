@@ -1,11 +1,10 @@
+// VARIABLES
 const themesContainer = document.querySelector(".container-themeMenu");
 const themeButton = document.querySelector("#button-theme");
-
-
-
+//EVENT LISTENERS
 themeButton.addEventListener('click', displayThemesMenu);
 themesContainer.addEventListener('click', setTheme);
-
+//FUNCTIONS
 function displayThemesMenu() {
 	if (themesContainer.classList.contains('hide')) {
         if (!reminderMenuContainer.classList.contains("hide")) {
@@ -21,7 +20,6 @@ function displayThemesMenu() {
 		themesContainer.classList.add("hide");
 		themeButton.classList.remove("active");
 	}
-	
 }
 //sets the Theme of the webpage
 function setTheme(e) {
@@ -29,7 +27,6 @@ function setTheme(e) {
     const mainContainer = document.querySelector('.container-main'); 
     //if the grayscale button is pressed, toggle the grayscale of container-main to 80% or 0%;
     if (theme === "grayscale"){
-
         if (mainContainer.style.filter === "grayscale(80%)") {
             mainContainer.style.filter = "grayscale(0%)";
         }
@@ -101,7 +98,7 @@ function setTheme(e) {
         mainContainer.classList.remove(classToBeRemoved); // removes the current theme class
         mainContainer.classList.add(theme); // adds the theme class depending on the button pressed
         }
-     
     }
 }
+//END
 

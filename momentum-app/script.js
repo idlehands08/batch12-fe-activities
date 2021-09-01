@@ -1,6 +1,5 @@
-
-
 // VARIABLES
+const centerWrapper = document.querySelector('.wrapper-center'); // contains the clock, greeting, and focus display
 // clock variables
 const clockContainer = document.querySelector(".clock")
 const clockTitle = clockContainer.querySelector("h1")
@@ -18,7 +17,6 @@ const focusDisplay = document.querySelector('.focus-display');
 const focus = document.querySelector('#focus');
 const editFocusButton = document.querySelector('#editFocusButton');
 //productivity quote variables
-// Productivity Quotes
 const quotesList = [
 	['Focus on being productive instead of busy.', '-Tim Ferriss'],
 	['Do the hard jobs first. The easy jobs will take care of themselves.', '- Dale Carnegie'],
@@ -38,7 +36,6 @@ const prodQuoteContainer = document.querySelector('.container-quotes')
 const prodQuote = document.querySelector('#prodQuote');
 const generateQuoteButton = document.querySelector('#button-generateQuote');
 const addQuoteButton = document.querySelector('#button-addQuote');
-
 // reset function variables
 const resetContainer = document.querySelector('#container-reset');    
 const resetButton = document.querySelector('#button-reset');
@@ -55,7 +52,7 @@ const healthQuotesArray = [
 	['Keeping your body healthy is an expression of gratitude to the whole cosmos- the trees, the clouds, everything.', '- Thich Nhat Hanh'],
 	['Healthy citizens are the greatest asset any country can have.', '- Winston Churchill']
 ]
-const centerWrapper = document.querySelector('.wrapper-center'); // contains the clock, greeting, and focus display
+//reminder/break variables
 const reminderContainer= document.querySelector('.container-reminders'); // contains the container for reminders
 const reminderText = document.querySelector('.reminderText');
 const reminderMenuContainer = document.querySelector('.container-remindersMenu');
@@ -63,24 +60,25 @@ const centerContainer = document.querySelector('.container-center');
 const reminderButton = document.querySelector('#button-reminder'); // button to trigger stretch reminder for presentation purposes only
 const healthQuote = document.querySelector('.healthQuote');
 const healthQuoteAuthor = document.querySelector('.healthQuoteAuthor');
-var stretchMinutes = 60; // default value 60 minutes;
-
-
+const set10secondsButton = document.querySelector('#intervalButton1');
+const set30minButton = document.querySelector('#intervalButton2');
+const set60minButton = document.querySelector('#intervalButton3');
+const set90minButton = document.querySelector('#intervalButton4');
+const offButton = document.getElementById('stopIntervalButton');
+const intervalButtons = document.querySelectorAll('.reminder-intervalButton');
+const triggerStretchButton = document.querySelector("#triggerStretchButton");
 //EVENT LISTENERS
 editFocusButton.addEventListener('click', showFocusInputField);
 // productivity quote event listeners
 generateQuoteButton.addEventListener('click', displayRandomProdQuote);
 addQuoteButton.addEventListener('click', addQuote);
-//edit name
+//edit name event listener
 editNameButton.addEventListener('click', editName);
 //reset function event listeners
 resetButton.addEventListener('click', displayResetConfirmation);
 resetButtonNo.addEventListener('click', displayResetConfirmation);
 reminderButton.addEventListener('click', displayReminderMenu);
-
-
 // FUNCTIONS
-
 // Clock Feature Section
 function getTime(){
 	const date = new Date();
@@ -95,33 +93,30 @@ function getTime(){
 	weekday[4] = "Thursday";
 	weekday[5] = "Friday";
 	weekday[6] = "Saturday";
-
 	// clockTitle.innerText = `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
 	clockTitle.innerText =   `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}`;
-	
 }
-// function that initialized the clock feature. - an IIFE function. Automatically calls itself 
+// IIFE - Immediately Invoked Function Expression. Ffunction that initializes the clock feature. Calls itself.
 (function initializeClock(){
 	getTime();
 	setInterval(getTime, 1000); //get time every second
-
 }())
-
 //Welcome-Container - Asks for the user's name. Disappears after entering name
 // function that gets the user name from the welcome message
 nameInput.addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && nameInput.value.trim() !== '') {
 		welcomeContainer.classList.add("hide");
-		user = nameInput.value;		
+		user = nameInput.value;
 		//sets the confirmation message with the user name
 		displayMomentum(user);
+		centerWrapper.classList.remove('hide');
     }
 });
-// DISPLAY MOMENTUP APP FUNCTION - transitions from welcome page to momentup app
+// DISPLAY MOMENTUM - transitions from welcome page to momentup app
 function displayMomentum(user) {
 	userName.innerHTML =  user;
 }
-//EDIT NAME
+//EDIT USERNAME
 //makes the userName tag editable.
 function editName() {
 	userName.contentEditable = "true";
@@ -137,19 +132,16 @@ userName.addEventListener('keypress', function (e) {
 });
 //PRODUCTIVITY QUOTE
 //display random prod quote
-// const prodQuoteAuthor = document.querySelector('.prodQuoteAuthor');
 function displayRandomProdQuote() {
 	const random = Math.floor(Math.random() * quotesList.length);
 	prodQuote.innerHTML = quotesList[random][0];
 }
 displayRandomProdQuote(); //display random quote on page startup.
-
-//add prod quote
+//add prod quote - combination of addquote and prodquote event listener enter
 function addQuote() {
 	prodQuote.contentEditable = "true";
 	prodQuote.focus();
 }
-
 prodQuote.addEventListener('keypress', function (e) {
     if (e.keyCode === 13) {
 		prodQuote.contentEditable = "false";
@@ -166,18 +158,13 @@ function showFocusInputField() {
 	focusDisplay.classList.add('hide');
 	prodQuoteContainer.classList.add('hide');
 } 
-// FOCUS FUNCTION
 var focusCrosshair;
 focusInput.addEventListener('keypress', function (e) {
-	
+	//if focus input is entered and the value is not null
     if (e.key === 'Enter' && focusInput.value !== "") {
-		// hide the focus input container
-		focusContainer.classList.add("hide");
-		//remove hide from focus display
-		focusDisplay.classList.remove('hide');
-		//remove hide from productivity quote container
-		prodQuoteContainer.classList.remove('hide');
-		// <i class="fas fa-bullseye"></i>
+		focusContainer.classList.add("hide"); // hide the focus input container
+		focusDisplay.classList.remove('hide'); 	//remove hide from focus display
+		prodQuoteContainer.classList.remove('hide'); //remove hide from productivity quote container
 		focus.innerHTML ='<i class="fas fa-crosshairs"></i>' + '  ' + focusInput.value;
 		focusInput.value = "";
 		focusCrosshair = document.querySelector('.fa-crosshairs');
@@ -188,7 +175,6 @@ focusInput.addEventListener('keypress', function (e) {
 function linethroughFocus() {
 	focusCrosshair.classList.toggle('linethrough');
 	focus.classList.toggle('linethrough');
-	
 }
 //RESET FUNCTION
 function displayResetConfirmation() {
@@ -200,27 +186,20 @@ function displayResetConfirmation() {
 		resetContainer.classList.add("hide");
 	}
 }
-// if YES is clicked on the reset confirmation page, it will refresh the page.
+// reset page - if YES from reset confirmation page is clicked, this function is executed.
 resetButtonYes.onclick = function refreshPage(){
 	window.location.reload();
 }
 //STRETCH REMINDER functions
 //stretch reminder triggers on certain interval depending on the button set on the break menu on the lower right of page.
-//it is set to 60min by default upon page load
-const set10secondsButton = document.querySelector('#intervalButton1');
-const set30minButton = document.querySelector('#intervalButton2');
-const set60minButton = document.querySelector('#intervalButton3');
-const set90minButton = document.querySelector('#intervalButton4');
-const offButton = document.getElementById('stopIntervalButton');
-const intervalButtons = document.querySelectorAll('.reminder-intervalButton');
 offButton.addEventListener('click', getInterval);
-const triggerStretchButton = document.querySelector("#triggerStretchButton");
 triggerStretchButton.addEventListener('click', stretchReminder);
 var interval = 3600000;  //defaults stretch break interval to 1 hour on page load
 startInterval(interval); //starts a 1 hour interval for stretch breaks
 var intervalId; // intervalId is used to store the intervalId so that it can be deleted when a new one is created.
 var currentActiveInterval = set60minButton; //default activeButton is the 60 min button;
 set60minButton.classList.add('active'); // default activeButton class put on the 60 min button. 
+//functions should be recycled/refactored -----
 set10secondsButton.addEventListener('click', function() {
 	interval = 10000;
 	clearInterval(intervalId);
@@ -268,11 +247,10 @@ offButton.addEventListener('click', function() {
 function startInterval(newInterval) {
 	// Store the id of the interval so we can clear it later
 	intervalId = setInterval(function() {
-		console.log(newInterval);
+		console.log(newInterval); //checks if the new Interval is being passed onto the new setInterval function
 		stretchReminder();
 	}, newInterval);
   }
-
 function getInterval() {
 	console.log(interval);
 }
@@ -284,14 +262,12 @@ function stretchReminder() {
 	const random = Math.floor(Math.random() * healthQuotesArray.length);
 	healthQuote.innerHTML = healthQuotesArray[random][0];
 	healthQuoteAuthor.innerHTML = healthQuotesArray[random][1];
-	console.log(interval);
-	//hide all open items to increase user focus on stretch reminder
-	hideAllItems();
+	hideAllItems(); //hide all open items to increase user focus on stretch reminder
 }
 //display the default items. Will be triggered by clicking on the screen whenever stretch reminder is displayed.
 function displayDefault() {
 	reminderContainer.classList.add('hide');
-	centerWrapper.classList.remove('hide')
+	centerWrapper.classList.remove('hide');
 	reminderText.innerHTML = "";
 	prodQuoteContainer.classList.remove('hide');
 	centerContainer.removeEventListener('click', displayDefault);
@@ -299,7 +275,6 @@ function displayDefault() {
 //function that will hide all open items whenever stretchReminder is triggered
 //first checks if a window is open by checking if it contains the hide class.
 function hideAllItems() {
-	
 	if (!themesContainer.classList.contains("hide")) { //checks if the container DOES NOT contain the hide class
 		themesContainer.classList.add("hide"); //adds the hide class if
 		themeButton.classList.remove("active"); // removes the active status from its button
@@ -325,7 +300,6 @@ function hideAllItems() {
 	if(!prodQuoteContainer.classList.contains("hide")) {
 		prodQuoteContainer.classList.add("hide");
 	}
-	
 }
 function displayReminderMenu() {
 	if (reminderMenuContainer.classList.contains('hide')){
@@ -342,4 +316,4 @@ function displayReminderMenu() {
 	}
 	
 }
-
+//END
