@@ -106,11 +106,9 @@ function mousedown(e) {
     function mousemove(e) {
         let newX = prevX - e.clientX; 
         let newY = prevY - e.clientY;
-
         const rect = stickyNotesContainer.getBoundingClientRect();
         stickyNotesContainer.style.left = rect.left - newX + "px"; //subtracts newX to the current left value
         stickyNotesContainer.style.top = rect.top - newY + "px"; //subtracts newY to the current top value
-
         prevX = e.clientX;
         prevY = e.clientY;
     }
