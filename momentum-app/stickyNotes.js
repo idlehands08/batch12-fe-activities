@@ -10,8 +10,6 @@ notesButton.addEventListener('click',  displayNotesContainer);
 stickyNotesContainer.addEventListener('click', deleteNote);
 closeNotesButton.addEventListener('click', displayNotesContainer);
 plusNoteButton.addEventListener('click', addNotes);
-
-
 // FUNCTIONS
 function displayNotesContainer() {
     //checks if there are no current sticky notes. 
@@ -37,7 +35,6 @@ function displayNotesContainer() {
     }
 	
 }
-
 //add the addNotes() function to all add buttons for all sticky Notes
 function addStickyNoteListeners() {
     //get all current stickyNotes add Button
@@ -46,19 +43,15 @@ function addStickyNoteListeners() {
         addNotesButton[i].addEventListener('click', addNotes);
     }
 }
-
 //add listener to close notes button and plusnote sign which are used for phone size version of Notes;
-
-
 addStickyNoteListeners(); // calls the addStickyNoteListener() upon webpage load.
-
 function addNotes() {
     //max number of sticky notes is 9 (don't want the screen to be too cluttered and you would rarely need more)
     if (stickyCounter <= 8) {
-        //create the sticky note container
+        //create the stickyNote div
         const stickyNoteDiv = document.createElement('div');
         stickyNoteDiv.classList.add('stickyNote');
-        //create and append the addStickyButton onto stickyNoteDiv
+        //create and append the addStickyButton onto stickyNote div
         const addStickyButton = document.createElement('button');
         addStickyButton.classList.add('addNotesButton');
         addStickyButton.innerHTML = '<i id="addNotesButton" class="fas fa-plus"></i>';
@@ -103,16 +96,13 @@ function deleteNote(e) {
            //subtracts 1 from stickyCounter (to be used for max number of sticky notes which is 9)
            stickyCounter--;
         }
-  
 }
 stickyNotesContainer.addEventListener('mousedown', mousedown);
 function mousedown(e) {
     window.addEventListener('mousemove', mousemove);
     window.addEventListener('mouseup', mouseup);
-
     let prevX = e.clientX; //current X position of mouse
     let prevY = e.clientY; //current Y position of mouse
-
     function mousemove(e) {
         let newX = prevX - e.clientX; 
         let newY = prevY - e.clientY;
@@ -124,7 +114,6 @@ function mousedown(e) {
         prevX = e.clientX;
         prevY = e.clientY;
     }
-
     function mouseup() {
         window.removeEventListener('mousemove', mousemove);
         window.removeEventListener('mouseup', mouseup);
