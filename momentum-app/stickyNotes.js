@@ -33,7 +33,6 @@ function displayNotesContainer() {
             notesButton.classList.remove("active");
         }
     }
-	
 }
 //add the addNotes() function to all add buttons for all sticky Notes
 function addStickyNoteListeners() {
@@ -97,6 +96,7 @@ function deleteNote(e) {
            stickyCounter--;
         }
 }
+//function to make stickyNotes draggable
 stickyNotesContainer.addEventListener('mousedown', mousedown);
 function mousedown(e) {
     window.addEventListener('mousemove', mousemove);

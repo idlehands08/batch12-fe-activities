@@ -96,26 +96,21 @@ function getTime(){
 	// clockTitle.innerText = `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
 	clockTitle.innerText =   `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}`;
 }
-// IIFE - Immediately Invoked Function Expression. Ffunction that initializes the clock feature. Calls itself.
+// IIFE - Immediately Invoked Function Expression. Function that initializes the clock feature. Calls itself.
 (function initializeClock(){
 	getTime();
 	setInterval(getTime, 1000); //get time every second
 }())
-//Welcome-Container - Asks for the user's name. Disappears after entering name
+//container-welcome div - Asks for the user's name. Disappears after entering name
 // function that gets the user name from the welcome message
 nameInput.addEventListener('keypress', function (e) {
     if (e.key === 'Enter' && nameInput.value.trim() !== '') {
 		welcomeContainer.classList.add("hide");
 		user = nameInput.value;
-		//sets the confirmation message with the user name
-		displayMomentum(user);
-		centerWrapper.classList.remove('hide');
+		userName.innerHTML =  user;
+		centerWrapper.classList.remove('hide'); //displays center content after entering name
     }
 });
-// DISPLAY MOMENTUM - transitions from welcome page to momentup app
-function displayMomentum(user) {
-	userName.innerHTML =  user;
-}
 //EDIT USERNAME
 //makes the userName tag editable.
 function editName() {
