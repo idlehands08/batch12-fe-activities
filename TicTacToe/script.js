@@ -1,10 +1,17 @@
 //GLOBAL VARIABLES
+//html elements
 const board = document.querySelector('.board');
 const cells = document.querySelectorAll('.cell')
+const previousButton = document.querySelector('.previous');
+const nextButton = document.querySelector('.next');
 var counter = 0; //used to count the turns
 var lastPlayerTurn = ""; //determines who was the last player to mark move on board. Used to check for winning combinations. 
 const boardArray = []; // initializes our board array
 boardArray[counter] = []; // initializes the first index of our board array as an array as well
+
+//EVENT LISTENERS
+previousButton.addEventListener('click', previousMove);
+nextButton.addEventListener('click', nextMove);
 
 //FUNCTIONS
 //IIFE function that initializes board on page load
@@ -35,18 +42,28 @@ const playerXTurn = () => {
 //handles click event when player clicks on a cell
 const playerMove = (e) => {
     targetCell = e.target;
+    var lastPlayerSymbol = ''
     if(playerXTurn() === true) {
         targetCell.classList.add('x');
         board.classList.remove('x');
         board.classList.add('o'); //switches turn to o 
+        lastPlayerSymbol = 'x';
     }
     else {
         targetCell.classList.add('o');
         board.classList.add('x');
         board.classList.remove('o');
         board.classList.add('x')//switches turn to x
+        lastPlayerSymbol = 'o';
     }
     storeHistory(); //calls the storeHistory function to store current state of board after a player turn
+    if (checkForWinner(lastPlayerSymbol)) {
+        alert(`${lastPlayerSymbol} is the winner!`);
+    }
+    else {
+        counter++;  //adds 1 to counter for the next array to be pushed on boardArray
+    }
+   
 }
 
 //adds event listeners to our board
@@ -95,34 +112,25 @@ const storeHistory = () => {
     boardArray[counter].push(row1);
     boardArray[counter].push(row2);
     boardArray[counter].push(row3);
-    counter++; //adds 1 to counter for the next array on boardArray
     console.log(boardArray); // --for test purposes only--
 }
 
-const previousButton = document.querySelector('.previous');
-
-const previousMove = () => {
+function previousMove(){
     counter -= 1;
     loadHistory();
 }
 
-previousButton.addEventListener('click', previousMove);
-
-const nextMove = () => {
+function nextMove(){
     counter += 1;
     loadHistory();
 }
 
-const nextButton = document.querySelector('.next');
-
-nextButton.addEventListener('click', nextMove);
-
 const loadHistory = () => {
     const cells = document.querySelectorAll('.cell'); //get all cells 
-    var cellCounter = 0;
+    var cellCounter = 0; //used to move through our cells
     boardHistory = boardArray[counter];
     boardHistory.forEach(row => {
-        row.forEach((item, index) =>{
+        row.forEach((item) =>{
             if(item === 'X') {
                 cells[cellCounter].classList.add('x');
                 cellCounter++;
@@ -138,4 +146,35 @@ const loadHistory = () => {
             }
         })
     });
+}
+
+function getCellValue(index) {
+    let cells = document.querySelectorAll('.cell');
+    if(cells[index].classList.includes('x')) {
+        return 'X';
+    }
+    else if (cells[index].classList.includes('o')) {
+        return 'O';
+    }
+    else {
+        return undefined;
+    }
+}
+
+function checkPlayerSymbol(index1,index2,index3, lastPlayerSymbol) {
+    const cells = document.querySelectorAll('.cell');
+    if (cells[index1].classList.contains(lastPlayerSymbol) && cells[index2].classList.contains(lastPlayerSymbol) && cells[index3].classList.contains(lastPlayerSymbol)) {
+        return true;
+    }
+}
+//checks if there is already a winner through winning combinations
+function checkForWinner(lastPlayerSymbol){
+    
+        if (checkPlayerSymbol(0,1,2, lastPlayerSymbol) || checkPlayerSymbol(3,4,5, lastPlayerSymbol)
+        || checkPlayerSymbol(6,7,8, lastPlayerSymbol) || checkPlayerSymbol(0,3,6, lastPlayerSymbol)
+        || checkPlayerSymbol(1,4,7, lastPlayerSymbol) || checkPlayerSymbol(2,5,8, lastPlayerSymbol)
+        || checkPlayerSymbol(2,4,6, lastPlayerSymbol) || checkPlayerSymbol(0,4,8, lastPlayerSymbol)
+        ){
+           return true;
+        }
 }
