@@ -144,7 +144,7 @@ prodQuote.addEventListener('keypress', function (e) {
 		prodQuote.innerHTML = quotesList.pop();
     }
 });
-// FOCUS
+// FOCUS FUNCTION
 //function to edit focus
 //brings back the focus input field container and hides the focus display container
 function showFocusInputField() {
@@ -187,22 +187,20 @@ resetButtonYes.onclick = function refreshPage(){
 }
 //STRETCH REMINDER functions
 //stretch reminder triggers on certain interval depending on the button set on the break menu on the lower right of page.
-offButton.addEventListener('click', getInterval);
 triggerStretchButton.addEventListener('click', stretchReminder);
 var interval = 3600000;  //defaults stretch break interval to 1 hour on page load
 startInterval(interval); //starts a 1 hour interval for stretch breaks
 var intervalId; // intervalId is used to store the intervalId so that it can be deleted when a new one is created.
 var currentActiveInterval = set60minButton; //default activeButton is the 60 min button;
 set60minButton.classList.add('active'); // default activeButton class put on the 60 min button. 
-//functions should be recycled/refactored -----
+//!!!! ----- functions should be recycled/refactored ----- !!!!
 set10secondsButton.addEventListener('click', function() {
-	interval = 10000;
-	clearInterval(intervalId);
-	startInterval(interval);
-	currentActiveInterval.classList.remove('active');
-	currentActiveInterval = set10secondsButton;
-	set10secondsButton.classList.add('active');
-	console.log(interval);
+	interval = 10000; //interval set in milliseconds
+	clearInterval(intervalId); //clear current intervalId
+	startInterval(interval); //start new Interval with new Id and the new Interval which in this case is 10 seconds
+	currentActiveInterval.classList.remove('active'); //removes hover effect from prev Interval
+	currentActiveInterval = set10secondsButton; //currentActiveInterval is used so that we can remove active later
+	set10secondsButton.classList.add('active'); //add hover effect on current activeInterval
 });
 set30minButton.addEventListener('click', function() {
 	interval = 1800000;
@@ -211,7 +209,6 @@ set30minButton.addEventListener('click', function() {
 	currentActiveInterval.classList.remove('active');
 	currentActiveInterval = set30minButton;
 	set30minButton.classList.add('active');
-	console.log(interval);
 });
 set60minButton.addEventListener('click', function() {
 	interval = 3600000;
@@ -220,7 +217,6 @@ set60minButton.addEventListener('click', function() {
 	currentActiveInterval.classList.remove('active');
 	currentActiveInterval = set60minButton;
 	set60minButton.classList.add('active');
-	console.log(interval);
 });
 set90minButton.addEventListener('click', function() {
 	interval = 5400000;
@@ -229,14 +225,12 @@ set90minButton.addEventListener('click', function() {
 	currentActiveInterval.classList.remove('active');
 	currentActiveInterval = set90minButton;
 	set90minButton.classList.add('active');
-	console.log(interval);
 });
 offButton.addEventListener('click', function() {
 	clearInterval(intervalId);
 	currentActiveInterval.classList.remove('active');
 	currentActiveInterval = offButton;
 	offButton.classList.add('active');
-	console.log(intervalId);
 });
 //starts a new interval for the stretch break function. Triggers whenever one of the interval settings button is clicked.
 function startInterval(newInterval) {
@@ -246,9 +240,6 @@ function startInterval(newInterval) {
 		stretchReminder();
 	}, newInterval);
   }
-function getInterval() {
-	console.log(interval);
-}
 function stretchReminder() {
     centerWrapper.classList.add('hide');
 	reminderContainer.classList.remove('hide');

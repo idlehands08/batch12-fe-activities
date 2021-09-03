@@ -464,6 +464,7 @@ footer ul {
         transform: translate(-50%);
         bottom: 3.5rem;
         width: 95vw;
+       
     }
 }
 @media (max-width: 1024px) {
