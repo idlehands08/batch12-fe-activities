@@ -4,7 +4,9 @@ const board = document.querySelector('.board');
 const cells = document.querySelectorAll('.cell')
 const previousButton = document.querySelector('.previous');
 const nextButton = document.querySelector('.next');
+const announcementTag = document.querySelector('.announcement')
 var counter = 0; //used to count the turns
+var lastCounter = 0;
 var lastPlayerTurn = ""; //determines who was the last player to mark move on board. Used to check for winning combinations. 
 const boardArray = []; // initializes our board array
 boardArray[counter] = []; // initializes the first index of our board array as an array as well
@@ -26,7 +28,7 @@ nextButton.addEventListener('click', nextMove);
         }
     }
     counter += 1;
-    console.log(boardArray);
+    announcementTag.innerHTML = "Player X's turn";
 }())
 
 //checks if it is player X's turn or player O's turn;
@@ -47,18 +49,21 @@ const playerMove = (e) => {
         targetCell.classList.add('x');
         board.classList.remove('x');
         board.classList.add('o'); //switches turn to o 
+        announcementTag.innerHTML = "Player O's turn";
         lastPlayerSymbol = 'x';
     }
     else {
         targetCell.classList.add('o');
         board.classList.add('x');
         board.classList.remove('o');
+        announcementTag.innerHTML = "Player X's turn";
         board.classList.add('x')//switches turn to x
         lastPlayerSymbol = 'o';
     }
     storeHistory(); //calls the storeHistory function to store current state of board after a player turn
     if (checkForWinner(lastPlayerSymbol)) {
         alert(`${lastPlayerSymbol} is the winner!`);
+        lastCounter=counter; // sets value of lastCounter to counter value after gamewin.
     }
     else {
         counter++;  //adds 1 to counter for the next array to be pushed on boardArray
@@ -67,13 +72,21 @@ const playerMove = (e) => {
 }
 
 //adds event listeners to our board
-function loadBoardFunctions() {
+function addCellEventListener() {
     const cells = document.querySelectorAll('.cell');
     cells.forEach(cell => {
         cell.addEventListener('click', playerMove, { once: true });
     });
 }
-loadBoardFunctions();
+addCellEventListener();
+
+function removeCellEventListener() {
+    const cells=document.querySelectorAll('.cell');
+    cells.forEach(cell => {
+        cell.removeEventListener('click', playerMove);
+        cell.style.cursor = "not-allowed";
+    });
+}
 
 //stores current board state every turn onto our boardArray to be used for previous and next button upon game completion.
 const storeHistory = () => {
@@ -117,11 +130,17 @@ const storeHistory = () => {
 
 function previousMove(){
     counter -= 1;
+    if(counter<2) {
+        previousButton.classList.add('hide');
+    }
     loadHistory();
 }
 
 function nextMove(){
     counter += 1;
+    if( counter === lastCounter ){
+        nextButton.classList.add('hide');
+    }
     loadHistory();
 }
 
@@ -148,7 +167,7 @@ const loadHistory = () => {
     });
 }
 
-//Check for Game Winner nested functions
+//Check for Game Winner function - called after every playerMove function activation
 //the function will first ask for the lastPlayerSymbol which is passed from the playerMove function
 function checkForWinner(lastPlayerSymbol){
     //checks if there is already a winner through all the possible winning combinations
@@ -157,7 +176,8 @@ function checkForWinner(lastPlayerSymbol){
     || checkPlayerSymbol(1,4,7, lastPlayerSymbol) || checkPlayerSymbol(2,5,8, lastPlayerSymbol)
     || checkPlayerSymbol(2,4,6, lastPlayerSymbol) || checkPlayerSymbol(0,4,8, lastPlayerSymbol)
     ){
-       return true;
+        removeCellEventListener();
+        return true;
     }
     //checks if the lastPlayerSymbol is on each index of the possible winning combination
     function checkPlayerSymbol(index1,index2,index3, lastPlayerSymbol) {
@@ -168,7 +188,3 @@ function checkForWinner(lastPlayerSymbol){
         }
     }
 }
-
-
-
-
