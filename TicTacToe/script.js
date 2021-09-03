@@ -148,33 +148,27 @@ const loadHistory = () => {
     });
 }
 
-function getCellValue(index) {
-    let cells = document.querySelectorAll('.cell');
-    if(cells[index].classList.includes('x')) {
-        return 'X';
+//Check for Game Winner nested functions
+//the function will first ask for the lastPlayerSymbol which is passed from the playerMove function
+function checkForWinner(lastPlayerSymbol){
+    //checks if there is already a winner through all the possible winning combinations
+    if (checkPlayerSymbol(0,1,2, lastPlayerSymbol) || checkPlayerSymbol(3,4,5, lastPlayerSymbol)
+    || checkPlayerSymbol(6,7,8, lastPlayerSymbol) || checkPlayerSymbol(0,3,6, lastPlayerSymbol)
+    || checkPlayerSymbol(1,4,7, lastPlayerSymbol) || checkPlayerSymbol(2,5,8, lastPlayerSymbol)
+    || checkPlayerSymbol(2,4,6, lastPlayerSymbol) || checkPlayerSymbol(0,4,8, lastPlayerSymbol)
+    ){
+       return true;
     }
-    else if (cells[index].classList.includes('o')) {
-        return 'O';
-    }
-    else {
-        return undefined;
+    //checks if the lastPlayerSymbol is on each index of the possible winning combination
+    function checkPlayerSymbol(index1,index2,index3, lastPlayerSymbol) {
+        const cells = document.querySelectorAll('.cell');
+        if (cells[index1].classList.contains(lastPlayerSymbol) && cells[index2].classList.contains(lastPlayerSymbol) 
+        && cells[index3].classList.contains(lastPlayerSymbol)) {
+            return true;
+        }
     }
 }
 
-function checkPlayerSymbol(index1,index2,index3, lastPlayerSymbol) {
-    const cells = document.querySelectorAll('.cell');
-    if (cells[index1].classList.contains(lastPlayerSymbol) && cells[index2].classList.contains(lastPlayerSymbol) && cells[index3].classList.contains(lastPlayerSymbol)) {
-        return true;
-    }
-}
-//checks if there is already a winner through winning combinations
-function checkForWinner(lastPlayerSymbol){
-    
-        if (checkPlayerSymbol(0,1,2, lastPlayerSymbol) || checkPlayerSymbol(3,4,5, lastPlayerSymbol)
-        || checkPlayerSymbol(6,7,8, lastPlayerSymbol) || checkPlayerSymbol(0,3,6, lastPlayerSymbol)
-        || checkPlayerSymbol(1,4,7, lastPlayerSymbol) || checkPlayerSymbol(2,5,8, lastPlayerSymbol)
-        || checkPlayerSymbol(2,4,6, lastPlayerSymbol) || checkPlayerSymbol(0,4,8, lastPlayerSymbol)
-        ){
-           return true;
-        }
-}
+
+
+
