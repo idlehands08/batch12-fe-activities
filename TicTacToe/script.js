@@ -10,6 +10,7 @@ var lastCounter = 0;
 var lastPlayerTurn = ""; //determines who was the last player to mark move on board. Used to check for winning combinations. 
 const boardArray = []; // initializes our board array
 boardArray[counter] = []; // initializes the first index of our board array as an array as well
+var winningIndexes = []; //where the winning combination is stored for styling purposes
 
 //EVENT LISTENERS
 previousButton.addEventListener('click', previousMove);
@@ -46,23 +47,22 @@ const playerMove = (e) => {
     targetCell = e.target;
     var lastPlayerSymbol = ''
     if(playerXTurn() === true) {
-        targetCell.classList.add('x');
-        board.classList.remove('x');
+        targetCell.classList.add('x'); //adds classList x to indicate an x mark on the cell
+        board.classList.remove('x'); // removes classList x from board to give way for next turn
         board.classList.add('o'); //switches turn to o 
         announcementTag.innerHTML = "Player O's turn";
-        lastPlayerSymbol = 'x';
+        lastPlayerSymbol = 'x'; //saves last player move as x
     }
     else {
-        targetCell.classList.add('o');
-        board.classList.add('x');
-        board.classList.remove('o');
+        targetCell.classList.add('o'); //adds classList x to indicate an o mark on the cell
+        board.classList.remove('o'); // removes classList o from board to give way for next turn
+        board.classList.add('x');  // switches turn to x
         announcementTag.innerHTML = "Player X's turn";
-        board.classList.add('x')//switches turn to x
-        lastPlayerSymbol = 'o';
+        lastPlayerSymbol = 'o'; //saves the last player move as o 
     }
     storeHistory(); //calls the storeHistory function to store current state of board after a player turn
     if (checkForWinner(lastPlayerSymbol)) {
-        alert(`${lastPlayerSymbol} is the winner!`);
+        alert(`${lastPlayerSymbol} is the winner!`); 
         lastCounter=counter; // sets value of lastCounter to counter value after gamewin.
     }
     else {
@@ -71,7 +71,7 @@ const playerMove = (e) => {
    
 }
 
-//adds event listeners to our board
+//add event listeners to all cells. Called on createBoard();
 function addCellEventListener() {
     const cells = document.querySelectorAll('.cell');
     cells.forEach(cell => {
@@ -80,6 +80,7 @@ function addCellEventListener() {
 }
 addCellEventListener();
 
+//removes eventListener for all cells. Called when a player wins.
 function removeCellEventListener() {
     const cells=document.querySelectorAll('.cell');
     cells.forEach(cell => {
@@ -184,6 +185,10 @@ function checkForWinner(lastPlayerSymbol){
         const cells = document.querySelectorAll('.cell');
         if (cells[index1].classList.contains(lastPlayerSymbol) && cells[index2].classList.contains(lastPlayerSymbol) 
         && cells[index3].classList.contains(lastPlayerSymbol)) {
+            winningIndexes.push(index1);
+            winningIndexes.push(index2);
+            winningIndexes.push(index3);
+            console.log(winningIndexes);
             return true;
         }
     }
