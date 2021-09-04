@@ -50,7 +50,13 @@ button {
     height: 100vh;
     
 }
+h1 {
+    font-size: 2.8rem;
+}
 
+h2 {
+    font-size: 2rem;
+}
 .flex-row-item {
     display: flex;
     align-items: center;
@@ -109,6 +115,11 @@ button {
     box-shadow: 0 .2em var(--color-gray); 
     cursor: pointer;
     
+}
+.container-prevNext button:active, #reset:active {
+	box-shadow: none;
+	position: relative;
+	top: .2em;
 }
 
 .cell {
