@@ -64,7 +64,6 @@ const playerXTurn = () => {
     }
 }
 
-
 //handles click event when player clicks on a cell
 const playerMove = (e) => {
     targetCell = e.target;
@@ -112,7 +111,6 @@ const playerMove = (e) => {
     }
    
 }
-
 
 //add event listeners to all cells. Called on createBoard();
 function addCellEventListener() {
@@ -168,7 +166,8 @@ const storeHistory = () => {
         setPlayerSymbol(cells[x]);
         row3.push(playerSymbol);
     }
-    //push all of our scope row variables onto our global boardArray
+    //push all of our scope row variables onto our global boardArray using the same index
+    //using the same index will make sure that all rows are pushed onto one index of our global boardArray.
     boardArray[counter].push(row1);
     boardArray[counter].push(row2);
     boardArray[counter].push(row3);
@@ -176,16 +175,15 @@ const storeHistory = () => {
 
 //used for history function. Shows previous move.
 function previousMove(){
-    counter -= 1;
+    counter -= 1; //first subtracts one from counter in order to point to our previous entry in our boardArray.
     if(counter<1) {
-        //previousButton.classList.add('hide');
         previousButton.classList.add('disable');
         previousButton.setAttribute("disabled", true);
         
     }
     nextButton.classList.remove('disable');
     nextButton.removeAttribute("disabled");
-    loadHistory();
+    loadHistory(); 
     
 }
 
@@ -202,10 +200,14 @@ function nextMove(){
     loadHistory();
 }
 
+//this function is used in our previous and next button. 
+//Pulls out entries from our historyArray depending on the counter.
+//displays our history content on our board.
 const loadHistory = () => {
     const cells = document.querySelectorAll('.cell'); //get all cells 
     var cellCounter = 0; //used to move through our cells
     boardHistory = boardArray[counter];
+    //this function pushes each content of our history array onto our board.
     boardHistory.forEach(row => {
         row.forEach((item) =>{
             if(item === 'X') {
@@ -254,8 +256,9 @@ function checkForWinner(lastPlayerSymbol){
     }
 }
 
+//this function is called when the history buton is clicked.
 function displayHistoryButtonsContainer() {
-    revertCellStyling();
+    revertCellStyling(); //sets the default styling of our board since it was edited during game win animations.
     announcementTag.style.color = "var(--color-cellBorder)"
     announcementTag.innerHTML ="History"
     historyButtonContainer.classList.remove('hide');
@@ -264,6 +267,7 @@ function displayHistoryButtonsContainer() {
     resetButton.classList.add('hide');
 }
 
+//sets the content of our winning message/box depending on who won the round.
 function setWinningStyleAndMessages(winnerSymbol) {
     if (winnerSymbol === 'x') {
         winningMessageContainer.classList.remove('hide');
@@ -312,14 +316,16 @@ function highlightSymbols(index1,index2,index3) {
     },2500);
 }
 
+//sets the message of our winningMessage when a draw happens.
 function handleDraw() {
     winningPlayerAnnouncement.innerHTML = "DRAW"
     winningMessageContainer.classList.remove('hide');
     winningMessageContainer.style.backgroundColor = "var( --color-background)";
-    pauseSound.play();
+    pauseSound.play(); //plays the pause sound from super mario bros. when the game is a draw.
     
 }
 
+//sets the default styling of our board since it was edited during game win animations.
 function revertCellStyling(){
     const cells = document.querySelectorAll('.cell');
     cells.forEach(cell => {
@@ -375,7 +381,7 @@ function restartGame() {
     pipeSound.play();
 }
 
-
+//turns on sound when the mute image is selected to toggle to sound on.
 function soundOn() {
     marioSound.muted = false;
     luigiSound.muted = false;
@@ -388,6 +394,7 @@ function soundOn() {
     soundOnButton.classList.remove('hide');
 }
 
+//mutes sound when the sound image is selected to toggle to mute. 
 function muteSound() {
     marioSound.muted = true;
     luigiSound.muted = true;
@@ -405,6 +412,7 @@ function refreshPage(){
     window.location.reload();
 }
 
+//adds a score to our scoreboard depending on who won the game.
 function addScore(lastPlayerSymbol){
     if(lastPlayerSymbol === 'x') {
         scoreX += 1;
@@ -415,6 +423,7 @@ function addScore(lastPlayerSymbol){
         scoreOTag.innerHTML = `${scoreO < 10 ? `0${scoreO}` : scoreO}`;
        
     }
-    coinSound.play();
-    
+    coinSound.play(); 
 }
+
+ 

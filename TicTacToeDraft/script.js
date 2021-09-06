@@ -52,7 +52,8 @@ function action(button) {
 }
 // Save the entire tic tac toe board into a 2d array every time a player does a move. 
 function saveMoves() {
-    let tempArray = [];
+    // create dummy arrays to in order to push the contents of our board by row.
+    let tempArray = []; 
     let tempArray2 = [];
     let tempArray3 = [];
     for (let i = 0; i < row1.children.length; i++) {
@@ -66,14 +67,11 @@ function saveMoves() {
     for (let i = 0; i < row3.children.length; i++) {
         tempArray3.push(row3.children[i].innerHTML);
     }
-    //push all of the tempArrays onto our historyArray to save our movehistory.
-    //  historyArray.push(tempArray);
-    //  historyArray.push(tempArray2);
-    //  historyArray.push(tempArray3);
 
-    pushHistory(tempArray, tempArray2, tempArray3);
+    pushHistory(tempArray, tempArray2, tempArray3); // passes the dummy arrays to our pushHistory function
 }
 
+//pushHistory will push each dummyArray one by one to our historyArray.
 function pushHistory(tempArray, tempArray2, tempArray3) {
     historyArray.push(tempArray);
     historyArray.push(tempArray2);
