@@ -22,6 +22,13 @@ const pipeSound = new Audio('./audio/smb_pipe.wav');
 const breakBlockSound = new Audio('./audio/smb_breakblock.wav');
 const pauseSound = new Audio('./audio/smb_pause.wav');
 const bgMusic = document.querySelector('#bgMusic');
+const settingsButton = document.querySelector('#settingsButton');
+const settingsMenu = document.querySelector('.settings');
+const settingsCloseButton = document.querySelector('#settingsCloseButton');
+const bgmOnButton = document.querySelector('#bgmON');
+const bgmOffButton = document.querySelector('#bgmOFF');
+const sfxOnButton = document.querySelector('#sfxON');
+const sfxOffButton = document.querySelector('#sfxOFF');
 const playerSelectContainer = document.querySelector('.container-playerSelect');
 const singlePlayerTag = document.getElementById('singlePlayer');
 const twoPlayersTag = document.getElementById('twoPlayers')
@@ -420,30 +427,6 @@ function restartGame() {
     pipeSound.play();
 }
 
-//turns on sound when the mute image is selected to toggle to sound on.
-function soundOn() {
-    marioSound.muted = false;
-    luigiSound.muted = false;
-    coinSound.muted = false;
-    growSound.muted = false;
-    pipeSound.muted= false;
-    breakBlockSound.muted = false;
-    pauseSound.muted = false;
-    bgSong.muted = false;
-}
-
-//mutes sound when the sound image is selected to toggle to mute. 
-function muteSound() {
-    marioSound.muted = true;
-    luigiSound.muted = true;
-    coinSound.muted = true;
-    growSound.muted = true;
-    pipeSound.muted= true;
-    breakBlockSound.muted = true;
-    pauseSound.muted = true;
-    bgSong.muted = true;
-}
-
 //function that reloads the page. Called by resetButton.
 function refreshPage(){
     window.location.reload();
@@ -555,3 +538,57 @@ function luigiSelected() {
     addCellEventListener();
 }
 
+settingsButton.addEventListener('click', toggleSettingsWindow);
+settingsCloseButton.addEventListener('click', toggleSettingsWindow);
+bgmOffButton.addEventListener('click', toggleBgmOff);
+bgmOnButton.addEventListener('click', toggleBgmOn);
+sfxOffButton.addEventListener('click', toggleSfxOff);
+sfxOnButton.addEventListener('click', toggleSfxOn);
+
+function toggleSettingsWindow() {
+    if(settingsMenu.classList.contains('hide')){
+        settingsMenu.classList.remove('hide');
+        settingsButton.classList.add('active');
+    }
+    else {
+        settingsMenu.classList.add('hide');
+        settingsButton.classList.remove('active');
+    }
+}
+
+function toggleBgmOff() {
+    bgmOnButton.classList.remove('active');
+    bgmOffButton.classList.add('active');
+    bgMusic.muted = true;
+}
+
+function toggleBgmOn () {
+    bgmOnButton.classList.add('active');
+    bgmOffButton.classList.remove('active');
+    bgMusic.muted = false;
+}
+
+function toggleSfxOff() {
+    sfxOnButton.classList.remove('active');
+    sfxOffButton.classList.add('active');
+    marioSound.muted = true;
+    luigiSound.muted = true;
+    coinSound.muted = true;
+    growSound.muted = true;
+    pipeSound.muted= true;
+    breakBlockSound.muted = true;
+    pauseSound.muted = true;
+}
+
+function toggleSfxOn() {
+    sfxOnButton.classList.add('active');
+    sfxOffButton.classList.remove('active');
+    marioSound.muted = false;
+    luigiSound.muted = false;
+    coinSound.muted = false;
+    growSound.muted = false;
+    pipeSound.muted= false;
+    breakBlockSound.muted = false;
+    pauseSound.muted = false;
+}
+//turns on sound when the mute image is selected to toggle to sound on.
