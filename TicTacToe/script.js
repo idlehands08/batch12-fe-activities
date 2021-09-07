@@ -65,6 +65,12 @@ singlePlayerTag.addEventListener('click', setSinglePlayerMode);
 twoPlayersTag.addEventListener('click', setTwoPlayersMode);
 selectMario.addEventListener('click', marioSelected);
 selectLuigi.addEventListener('click', luigiSelected);
+settingsButton.addEventListener('click', toggleSettingsWindow);
+settingsCloseButton.addEventListener('click', toggleSettingsWindow);
+bgmOffButton.addEventListener('click', toggleBgmOff);
+bgmOnButton.addEventListener('click', toggleBgmOn);
+sfxOffButton.addEventListener('click', toggleSfxOff);
+sfxOnButton.addEventListener('click', toggleSfxOn);
 
 //FUNCTIONS
 //initializes an empty board. Called on page load and when rematchButton is pressed.
@@ -140,7 +146,8 @@ const playerMove = (e) => {
         else {
             counter++;  //adds 1 to counter for the next array to be pushed on boardArray
             if (mode === 'singlePlayer') {
-                removeCellEventListener();
+                //remove cells event listeners on single player mode to prevent player from taking action on bot turn
+                removeCellEventListener(); 
                 botDelay(); //calls on bot action with a random delay
             }
         }
@@ -159,7 +166,6 @@ function addCellEventListener() {
         rematchButton.addEventListener('click', restartGame);
     });
 }
-
 
 //removes eventListener for all cells. Called when a player wins.
 function removeCellEventListener() {
@@ -221,7 +227,6 @@ function previousMove(){
     nextButton.classList.remove('disable');
     nextButton.removeAttribute("disabled");
     loadHistory(); 
-    
 }
 
 //used for history function. Shows next move.
@@ -358,7 +363,6 @@ function handleDraw() {
     winningMessageContainer.classList.remove('hide');
     winningMessageContainer.style.backgroundColor = "var( --color-background)";
     pauseSound.play(); //plays the pause sound from super mario bros. when the game is a draw.
-    
 }
 
 //sets the default styling of our board since it was edited during game win animations.
@@ -369,7 +373,6 @@ function revertCellStyling(){
         cell.style.transform = "unset";
         cell.style.border = "3px solid var(--color-cellBorder)";
         cell.style.borderRadius = "unset";
-        
     });
     for (let i = 0; i < 3; i++) {
         cells[i].style.borderTop = "none";
@@ -460,7 +463,6 @@ function bot() {
     botMove(randomCell);
 }
 
-
 //bot function that allows our bot to take his turn.
 //exactly the same as playerMove() but takes in a cell instead of a target.
 const botMove = (cell) => {
@@ -495,7 +497,7 @@ const botMove = (cell) => {
     }
 }
 
-
+//sets a delay on bot action to make the user experience a bit more realistic
 function botDelay(){
     let randomDelay = ((Math.random() * 1000) + 300).toFixed();
     setTimeout(() => {
@@ -504,6 +506,7 @@ function botDelay(){
     }, randomDelay);
 }
 
+//handles singlePlayerMode 
 function setSinglePlayerMode() {
     mode = "singlePlayer"
     modeSelect.classList.add('hide');
@@ -511,6 +514,7 @@ function setSinglePlayerMode() {
     breakBlockSound.play();
 }
 
+//handles twoPlayerMode
 function setTwoPlayersMode() {
     mode = "multiPlayer";
     modeSelect.classList.add('hide');
@@ -521,6 +525,7 @@ function setTwoPlayersMode() {
     addCellEventListener();
 }
 
+//handles marioSelection on single player mode
 function marioSelected() {
     playerCharacter = 'mario';
     playerSelectContainer.classList.add('hide');
@@ -529,22 +534,17 @@ function marioSelected() {
     addCellEventListener();
 }
 
+//handles luigi selection on singleplayerMode
 function luigiSelected() {
     playerCharacter = 'luigi';
     playerSelectContainer.classList.add('hide');
     breakBlockSound.play();
-    botDelay();
+    botDelay(); //bot will go first when luigi is selected so bot action is called.
     bgMusic.play();
     addCellEventListener();
 }
 
-settingsButton.addEventListener('click', toggleSettingsWindow);
-settingsCloseButton.addEventListener('click', toggleSettingsWindow);
-bgmOffButton.addEventListener('click', toggleBgmOff);
-bgmOnButton.addEventListener('click', toggleBgmOn);
-sfxOffButton.addEventListener('click', toggleSfxOff);
-sfxOnButton.addEventListener('click', toggleSfxOn);
-
+//opens or closes the settings window
 function toggleSettingsWindow() {
     if(settingsMenu.classList.contains('hide')){
         settingsMenu.classList.remove('hide');
@@ -556,18 +556,21 @@ function toggleSettingsWindow() {
     }
 }
 
+//mute background music
 function toggleBgmOff() {
     bgmOnButton.classList.remove('active');
     bgmOffButton.classList.add('active');
     bgMusic.muted = true;
 }
 
+//unmute background music
 function toggleBgmOn () {
     bgmOnButton.classList.add('active');
     bgmOffButton.classList.remove('active');
     bgMusic.muted = false;
 }
 
+//mutes sound effects
 function toggleSfxOff() {
     sfxOnButton.classList.remove('active');
     sfxOffButton.classList.add('active');
@@ -580,6 +583,7 @@ function toggleSfxOff() {
     pauseSound.muted = true;
 }
 
+//unmute sound effects
 function toggleSfxOn() {
     sfxOnButton.classList.add('active');
     sfxOffButton.classList.remove('active');
@@ -591,4 +595,3 @@ function toggleSfxOn() {
     breakBlockSound.muted = false;
     pauseSound.muted = false;
 }
-//turns on sound when the mute image is selected to toggle to sound on.

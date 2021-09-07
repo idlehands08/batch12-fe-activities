@@ -44,12 +44,10 @@ button {
     font-family: var(--font-family-play);
 }
 
-
-
 #settingsButton {
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
+    top: 0.3rem;
+    right: 0.3rem;
     padding: 1rem;
     border-radius: 50%;
     cursor: pointer;
