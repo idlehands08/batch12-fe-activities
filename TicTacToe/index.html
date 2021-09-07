@@ -14,6 +14,31 @@
 </head>
 <body>
     <div class="container-main">
+        <div class="settings">
+            <h2>SETTINGS</h2>
+            <h3>BG Music</h3>
+            <div class="flex-row-item">
+                <span id="bgmON" class="active">ON</span>
+                <span id="bgmOFF">OFF</span>
+            </div>
+            <h3>Sound Effects</h3>
+            <div class="flex-row-item">
+                <span id="sfxON" class="active">ON</span>
+                <span id="sfxOFF">OFF</span>
+            </div>
+        </div>
+        <div class="container-playerSelect">
+            <div class="modeSelect flex-column-item">
+                <h1 id=modeSelectTitle>Game Mode</h1>
+                <h2 id="singlePlayer" class="selection">Single Player</h2>
+                <h2 id="twoPlayers" class="selection">Two Players</h2>
+            </div>
+            <div class="characterSelect flex-column-item hide">
+                <h2>Who do you want to play as?</h2>
+                <h2 id="selectMario" class="selection">Mario - Player 1</h2>
+                <h2 id="selectLuigi" class="selection">Luigi - Player 2</h2>
+            </div>
+        </div>
         <div class="container-sound">
             <i id="sound" class="soundIcon fas fa-volume-up"></i>
             <i id="mute" class="soundIcon fas fa-volume-mute hide"></i>
@@ -39,6 +64,29 @@
         <div class="container-mainComponents">
         <div class="container-title flex-column-item">
             <a href="https://fontmeme.com/super-mario-font/"><img id="title"src="https://fontmeme.com/permalink/210905/5c345dabe95bb939be4e05ea55413882.png" alt="super-mario-font" border="0"></a>
+        </div>
+        <div class="container-scoreBoard">  <!-- details-->
+            <div class="wrapper-scoreboard">
+                <div class="flex-row-item">
+                    <div class="container-emblem">
+                        <img id="marioEmblem" src="./images/marioEmblem.png">
+                    </div>
+                    <div class="container-xScoreBoard scoreboard">
+                        <h2>PLAYER 1</h2>
+                        <h2 class="scoreX score">00</h2>
+                    </div>
+                </div>
+                <div class="flex-row-item">
+                    <div class="container-oScoreBoard scoreboard">
+                        <h2>PLAYER 2</h2>
+                        <h2 class="scoreO score">00</h2>
+                    </div>
+                    <div class="container-emblem">
+                        <img id="luigiEmblem" src="./images/luigiEmblem.png">
+                    </div>
+                </div>
+            </div>
+            <div class="slider"></div>
         </div>
         <h2 class="announcement"></h2>
         <div class="container-welcome hide">
@@ -66,8 +114,10 @@
         
         
     </div>
+   
     <button id="reset">RESET</button>
     </div>
-
+    <audio id="bgMusic" controls src="audio/marioMedley.mp3">
+      </audio>
 </body>
 </html>

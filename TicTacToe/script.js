@@ -21,8 +21,25 @@ const growSound = new Audio('./audio/smb_vine.wav');
 const pipeSound = new Audio('./audio/smb_pipe.wav');
 const breakBlockSound = new Audio('./audio/smb_breakblock.wav');
 const pauseSound = new Audio('./audio/smb_pause.wav');
+const bgMusic = document.querySelector('#bgMusic');
 const soundOnButton = document.getElementById('sound');
 const muteButton = document.getElementById('mute');
+const playerSelectContainer = document.querySelector('.container-playerSelect');
+const singlePlayerTag = document.getElementById('singlePlayer');
+const twoPlayersTag = document.getElementById('twoPlayers')
+const modeSelect = document.querySelector('.modeSelect');
+const characterSelect = document.querySelector('.characterSelect');
+const selectMario = document.getElementById('selectMario');
+const selectLuigi = document.getElementById('selectLuigi');
+
+//sound
+bgMusic.loop = 'true';
+bgMusic.volume = 0.2;
+luigiSound.volume = 0.3;
+marioSound.volume = 0.3;
+growSound.volume = 0.3;
+coinSound.volume = 1.0;
+
 //declared variables
 var counter = 0; //used to count the turns
 var lastCounter = 0; //used to indicate when the nextButton will disappear
@@ -31,6 +48,8 @@ var boardArray = []; // initializes our board array
 boardArray[counter] = []; // initializes the first index of our board array as an array as well
 var scoreX = 0;
 var scoreO = 0;
+var mode = 'singlePlayer';
+var playerCharacter = "mario";
 
 //EVENT LISTENERS
 previousButton.addEventListener('click', previousMove);
@@ -39,6 +58,10 @@ historyButton.addEventListener('click', displayHistoryButtonsContainer);
 resetButton.addEventListener('click', refreshPage);
 soundOnButton.addEventListener('click', muteSound);
 muteButton.addEventListener('click', soundOn);
+singlePlayerTag.addEventListener('click', setSinglePlayerMode);
+twoPlayersTag.addEventListener('click', setTwoPlayersMode);
+selectMario.addEventListener('click', marioSelected);
+selectLuigi.addEventListener('click', luigiSelected);
 
 //FUNCTIONS
 //initializes an empty board. Called on page load and when rematchButton is pressed.
@@ -50,7 +73,6 @@ function createBoard() {
             board.appendChild(newDiv);
         }
     }
-    // announcementTag.innerHTML = "Player X's turn";
 }
 createBoard();
 
@@ -64,31 +86,38 @@ const playerXTurn = () => {
     }
 }
 
+//function to handle player x/mario cell clicks
+const xAction = () => {
+    targetCell.classList.add('x'); //adds classList x to indicate an x mark on the cell
+    marioSound.play();
+    board.classList.remove('x'); // removes classList x from board to give way for next turn
+    board.classList.add('o'); //switches turn to o
+    lastPlayerSymbol = 'x'; //saves last player move as x
+    scoreBoardContainer.classList.add('oTurn');
+}
+
+//function to handle player o/luigi cell clicks 
+const oAction = () => {
+    targetCell.classList.add('o'); //adds classList x to indicate an o mark on the cell
+    luigiSound.play();
+    board.classList.remove('o'); // removes classList o from board to give way for next turn
+    board.classList.add('x');  // switches turn to x
+    lastPlayerSymbol = 'o'; //saves the last player move as o 
+    scoreBoardContainer.classList.remove('oTurn');
+}
+
 //handles click event when player clicks on a cell
 const playerMove = (e) => {
     targetCell = e.target;
     if(playerXTurn() === true) {
-        targetCell.classList.add('x'); //adds classList x to indicate an x mark on the cell
-        marioSound.play();
-        board.classList.remove('x'); // removes classList x from board to give way for next turn
-        board.classList.add('o'); //switches turn to o
-        lastPlayerSymbol = 'x'; //saves last player move as x
-        scoreBoardContainer.classList.add('oTurn');
+       xAction();
     }
     else {
-        // targetCell.innerHTML = `<i class="far fa-circle"></i>`;
-        targetCell.classList.add('o'); //adds classList x to indicate an o mark on the cell
-        luigiSound.play();
-        board.classList.remove('o'); // removes classList o from board to give way for next turn
-        board.classList.add('x');  // switches turn to x
-        lastPlayerSymbol = 'o'; //saves the last player move as o 
-        scoreBoardContainer.classList.remove('oTurn');
-
+        oAction();
     }
     storeHistory(); //calls the storeHistory function to store current state of board after a player turn
     if (checkForWinner(lastPlayerSymbol)) {
         //if else which sets the color for the announcement tag depending on lastPlayerSymbol (the winner of the game);
-        
         if (lastPlayerSymbol === 'x') {
             announcementTag.style.color = "var(--color-playerX)";
             scoreBoardContainer.classList.remove('oTurn');
@@ -107,22 +136,27 @@ const playerMove = (e) => {
         }
         else {
             counter++;  //adds 1 to counter for the next array to be pushed on boardArray
+            if (mode === 'singlePlayer') {
+                removeCellEventListener();
+                botDelay(); //calls on bot action with a random delay
+            }
         }
     }
-   
 }
 
 //add event listeners to all cells. Called on createBoard();
 function addCellEventListener() {
     const cells = document.querySelectorAll('.cell');
     cells.forEach(cell => {
+        if(!cell.classList.contains('x') && !cell.classList.contains('o')) //only adds event listener to empty cells
         cell.addEventListener('click', playerMove, { once: true });
+        cell.style.cursor = "pointer";
     });
     rematchButtons.forEach(rematchButton => {
         rematchButton.addEventListener('click', restartGame);
     });
 }
-addCellEventListener();
+
 
 //removes eventListener for all cells. Called when a player wins.
 function removeCellEventListener() {
@@ -236,7 +270,6 @@ function checkForWinner(lastPlayerSymbol){
     || checkPlayerSymbol(1,4,7, lastPlayerSymbol) || checkPlayerSymbol(2,5,8, lastPlayerSymbol)
     || checkPlayerSymbol(2,4,6, lastPlayerSymbol) || checkPlayerSymbol(0,4,8, lastPlayerSymbol)
     ){
-        
         removeCellEventListener(); //remove event listener from cells to prevent click function after game
         //styling of winning message bg and winningPlayer content depending on who won the game
         
@@ -367,8 +400,18 @@ function restartGame() {
     else {
         scoreBoardContainer.classList.remove('oTurn');
     }
-
+    
     addCellEventListener();
+    if (mode === 'singlePlayer') {
+        board.classList.remove('o');
+        board.classList.add('x');
+        scoreBoardContainer.classList.remove('oTurn');
+        if(playerCharacter === 'luigi') {
+            botDelay();
+        } 
+
+    }
+   
     //reset the variables
     resetButton.classList.remove('hide');
     counter = 0;
@@ -390,6 +433,7 @@ function soundOn() {
     pipeSound.muted= false;
     breakBlockSound.muted = false;
     pauseSound.muted = false;
+    bgSong.muted = false;
     muteButton.classList.add('hide');
     soundOnButton.classList.remove('hide');
 }
@@ -403,6 +447,7 @@ function muteSound() {
     pipeSound.muted= true;
     breakBlockSound.muted = true;
     pauseSound.muted = true;
+    bgSong.muted = true;
     soundOnButton.classList.add('hide');
     muteButton.classList.remove('hide');
 }
@@ -426,4 +471,95 @@ function addScore(lastPlayerSymbol){
     coinSound.play(); 
 }
 
- 
+function bot() {
+    let freeCells = [];
+    const cells = document.querySelectorAll('.cell');
+    cells.forEach(cell => {
+        if(!cell.classList.contains('x') && !cell.classList.contains('o')) {
+            freeCells.push(cell);
+            console.log(cell + ' has no children');
+        }
+    })
+    let randomCell = freeCells[Math.floor(Math.random() * freeCells.length)];
+    console.log(randomCell);
+    botMove(randomCell);
+}
+
+
+//bot function that allows our bot to take his turn.
+//exactly the same as playerMove() but takes in a cell instead of a target.
+const botMove = (cell) => {
+    targetCell = cell;
+    if(playerXTurn() === true) {
+        xAction();
+    }
+    else {
+        oAction();
+    }
+    storeHistory(); //calls the storeHistory function to store current state of board after a player turn
+    if (checkForWinner(lastPlayerSymbol)) {
+        if (lastPlayerSymbol === 'x') {
+            announcementTag.style.color = "var(--color-playerX)";
+            scoreBoardContainer.classList.remove('oTurn');
+        }
+        else {
+            announcementTag.style.color = "var(--color-playerO)"; 
+            scoreBoardContainer.classList.add('oTurn');
+        }
+        announcementTag.innerHTML = "Congratulations!";
+        lastCounter = counter; // sets value of lastCounter to counter value after gamewin.
+    }
+    else {
+        if(counter === 8) {
+            handleDraw();
+            lastCounter = counter;
+        }
+        else {
+            counter++;  //adds 1 to counter for the next array to be pushed on boardArray
+        }
+    }
+}
+
+
+function botDelay(){
+    let randomDelay = ((Math.random() * 1000) + 300).toFixed();
+    setTimeout(() => {
+        bot();
+        addCellEventListener();
+    }, randomDelay);
+}
+
+function setSinglePlayerMode() {
+    mode = "singlePlayer"
+    modeSelect.classList.add('hide');
+    characterSelect.classList.remove('hide');
+    breakBlockSound.play();
+}
+
+function setTwoPlayersMode() {
+    mode = "multiPlayer";
+    modeSelect.classList.add('hide');
+    characterSelect.classList.remove('hide');
+    playerSelectContainer.classList.add('hide');
+    breakBlockSound.play();
+    bgMusic.play();
+    addCellEventListener();
+}
+
+function marioSelected() {
+    playerCharacter = 'mario';
+    playerSelectContainer.classList.add('hide');
+    breakBlockSound.play();
+    bgMusic.play();
+    addCellEventListener();
+}
+
+function luigiSelected() {
+    playerCharacter = 'luigi';
+    playerSelectContainer.classList.add('hide');
+    breakBlockSound.play();
+    botDelay();
+    bgMusic.play();
+    addCellEventListener();
+}
+

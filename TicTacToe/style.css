@@ -1,7 +1,6 @@
 :root {
-    /* color set */
-
-    /* Component Settings */
+    /* COLORS */
+    /* component Settings */
     --color-playerX:rgba(254, 19, 15);
     --color-playerO:rgba(19, 147, 52);
     --color-cellBorder: rgba(255, 251, 252);
@@ -48,12 +47,56 @@ button {
     font-family: var(--font-family-play);
 }
 
+.settings {
+    background-color: var(--color-background);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: none;
+    width: 600px;
+    height: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 1rem;
+    border: 3px solid var(--color-snow);
+    z-index: 10;
+}
+
+.settings span{
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 10px;
+
+}
+.settings span:hover,
+.settings span.active {
+    background-color: lightgray;
+ 
+}
+
+.settings h2{
+    padding-bottom: 1rem;
+}
+
+
+#bgMusic {
+    display: none;
+}
 
 .container-mario {
     position: absolute;
     top: 4rem;
 }
-
 
 .container-luigi {
     position: absolute;
@@ -142,8 +185,6 @@ button {
         height: 30px;
     }
 }
-
-
 
 .container-main {
     background-image: url(./images/skyBackground.png);
@@ -326,6 +367,47 @@ button {
 }
 
 
+.container-playerSelect {
+    background-color: var(--color-background);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: none;
+    width: 650px;
+    height: auto;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+    border-radius: 1rem;
+    border: 3px solid var(--color-snow);
+    z-index: 10;
+}
+
+#modeSelectTitle {
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.4rem;
+    border-bottom: 3px solid white;
+}
+
+.selection {
+    cursor: pointer;
+    border-radius: 10px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+
+.selection:hover {
+    background-color: var(--color-gray);
+}
+.characterSelect h1{
+    text-align: center;
+}
 @media (max-width: 1024px) {
     .container-winningMessage {
         width: 85vw;
@@ -333,7 +415,29 @@ button {
         left: 50%;
         transform: translate(-50%, -60%);
     }
+
+    .settings {
+        width: 85vw;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -60%);
+    }
+
+    .container-playerSelect {
+        width: 85vw;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -60%);
+    }
 }
+
+@media (max-width: 414px) {
+    .container-playerSelect {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+ 
 
 
 .winningMessage {
@@ -507,6 +611,14 @@ h1 {
 
 h2 {
     font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+span {
+    font-size: 1rem;
 }
 
 /* reusable classes */
