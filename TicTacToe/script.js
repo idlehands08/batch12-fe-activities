@@ -22,8 +22,6 @@ const pipeSound = new Audio('./audio/smb_pipe.wav');
 const breakBlockSound = new Audio('./audio/smb_breakblock.wav');
 const pauseSound = new Audio('./audio/smb_pause.wav');
 const bgMusic = document.querySelector('#bgMusic');
-const soundOnButton = document.getElementById('sound');
-const muteButton = document.getElementById('mute');
 const playerSelectContainer = document.querySelector('.container-playerSelect');
 const singlePlayerTag = document.getElementById('singlePlayer');
 const twoPlayersTag = document.getElementById('twoPlayers')
@@ -56,8 +54,6 @@ previousButton.addEventListener('click', previousMove);
 nextButton.addEventListener('click', nextMove);
 historyButton.addEventListener('click', displayHistoryButtonsContainer);
 resetButton.addEventListener('click', refreshPage);
-soundOnButton.addEventListener('click', muteSound);
-muteButton.addEventListener('click', soundOn);
 singlePlayerTag.addEventListener('click', setSinglePlayerMode);
 twoPlayersTag.addEventListener('click', setTwoPlayersMode);
 selectMario.addEventListener('click', marioSelected);
@@ -434,8 +430,6 @@ function soundOn() {
     breakBlockSound.muted = false;
     pauseSound.muted = false;
     bgSong.muted = false;
-    muteButton.classList.add('hide');
-    soundOnButton.classList.remove('hide');
 }
 
 //mutes sound when the sound image is selected to toggle to mute. 
@@ -448,8 +442,6 @@ function muteSound() {
     breakBlockSound.muted = true;
     pauseSound.muted = true;
     bgSong.muted = true;
-    soundOnButton.classList.add('hide');
-    muteButton.classList.remove('hide');
 }
 
 //function that reloads the page. Called by resetButton.

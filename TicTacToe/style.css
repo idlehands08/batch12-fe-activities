@@ -14,11 +14,9 @@
     --color-gray: rgba(152, 152, 152);
     --color-darkGray: 	rgba(65, 69, 72);
     --color-snow: rgba(255, 251, 252);
-    
    
-    /* font settings */
+    /* font and sizes */
     --font-family-play: 'Play', sans-serif;
-    /* sizing settings */
     --radius-size: 10px;
     --cell-size: 6rem;
     --mark-size: calc(var(--cell-size) * 0.8);
@@ -36,7 +34,6 @@ body {
     color: var(--color-snow);
 }
 
-
 @media (max-width: 700px) {
     html{
         font-size: 70%;
@@ -46,6 +43,28 @@ body {
 button {
     font-family: var(--font-family-play);
 }
+
+.container-settingsIcon {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 2.4rem;
+}
+
+.container-settingsIcon:hover,
+.container-settingsIcon.active {
+    background-color: lightgray;
+   
+}
+
+@media (max-width: 768px) {
+    .container-settingsIcon {
+        font-size: 2rem;
+    }
+} 
 
 .settings {
     background-color: var(--color-background);
@@ -76,13 +95,11 @@ button {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
     border-radius: 10px;
-
 }
 
 .settings span:hover,
-.settings span.active {`
+.settings span.active {
     background-color: lightgray;
- 
 }
 
 .settings h2{
@@ -209,21 +226,6 @@ button {
     width: calc(var(--cell-size) * 4);
     height: 95vh;
     border-radius: 10px;
-}
-
-.soundIcon {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 2rem; 
-}
-
-#sound {
-    
-}
-
-#mute {
-
 }
 .title {
     margin-bottom: 2rem;
