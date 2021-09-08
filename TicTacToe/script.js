@@ -75,7 +75,7 @@ sfxOnButton.addEventListener('click', toggleSfxOn);
 
 //FUNCTIONS
 //initializes an empty board. Called on page load and when rematchButton is pressed.
-function createBoard() {
+(function createBoard() {
     for(let i = 0; i < 3; i++) {
         for (let j=0; j < 3; j++)  {
             let newDiv = document.createElement('div');
@@ -83,8 +83,7 @@ function createBoard() {
             board.appendChild(newDiv);
         }
     }
-}
-createBoard();
+}())
 
 //checks if it is player X's turn or player O's turn;
 const playerXTurn = () => {
@@ -300,7 +299,7 @@ function checkForWinner(lastPlayerSymbol){
     }
 }
 
-//this function is called when the history buton is clicked.
+//this function is called when the history button is clicked.
 function displayHistoryButtonsContainer() {
     revertCellStyling(); //sets the default styling of our board since it was edited during game win animations.
     announcementTag.style.color = "var(--color-cellBorder)"
