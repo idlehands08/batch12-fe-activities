@@ -95,7 +95,7 @@ const playerXTurn = () => {
     }
 }
 
-//function to handle player x/mario cell clicks
+//function to handle player x/mario cell clicks. This is called on playerMove and botMove
 const xAction = () => {
     targetCell.classList.add('x'); //adds classList x to indicate an x mark on the cell
     marioSound.play();
@@ -105,7 +105,7 @@ const xAction = () => {
     scoreBoardContainer.classList.add('oTurn');
 }
 
-//function to handle player o/luigi cell clicks 
+//function to handle player o/luigi cell clicks. This is called on playerMove and botMove
 const oAction = () => {
     targetCell.classList.add('o'); //adds classList x to indicate an o mark on the cell
     luigiSound.play();
@@ -115,7 +115,7 @@ const oAction = () => {
     scoreBoardContainer.classList.remove('oTurn');
 }
 
-//handles click event when player clicks on a cell
+//main function to handle player moves / player clicking on a cell on his/her turn.
 const playerMove = (e) => {
     targetCell = e.target;
     if(playerXTurn() === true) {
@@ -357,7 +357,7 @@ function highlightSymbols(index1,index2,index3) {
     setTimeout(function() {
         scoreXTag.style.transform = "unset";
         scoreOTag.style.transform = "unset";
-    },2500);
+    }, 2500);
 }
 
 //sets the message of our winningMessage when a draw happens.
