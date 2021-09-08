@@ -228,6 +228,7 @@ function previousMove(){
     nextButton.classList.remove('disable');
     nextButton.removeAttribute("disabled");
     loadHistory(); 
+    breakBlockSound.play();
 }
 
 //used for history function. Shows next move.
@@ -241,6 +242,7 @@ function nextMove(){
     previousButton.classList.remove('disable');
     previousButton.removeAttribute("disabled");
     loadHistory();
+    breakBlockSound.play();
 }
 
 //this function is used in our previous and next button. 
@@ -400,21 +402,20 @@ function restartGame() {
         cell.classList.remove('o');
         cell.style.cursor = "pointer";
     })
-    addCellEventListener();
     if (lastPlayerSymbol ==="x") {
         scoreBoardContainer.classList.add('oTurn');
     }
     else {
         scoreBoardContainer.classList.remove('oTurn');
     }
-    
     addCellEventListener();
     if (mode === 'singlePlayer') {
         board.classList.remove('o');
         board.classList.add('x');
         scoreBoardContainer.classList.remove('oTurn');
         if(playerCharacter === 'luigi') {
-            botDelay();
+            removeCellEventListener(); // makes sure the bot takes his turn first before the player
+            botDelay(); //bot will take his turn first as mario/player-1
         } 
     }
    
@@ -541,7 +542,7 @@ function luigiSelected() {
     breakBlockSound.play();
     botDelay(); //bot will go first when luigi is selected so bot action is called.
     bgMusic.play();
-    addCellEventListener();
+    removeCellEventListener(); 
 }
 
 //opens or closes the settings window
