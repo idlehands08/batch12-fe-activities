@@ -382,7 +382,10 @@ button {
 }
 #charSelectTitle{
     text-align: center;
+    padding-bottom: 0.5rem;
     margin-bottom: 1.4rem;
+    border-bottom: 3px solid white;
+
 }
 @media (max-width: 1024px) {
     .container-winningMessage {
