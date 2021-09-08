@@ -1,7 +1,5 @@
 :root {
-    
     --color-blue: #2383D1;
-    /* --color-staryellow: #ffb444; */
     --color-maizecrayola: #F3CA40;
     --color-staryellow:#F2A541;
     --color-blackfogra: #01161E;
@@ -9,10 +7,7 @@
     --color-ghostwhite: #F2F4FF;
     --color-snow: #FFFCFF;
     --color-gunmetal: #292F36;
-    
-    
 }
-
 
 *,
 ::before,
@@ -20,30 +15,19 @@
     margin: 0;
     padding: 0;
     box-sizing: inherit;
-
-
 }
-
-
-
 
 section{
     display: block;
 }
 
-
-
 /* -----Container Display Styling starts here*----- */
-
 #img-header{
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-self: stretch;     
-    
     text-align: center;     
-    /* background: url(./images/image4.png); */
     background: url(./images/Header.jpg);
     background-position: center;
     background-size: cover;
@@ -51,9 +35,7 @@ section{
     color: whitesmoke;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
-    
 }
-
 
 .title-header{
     display: flex;
@@ -61,39 +43,45 @@ section{
     align-items: center;
     max-width: 80%;
 }
-#subheader {
-  
-}
-
-
 
 .container-main{
-
-    
+    position: absolute;
     display: flex;
     justify-content: center;
-    height: 100vh;
+    height: 900px;
     width: 100%;
     flex-direction: row;
-    /* border: solid 3px black;   */
     background-color: var(--color-snow);
-    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-height: 900px) {
+    .container-main {
+        height: 100%;
+        position: relative;
+        top: unset;
+        left: unset;
+        transform: unset;
+    }
+}
+
+@media(max-width: 1200px) {
 
 }
 
+
 .container-survey{
-    
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 1px solid var(--color-gunmetal);
     border-top-right-radius: .5rem;
     border-bottom-right-radius: .5rem;
-    
 }
 
 .container-main-feedback{
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -106,18 +94,12 @@ section{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    
 }
-
-
-
 
 form {
     display: flex;
     flex-direction: column;
     justify-content: center;   
-
 }
 
 .personal-info{
@@ -125,7 +107,6 @@ form {
     flex-direction: column;
     align-items:flex-start;
     justify-content: space-around;
-    
 }
 
 #description {
@@ -137,45 +118,27 @@ form {
 .primary-info{
     display: flex;
     flex-direction: column;
-    
-    
 }
 
 .primary-info .flex-row-item{
     justify-content: flex-start;
 }
 
-/* -----Container Display Styling ends here*-----/
-
-
-/* margin and positioning styling starts here */
-
-
 .container-main{
-    /* padding-top: 100px; */
     margin: auto;
-   
 }
 
 .container-main img{
     max-width: 300px;
-   
 }
 
 #title{
     margin-top: 10px;  
-
 }
 
 form{
-    
     padding-left: 20px;
     padding-right: 20px;
-}
-
-
-.personal-info{
-    
 }
 
 #sex-row label {
@@ -196,7 +159,7 @@ form{
     width: 10rem;
 }
 
-   /* margin on the left of personal info items */
+/* margin on the left of personal info items */
 .personal-info .flex-column-item {
     margin-left: 20px;
 }
@@ -216,9 +179,6 @@ form{
     border-bottom: 0.5px solid #646464;
     background-color: transparent;
     font-size: 1.2rem;
-    
-
-    
 }
     /* made age width smaller */
 #age {
@@ -296,22 +256,17 @@ text-shadow: 0 0 25px var(--color-staryellow);
 /* submit button styling */
 
 #submit {
-
     width: 100%;
-    
     border: none;
     color: var(--color-blue);
-    transition: ease-out 0..3s;
+    transition: ease-out 0.3s;
     font-size: 1.2rem;
     outline: none;
     border: 1px solid var(--color-blackfogra);
     position: relative;
-
     /* button */
     margin-top: 20px;
     margin-bottom: 50px;
-
-    
     border: solid 1px gainsboro;
     border-radius: 0.25rem; 
     -webkit-box-shadow: 
@@ -327,10 +282,6 @@ text-shadow: 0 0 25px var(--color-staryellow);
     background: rgba(255,255,255,0.5);
     margin: 0 0 10px 0; 
     color: var(--color-blue)
-
-      
-    
-
 }
  
 #submit:hover {
@@ -340,13 +291,7 @@ text-shadow: 0 0 25px var(--color-staryellow);
     font-weight:800;
     cursor: pointer;
     text-transform: uppercase;
-     
-
 }
-
-
-
-
 
 textarea {
     background-color : whitesmoke;
@@ -390,26 +335,16 @@ select {
 }
 
 input[type=email] {
-
     width: 15rem;    
-    
 }
 
 input[type=text] {
-    
     width: 15rem;   
-    
 }
 
 input[id=age] {
-    
     width: 3rem;   
-    
 }
-
-
-
-/* form font styling starts here */
 
 html {
     font-size: 70%;
@@ -429,15 +364,11 @@ body {
     text-align: center;    
     color: var(--color-gunmetal);
     font-size: 0.8rem;
-    
-
 }
 
 label {
     color: var(--color-blue);
-    /* color: #08D99A; */
 }
-
 
 .primary-info label{
     margin-top: 2rem;
@@ -445,7 +376,6 @@ label {
     font-size: 1rem;
     text-transform: uppercase;
 }
-
 
 .secondary-info label{
     font-size: 1.2rem
@@ -515,41 +445,22 @@ select {
     
 }
 
-/* font styling ends here */
-
-
-
-
-.primary-info input {
-    
-   
-}
-
 .secondary-info{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    
 }
-
-
 
 .secondary-info label{
     margin-top: 2rem;
 }
 
-
-
 .flex-row-item{
     display: flex;
     flex-direction: row;
-    /* border: green 1px solid; */
     align-items: baseline;
     justify-content: space-between;
-    
-    
 }
 
 .flex-column-item{
@@ -558,37 +469,13 @@ select {
    
 }
 
-
-
-/* checkboxes styling */
-
-
 .secondary-info .checkbox-item {
     margin-left: 1rem;
-
 }
 
-/* textarea styling */
 textarea {
     width: 80%;
 }
-
-
-/* rating styling */
-
-
-
-/* feedback styling */
-
-
-
-
-
-
-
-
-
-
 
 @media (max-width:1200px) {
     
@@ -624,51 +511,32 @@ textarea {
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: auto;
-        
+        position: unset;
+        top: unset;
+        left: unset;
+        transform: unset;
+        height: 100%;
+        border:none;
         
     }
-    
-
-    
-    
     .container-survey {
         max-width: 100%;
-        
     }
-
-
-    
 }
-
-
-
 @media (max-width: 840px) {
-    
-  
-   
-
-    h2 {
-        
-    }
-
-   
     .container-main{
         min-width: 80%;
         display: flex;
         flex-direction: column;  
         align-items: center;
         
-        
     }
 
     .secondary-info label{
         font-size: 0.8rem
-    
     }
 
     form {
-              
         align-items: center;
     }
 
@@ -694,25 +562,16 @@ textarea {
     .secondary-info {
         margin-left: 5px;
     }
-
-
-    
 }
 
 @media (max-width: 680px) {
-
-
-         
-    
     #flex-row-secondary-info{
         display: flex;
         flex-direction: column;
     }
 
     .container-main-feedback {
-        
         align-items: center;
-        
     }
 
     .feedback-item {
@@ -721,11 +580,8 @@ textarea {
         align-items: center;
         justify-content: space-evenly;
     }
-
-    
     .primary-info input {
         min-width: 100%;
-        
     }
 }
 
@@ -755,9 +611,4 @@ textarea {
     .container-main {
         width: 100%;
     }
-
-   
-
-
-    
 }
