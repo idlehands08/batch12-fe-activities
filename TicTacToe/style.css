@@ -419,8 +419,10 @@ button {
 .selection:hover {
     background-color: var(--color-gray);
 }
-.characterSelect h1{
+
+#charSelectTitle{
     text-align: center;
+    margin-bottom: 1.4rem;
 }
 @media (max-width: 1024px) {
     .container-winningMessage {
@@ -449,7 +451,9 @@ button {
     .container-playerSelect {
         width: 100vw;
         height: 100vh;
+        border: none;
     }
+
 }
  
 
