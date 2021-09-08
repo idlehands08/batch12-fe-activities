@@ -44,6 +44,7 @@ button {
     font-family: var(--font-family-play);
 }
 
+/* SETTINGS BUTTON STYLING  */
 #settingsButton {
     position: absolute;
     top: 0.3rem;
@@ -53,13 +54,11 @@ button {
     cursor: pointer;
     font-size: 2.4rem;
 }
-
 #settingsButton:hover, 
 #settingsButton.active {
     background-color: lightgray;
    
 }
-
 #settingsCloseButton {
     padding: 0.5rem;
     margin-top: 1rem;
@@ -77,6 +76,7 @@ button {
     }
 } 
 
+/* SETTINGS MENU STYLING */
 .settings {
     background-color: var(--color-background);
     position: absolute;
@@ -96,7 +96,6 @@ button {
     border: 3px solid var(--color-snow);
     z-index: 10;
 }
-
 .settings span{
     font-size: 1rem;
     padding-left: 0.5rem;
@@ -107,32 +106,29 @@ button {
     margin-right: 0.5rem;
     border-radius: 10px;
 }
-
 .settings span:hover,
 .settings span.active {
     background-color: lightgray;
 }
-
 .settings h2{
     padding-bottom: 1rem;
 }
 
-
+/* EMBEDDED BGMUSIC */
 #bgMusic {
     display: none;
 }
 
+/* PICTURE CONTAINERS */
 .container-mario {
     position: absolute;
     top: 4rem;
 }
-
 .container-luigi {
     position: absolute;
     bottom: 0;
     right: 0;
 }
-
 .container-mario2 {
     position: absolute;
     bottom: 0;
@@ -197,10 +193,10 @@ button {
     }
 }
 
+/* TITLE-TICTACTOE */
 .container-title {
     margin-bottom: 2rem;
 }
-
 .container-title img {
    height: 80px;
 }
@@ -215,6 +211,7 @@ button {
     }
 }
 
+/* MAIN CONTAINER */
 .container-main {
     background-image: url(./images/skyBackground.png);
     width: 100vw;
@@ -225,6 +222,7 @@ button {
     background-position: center;
 }
 
+/* MAIN COMPONENTS CONTAINER */
 .container-mainComponents {
     position: absolute;
     display: flex;
@@ -238,18 +236,14 @@ button {
     height: 95vh;
     border-radius: 10px;
 }
-.title {
-    margin-bottom: 2rem;
-}
 
+/* SCOREBOARD STYLING */
 .container-scoreBoard {
     margin-bottom: 3rem;
     max-height: var(--cell-size);
     background-color: var(--color-snow);
     border-radius: var(--radius-size);
-    
 }
-
 .wrapper-scoreboard{
     display: flex;
     align-items: center;
@@ -257,14 +251,22 @@ button {
     border-radius: var(--radius-size);
     
 }
-
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+    position: relative;
+    z-index: 2;
+    width: calc(var(--cell-size)*2);   
+}
 .container-emblem {
     z-index: 1;
     
 }
 .container-emblem img {
     max-height: var(--cell-size);
-
 }
 
 @media(max-width: 414px) {
@@ -288,12 +290,7 @@ button {
     .wrapper-scoreboard .flex-row-item {
         max-width: 40vw;
     }
-
-    
-   
-    
 }
-
 #marioEmblem {
     border-radius: var(--radius-size);
 }
@@ -305,23 +302,9 @@ button {
     text-align: center;
 
 }
-
-.scoreboard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: default;
-    position: relative;
-    z-index: 2;
-    width: calc(var(--cell-size)*2);   
-}
-
-
 .container-main .container-scoreBoard {
     position: relative;
 }
-
 .container-scoreBoard .slider {
     position: absolute;
     left: 0;
@@ -333,14 +316,12 @@ button {
     transition: 0.35s all ease;
     border-radius: var(--radius-size);
 }
-
 .container-scoreBoard.oTurn .slider {
     transition: 0.35s all ease;
     left: 50%;
     background-color: var(--color-playerO);
 
 }
-
 .container-scoreBoard .container-oScoreBoard h2 {
     color: var(--color-gray);
 }
@@ -351,6 +332,7 @@ button {
     color: var(--color-gray);
 }
 
+/* TIC TAC TOE BOARD STYLING */
 .board {
     display: grid;
     justify-content: center;
@@ -362,25 +344,7 @@ button {
     margin-bottom: 3rem;
 }
 
-.container-winningMessage {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: none;
-    width: 600px;
-    height: auto;
-    padding-bottom: 2rem;
-    border-radius: 1rem;
-    border: 3px solid var(--color-snow);
-    z-index: 5;
-}
-
-
+/* PLAYER AND MODE SELECT STYLING */
 .container-playerSelect {
     background-color: var(--color-background);
     position: absolute;
@@ -400,13 +364,11 @@ button {
     border: 3px solid var(--color-snow);
     z-index: 10;
 }
-
 #modeSelectTitle {
     padding-bottom: 0.5rem;
     margin-bottom: 1.4rem;
     border-bottom: 3px solid white;
 }
-
 .selection {
     cursor: pointer;
     border-radius: 10px;
@@ -415,11 +377,9 @@ button {
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
 }
-
 .selection:hover {
     background-color: var(--color-gray);
 }
-
 #charSelectTitle{
     text-align: center;
     margin-bottom: 1.4rem;
@@ -431,14 +391,12 @@ button {
         left: 50%;
         transform: translate(-50%, -60%);
     }
-
     .settings {
         width: 85vw;
         top: 60%;
         left: 50%;
         transform: translate(-50%, -60%);
     }
-
     .container-playerSelect {
         width: 85vw;
         top: 60%;
@@ -446,7 +404,6 @@ button {
         transform: translate(-50%, -60%);
     }
 }
-
 @media (max-width: 414px) {
     .container-playerSelect {
         width: 100vw;
@@ -455,6 +412,24 @@ button {
     }
 }
 
+/* WINNING MESSAGE STYLING */
+.container-winningMessage {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: none;
+    width: 600px;
+    height: auto;
+    padding-bottom: 2rem;
+    border-radius: 1rem;
+    border: 3px solid var(--color-snow);
+    z-index: 5;
+}
 .winningMessage {
     border-bottom: 2px var(--color-snow) solid;
     padding: 2rem;
@@ -462,7 +437,6 @@ button {
     margin-bottom: 2rem;
     text-align: center;
 }
-
 @media (max-width: 1024px) {
     .winningMessage {
         border-bottom: none;
@@ -471,6 +445,7 @@ button {
     }
 }
 
+/* GAME BUTTONS STYLING */
 .gameButton{
     margin: 0.5rem;
     font-size: 1.5rem;
@@ -489,7 +464,6 @@ button {
     box-shadow: 0 .2em var(--color-gray); 
     cursor: pointer;
 }
-
 #reset {
     position: absolute;
     bottom: 1rem;
@@ -517,7 +491,6 @@ button {
 	position: relative;
 	top: .2em;
 }
-
 .gameButton.disable {
     box-shadow: none;
     position: relative;
@@ -525,6 +498,7 @@ button {
     cursor: not-allowed;
 }
 
+/* CELLS STYLING */
 .cell {
     display: flex;
     justify-content: center;
@@ -535,7 +509,6 @@ button {
     border: 3px solid var(--color-cellBorder);
     cursor: pointer;
 }
-
 .cell:first-child,
 .cell:nth-child(2),
 .cell:nth-child(3) {
@@ -547,18 +520,15 @@ button {
 .cell:nth-child(3n+3) {
     border-right: none;
 }
-
 .cell:last-child,
 .cell:nth-child(8),
 .cell:nth-child(7) {
     border-bottom: none;
 }
-
 .cell.x,
 .cell.o {
     cursor: not-allowed;
 }
-
 .cell.x::before,
 .cell.x::after {
     background-color: var(--color-playerX);
@@ -567,7 +537,6 @@ button {
 .board.x .cell:not(.x):not(.o):hover::after {
     background-color: var(--color-cellBorder);
 }
-
 .cell.x::before,
 .cell.x::after, 
 .board.x .cell:not(.x):not(.o):hover::before,
@@ -577,7 +546,6 @@ button {
     width: calc(var(--mark-size) * .15);
     height: var(--mark-size);
 }
-
 .cell.x::before,
 .board.x .cell:not(.x):not(.o):hover::before {
     transform: rotate(45deg);
@@ -586,7 +554,6 @@ button {
 .board.x .cell:not(.x):not(.o):hover::after {
     transform: rotate(-45deg);
 }
-
 .cell.o::before,
 .cell.o::after {
     background-color: var(--color-playerO);
@@ -595,7 +562,6 @@ button {
 .board.o .cell:not(.x):not(.o):hover::after {
     background-color: var(--color-cellBorder);
 }
-
 .cell.o::before,
 .cell.o::after,
 .board.o .cell:not(.x):not(.o):hover::before,
@@ -604,7 +570,6 @@ button {
     position: absolute;
     border-radius: 50%;
 }
-
 .cell.o::before, 
 .board.o .cell:not(.x):not(.o):hover::before {
     width: calc(var(--mark-size) * 0.9);
@@ -616,40 +581,34 @@ button {
     width: calc(var(--mark-size) * .635);
     height: calc(var(--mark-size) * .635);
     background-color: var( --color-background);
-   
 }
 
-/* Font Styling */
+/* FONT STYLING */
 h1 {
     font-size: 2.8rem;
 }
-
 h2 {
     font-size: 2rem;
 }
-
 h3 {
     font-size: 1.4rem;
 }
-
 span {
     font-size: 1rem;
 }
 
-/* reusable classes */
+/* REUSABLE CLASSES */
 .flex-row-item {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .flex-column-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-
 .hide {
     display: none;
     cursor: none;
