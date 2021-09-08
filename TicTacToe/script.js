@@ -14,13 +14,6 @@ const scoreBoardContainer = document.querySelector('.container-scoreBoard');
 const rematchButtons = document.querySelectorAll('.rematch');
 const scoreXTag = document.querySelector('.scoreX');
 const scoreOTag = document.querySelector('.scoreO');
-const marioSound = new Audio('./audio/smb_jump-small.wav');
-const luigiSound = new Audio('./audio/smb_jump-super.wav');
-const coinSound = new Audio('./audio/smw_coin.wav');
-const growSound = new Audio('./audio/smb_vine.wav');
-const pipeSound = new Audio('./audio/smb_pipe.wav');
-const breakBlockSound = new Audio('./audio/smb_breakblock.wav');
-const pauseSound = new Audio('./audio/smb_pause.wav');
 const bgMusic = document.querySelector('#bgMusic');
 const settingsButton = document.querySelector('#settingsButton');
 const settingsMenu = document.querySelector('.settings');
@@ -36,8 +29,16 @@ const modeSelect = document.querySelector('.modeSelect');
 const characterSelect = document.querySelector('.characterSelect');
 const selectMario = document.getElementById('selectMario');
 const selectLuigi = document.getElementById('selectLuigi');
+//audio elements
+const marioSound = new Audio('./audio/smb_jump-small.wav');
+const luigiSound = new Audio('./audio/smb_jump-super.wav');
+const coinSound = new Audio('./audio/smw_coin.wav');
+const growSound = new Audio('./audio/smb_vine.wav');
+const pipeSound = new Audio('./audio/smb_pipe.wav');
+const breakBlockSound = new Audio('./audio/smb_breakblock.wav');
+const pauseSound = new Audio('./audio/smb_pause.wav');
 
-//sound
+//sound settings
 bgMusic.loop = 'true';
 bgMusic.volume = 0.2;
 luigiSound.volume = 0.3;
@@ -322,6 +323,7 @@ function setWinningStyleAndMessages(winnerSymbol) {
     }
 }      
 
+//short animation called upon when a player wins.
 function highlightSymbols(index1,index2,index3) {
     const cells = document.querySelectorAll('.cell');
     cells.forEach(cell => {
@@ -386,7 +388,6 @@ function revertCellStyling(){
     for( let x=6; x < 9; x++ ) {
         cells[x].style.borderBottom = "none";
     }
-
     announcementTag.innerHTML = `History - Player Turn ${counter}`;
 }
 
@@ -415,7 +416,6 @@ function restartGame() {
         if(playerCharacter === 'luigi') {
             botDelay();
         } 
-
     }
    
     //reset the variables
@@ -554,6 +554,7 @@ function toggleSettingsWindow() {
         settingsMenu.classList.add('hide');
         settingsButton.classList.remove('active');
     }
+    breakBlockSound.play();
 }
 
 //mute background music
