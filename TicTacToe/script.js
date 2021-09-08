@@ -307,6 +307,7 @@ function displayHistoryButtonsContainer() {
     historyButtonContainer.classList.remove('hide');
     winningMessageContainer.classList.add('hide');
     breakBlockSound.play();
+    nextButton.classList.add('disable');
     resetButton.classList.add('hide');
 }
 
