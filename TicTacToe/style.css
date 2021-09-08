@@ -453,10 +453,7 @@ button {
         height: 100vh;
         border: none;
     }
-
 }
- 
-
 
 .winningMessage {
     border-bottom: 2px var(--color-snow) solid;

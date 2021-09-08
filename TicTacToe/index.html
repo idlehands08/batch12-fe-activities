@@ -13,6 +13,7 @@
     <script defer src="script.js"></script>
 </head>
 <body>
+    <!-- start of container-main -->
     <div class="container-main">
         <!-- settings icon placed on uper right -->
          <i id="settingsButton" class="fas fa-cog"></i>
@@ -43,7 +44,8 @@
                 <h2 id="selectLuigi" class="selection">Luigi - Player 2</h2>
             </div>
         </div>
-       <!-- container for mario picture -->
+        <!-- end of settings menu-->
+       <!-- containers for pictures -->
         <div class="container-mario">
             <img src="./images/mario.png">
         </div>
@@ -62,63 +64,69 @@
         <div class="container-luigi3">
             <img src="./images/luigi3.png" alt="">
         </div>
+        <!-- end of containers for pictures -->
+        <!-- container for main components -->
         <div class="container-mainComponents">
-        <div class="container-title flex-column-item">
-            <a href="https://fontmeme.com/super-mario-font/"><img id="title"src="https://fontmeme.com/permalink/210905/5c345dabe95bb939be4e05ea55413882.png" alt="super-mario-font" border="0"></a>
-        </div>
-        <div class="container-scoreBoard">  <!-- details-->
-            <div class="wrapper-scoreboard">
-                <div class="flex-row-item">
-                    <div class="container-emblem">
-                        <img id="marioEmblem" src="./images/marioEmblem.png">
+            <!-- tictactoe title -->
+            <div class="container-title flex-column-item">
+                <a href="https://fontmeme.com/super-mario-font/"><img id="title"src="https://fontmeme.com/permalink/210905/5c345dabe95bb939be4e05ea55413882.png" alt="super-mario-font" border="0"></a>
+            </div>
+            <!-- end of tictactoe title -->
+            <!-- start of container for scoreboard -->
+            <div class="container-scoreBoard">  <!-- details-->
+                <div class="wrapper-scoreboard">
+                    <div class="flex-row-item">
+                        <div class="container-emblem">
+                            <img id="marioEmblem" src="./images/marioEmblem.png">
+                        </div>
+                        <div class="container-xScoreBoard scoreboard">
+                            <h2>PLAYER 1</h2>
+                            <h2 class="scoreX score">00</h2>
+                        </div>
                     </div>
-                    <div class="container-xScoreBoard scoreboard">
-                        <h2>PLAYER 1</h2>
-                        <h2 class="scoreX score">00</h2>
+                    <div class="flex-row-item">
+                        <div class="container-oScoreBoard scoreboard">
+                            <h2>PLAYER 2</h2>
+                            <h2 class="scoreO score">00</h2>
+                        </div>
+                        <div class="container-emblem">
+                            <img id="luigiEmblem" src="./images/luigiEmblem.png">
+                        </div>
                     </div>
                 </div>
+                <div class="slider"></div>
+            </div>
+            <!-- end of container for scoreboard -->
+            <!-- game announcements -->
+            <h2 class="announcement"></h2>
+            <!-- board where the cells will be initiated -->
+            <div class="board x">
+                    <!-- cells will be initiated here by script.js-->
+            </div>
+            <!-- start of container for winning message -->
+            <div class="container-winningMessage hide">
+                <h2 class="winningMessage"></h2>
                 <div class="flex-row-item">
-                    <div class="container-oScoreBoard scoreboard">
-                        <h2>PLAYER 2</h2>
-                        <h2 class="scoreO score">00</h2>
-                    </div>
-                    <div class="container-emblem">
-                        <img id="luigiEmblem" src="./images/luigiEmblem.png">
-                    </div>
+                    <button id="checkHistory" class="gameButton">HISTORY</button>
+                    <button id="rematch" class="rematch gameButton">REMATCH</button>
                 </div>
             </div>
-            <div class="slider"></div>
-        </div>
-        <h2 class="announcement"></h2>
-        <div class="container-welcome hide">
-            <h1>TIC-TAC-TOE</h1>
-            <h2></h2>
-        </div>
-        <div class="board x">
-                <!-- where the board will be initiated -->
-        </div>
-        <div class="container-winningMessage hide">
-            <h2 class="winningMessage"></h2>
-            <div class="flex-row-item">
-                <button id="checkHistory" class="gameButton">HISTORY</button>
+            <!-- end of container for winning message -->
+            <!-- start of container for history buttons -->
+            <div class="container-historyButtons flex-column-item hide">
+                <div class="container-prevNext flex-row-item">
+                    <button id="previous" class="previous gameButton">PREVIOUS</button>
+                    <button id="next" class="next gameButton">NEXT</button>
+                </div>
                 <button id="rematch" class="rematch gameButton">REMATCH</button>
             </div>
+            <!-- end of container for history buttons -->
         </div>
-        
-        <div class="container-historyButtons flex-column-item hide">
-            <div class="container-prevNext flex-row-item">
-                <button id="previous" class="previous gameButton">PREVIOUS</button>
-                <button id="next" class="next gameButton">NEXT</button>
-            </div>
-            <button id="rematch" class="rematch gameButton">REMATCH</button>
-        </div>
-        
-        
+        <!-- end of container-mainComponents -->
+        <button id="reset">RESET</button>
     </div>
-   
-    <button id="reset">RESET</button>
-    </div>
-    <audio id="bgMusic" controls src="audio/marioMedley.mp3">
-      </audio>
+    <!-- end of container-main -->
+    <audio id="bgMusic" controls src="audio/marioMedley.mp3"></audio>
+      
 </body>
 </html>
