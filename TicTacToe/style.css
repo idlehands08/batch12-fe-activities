@@ -53,6 +53,7 @@ button {
     border-radius: 50%;
     cursor: pointer;
     font-size: 2.4rem;
+    z-index: 100;
 }
 #settingsButton:hover, 
 #settingsButton.active {
