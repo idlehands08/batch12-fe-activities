@@ -14,7 +14,6 @@ const scoreBoardContainer = document.querySelector('.container-scoreBoard');
 const rematchButtons = document.querySelectorAll('.rematch');
 const scoreXTag = document.querySelector('.scoreX');
 const scoreOTag = document.querySelector('.scoreO');
-const bgMusic = document.querySelector('#bgMusic');
 const settingsButton = document.querySelector('#settingsButton');
 const settingsMenu = document.querySelector('.settings');
 const settingsCloseButton = document.querySelector('#settingsCloseButton');
@@ -30,6 +29,7 @@ const characterSelect = document.querySelector('.characterSelect');
 const selectMario = document.getElementById('selectMario');
 const selectLuigi = document.getElementById('selectLuigi');
 //audio elements
+const bgMusic = document.querySelector('#bgMusic');
 const marioSound = new Audio('./audio/smb_jump-small.wav');
 const luigiSound = new Audio('./audio/smb_jump-super.wav');
 const coinSound = new Audio('./audio/smw_coin.wav');
@@ -52,8 +52,8 @@ var lastCounter = 0; //used to indicate when the nextButton will disappear
 var lastPlayerSymbol = ""; //determines who was the last player to mark move on board. Used to check for winning combinations. 
 var boardArray = []; // initializes our board array
 boardArray[counter] = []; // initializes the first index of our board array as an array as well
-var scoreX = 0;
-var scoreO = 0;
+var scoreX = 0; //score of playerX/Player1/mario
+var scoreO = 0; //score of playerO/Player2/luigi
 var mode = 'singlePlayer';
 var playerCharacter = "mario";
 
