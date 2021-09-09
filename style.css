@@ -41,7 +41,6 @@ h1 {
     opacity: 0;
     transition: all 1s ease;
     display: inline-block;
-    margin-bottom: 5rem;
     font-size: 6rem;
     font-weight: 400;
 }
@@ -72,20 +71,26 @@ h1 {
 
 @keyframes moveLetters {
     0%{
+        position: absolute;
         opacity: 0;
+        top: 0;
         left: -60vw;
     }
     30%{
+        position: relative;
         opacity: 1;
         top: 50%;
         left: 200px;
     }
-    60% {
+    50% {
         opacity: 0;
+    }
+    60% {
+        opacity: 1;
     }
     80%{
         opacity: 1;
-        transform: translateY(5px);
+        transform: translateY(80px);
     }
     100%{
         opacity: 1;
