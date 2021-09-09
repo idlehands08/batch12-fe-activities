@@ -82,13 +82,13 @@ h1 {
         top: 50%;
         left: 200px;
     }
-    50% {
+    /* 50% {
         opacity: 0;
-    }
+    } */
     60% {
         opacity: 1;
     }
-    80%{
+    90%{
         opacity: 1;
         transform: translateY(80px);
     }
@@ -111,14 +111,13 @@ h1 {
        transform: translateY(50px);
     }
     60% {
-        opacity: 0;
+        opacity: 1;
         left: -800px;
         transform: translateY(50px);
     }
     100%{
         opacity: 1;
         top: 50%;
-        /* transform: translateY(-70%); */
         left: 0px;
     }
 }
