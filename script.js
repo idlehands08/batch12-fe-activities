@@ -35,7 +35,7 @@ let char2 = 0;
 
 setTimeout(function(){
     timer2 = setInterval(onTick2, 50);
-}, 50)
+}, 500)
 
 function onTick2() {
     const span2 = document.querySelectorAll('.span2')[char2];

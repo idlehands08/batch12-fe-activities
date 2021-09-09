@@ -2,10 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 body{
-
+    font-family: 'Kanit', sans-serif;
 }
 
 .container-main {
@@ -21,11 +22,13 @@ body{
 h1 {
     color: whitesmoke;
     font-size: 4rem;
-    font-family: sans-serif;
 }
 
 .title2 {
     position: relative;
+    font-size: 4rem;
+    font-weight: 400;
+    
 }
 
 .title1 {
@@ -39,10 +42,16 @@ h1 {
     transition: all 1s ease;
     display: inline-block;
     margin-bottom: 5rem;
+    font-size: 6rem;
+    font-weight: 400;
 }
 
 .span1.rotate {
     animation: moveLetters 1s both;
+}
+
+.span1.rotate:hover {
+    transform: translateY(55px);
 }
 
 .span2 {
@@ -51,11 +60,14 @@ h1 {
     opacity: 0;
     transition: all 1s ease;
     display: inline-block;
-    
 }
 
 .span2.fade {
-    animation: dropLetters 1s both;
+    animation: moveLetters2 1s both;
+}
+
+.span2:hover {
+    transform: translateY(20px);
 }
 
 @keyframes moveLetters {
@@ -66,11 +78,14 @@ h1 {
     30%{
         opacity: 1;
         top: 50%;
-        transform: translateY(-50%);
         left: 200px;
     }
     60% {
         opacity: 0;
+    }
+    80%{
+        opacity: 1;
+        transform: translateY(5px);
     }
     100%{
         opacity: 1;
@@ -80,7 +95,28 @@ h1 {
     }
 }
 
-
+@keyframes moveLetters2 {
+    0%{
+        opacity: 0;
+        left: 110vw;
+    }
+    30%{
+        opacity: 1;
+        top: 50%;
+       transform: translateY(50px);
+    }
+    60% {
+        opacity: 0;
+        left: -800px;
+        transform: translateY(50px);
+    }
+    100%{
+        opacity: 1;
+        top: 50%;
+        /* transform: translateY(-70%); */
+        left: 0px;
+    }
+}
 @keyframes dropLetters {
     0% {
         opacity: 0;
