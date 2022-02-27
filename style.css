@@ -12,14 +12,16 @@
     --color-lightred: #CE4760;
 }
 
-.home {
+/* home - particles-js */
+#particles-js {
     background-color: #1c1d25;
     height: 100vh;
-    color: white;
-    font-size: 40px;
+    color: #F5FAFA;
 }
 
 nav {
+    position: absolute;
+    right: 0;
     display: flex;
     justify-content: flex-end;
     padding: 1rem;
@@ -56,20 +58,19 @@ footer {
     font-weight:800;
 }
 
+
 .container-home-text {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    padding: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: 100px;
 }
 
-.logo-container {
-    font-weight: 800;
-}
 .home-text {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
     margin-bottom: 150px;
 }
@@ -128,12 +129,6 @@ footer {
     html {
         font-size: 14px;
     }
-
-    .container-home-text{
-        padding: 60px;
-    }
-
-
 
 }
 
@@ -260,6 +255,7 @@ footer {
     align-items: center;
     justify-content: space-around;
     padding: 80px;
+    background-color: var(--color-white);
 }
 
 
